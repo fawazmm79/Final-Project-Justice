@@ -31,6 +31,7 @@
 		CC86C0432763E98700DBE373 /* MyProfilePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86C0422763E98700DBE373 /* MyProfilePageVC.swift */; };
 		CC86C0452763E9AA00DBE373 /* LogIn_asLawyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86C0442763E9AA00DBE373 /* LogIn_asLawyer.swift */; };
 		CC86C0472763E9C500DBE373 /* SingUp_asLawyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86C0462763E9C500DBE373 /* SingUp_asLawyer.swift */; };
+		CC86C0492763F26200DBE373 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC86C0482763F26200DBE373 /* File.swift */; };
 		CC9759B527612B5B0091BEFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9759B427612B5B0091BEFB /* AppDelegate.swift */; };
 		CC9759B727612B5B0091BEFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9759B627612B5B0091BEFB /* SceneDelegate.swift */; };
 		CC9759BC27612B5B0091BEFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9759BA27612B5B0091BEFB /* Main.storyboard */; };
@@ -72,6 +73,7 @@
 		CC86C0422763E98700DBE373 /* MyProfilePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfilePageVC.swift; sourceTree = "<group>"; };
 		CC86C0442763E9AA00DBE373 /* LogIn_asLawyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn_asLawyer.swift; sourceTree = "<group>"; };
 		CC86C0462763E9C500DBE373 /* SingUp_asLawyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUp_asLawyer.swift; sourceTree = "<group>"; };
+		CC86C0482763F26200DBE373 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		CC9759B127612B5B0091BEFB /* Justice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Justice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9759B427612B5B0091BEFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC9759B627612B5B0091BEFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				CC86C01C2763E64C00DBE373 /* TabBar */,
 				CC86C01A2763E5DD00DBE373 /* User Path Control */,
 				CC86C0192763E5B000DBE373 /* Lawyer Path Control */,
+				CC86C0482763F26200DBE373 /* File.swift */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				CC86C0392763E8E900DBE373 /* NewsVC_Cell.swift in Sources */,
 				CC86C02B2763E7F900DBE373 /* CourtPageVC.swift in Sources */,
 				CC86C0472763E9C500DBE373 /* SingUp_asLawyer.swift in Sources */,
+				CC86C0492763F26200DBE373 /* File.swift in Sources */,
 				CC9759B727612B5B0091BEFB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
