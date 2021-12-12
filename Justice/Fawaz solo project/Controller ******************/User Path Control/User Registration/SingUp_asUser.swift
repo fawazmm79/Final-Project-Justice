@@ -107,30 +107,6 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
   }()
   
   //--------------------------------------------------------------------------
-  //MARK: - logInWeb
-  
-  lazy var logInWebGoogle: ButtonWebView = {
-    let logInWebGoogle = ButtonWebView()
-    logInWebGoogle.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
-    self.view.addSubview(logInWebGoogle)
-    return logInWebGoogle
-  }()
-  //--------------------------------------------------------------------------
-  lazy var logInWebFacebook: ButtonWebView = {
-    let logInWebFacebook = ButtonWebView()
-    logInWebFacebook.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
-    self.view.addSubview(logInWebFacebook)
-    return logInWebFacebook
-  }()
-  //--------------------------------------------------------------------------
-  lazy var logInWebMicrosoft: ButtonWebView = {
-    let logInWebMicrosoft = ButtonWebView()
-    logInWebMicrosoft.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
-    self.view.addSubview(logInWebMicrosoft)
-    return logInWebMicrosoft
-  }()
-  
-  //--------------------------------------------------------------------------
   //MARK: - allConstraint
   
   func allConstraint(){
@@ -174,21 +150,6 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
       buttonLogIn.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30),
       buttonLogIn.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant:-50),
       buttonLogIn.heightAnchor.constraint(equalToConstant: 50),
-    ])
-    //------------------------------------------------------------------------
-    NSLayoutConstraint.activate([
-      logInWebGoogle.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-      logInWebGoogle.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20),
-    ])
-    //------------------------------------------------------------------------
-    NSLayoutConstraint.activate([
-      logInWebFacebook.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-      logInWebFacebook.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-    ])
-    //------------------------------------------------------------------------
-    NSLayoutConstraint.activate([
-      logInWebMicrosoft.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-      logInWebMicrosoft.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
     ])
   }
   

@@ -1,16 +1,16 @@
 //
-//  LogInVC.swift
+//  xx.swift
 //  Fawaz solo project
 //
-//  Created by Fawaz on 27/11/2021.
+//  Created by Fawaz on 12/12/2021.
 //
 
 import UIKit
 import FirebaseAuth
 
-class LogIn_asUser: UIViewController, UITextFieldDelegate {
+class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   //MARK: - All User
   
   lazy var uEmail: TextField_View = {
@@ -19,7 +19,7 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     view.addSubview(uEmail)
     return uEmail
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var uPassword: TextField_View = {
     let uPassword = TextField_View()
     uPassword.placeholder = (NSLocalizedString("Password", comment: ""))
@@ -27,7 +27,7 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     return uPassword
   }()
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   //MARK: - Login Button
   
   lazy var logIn: Button_View = {
@@ -38,7 +38,7 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     return logIn
   }()
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   //MARK: - stackView
   
   let stackView: UIStackView = {
@@ -50,7 +50,7 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     return stackView
   }()
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   //MARK: - Go To SingIn Page
   
   lazy var labelSingIn: UILabel = {
@@ -61,7 +61,7 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     labelSingIn.backgroundColor = .orange
     return labelSingIn
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var buttonSingIn: UIButton = {
     let buttonSingIn = UIButton()
     buttonSingIn.translatesAutoresizingMaskIntoConstraints = false
@@ -74,27 +74,13 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
   }()
   
   //--------------------------------------------------------------------------
-  //MARK: - logInWeb
+  //MARK: - backUser_OR_Lawyer
   
-  lazy var logInWebGoogle: ButtonWebView = {
-    let logInWebGoogle = ButtonWebView()
-    logInWebGoogle.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-    self.view.addSubview(logInWebGoogle)
-    return logInWebGoogle
-  }()
-  //--------------------------------------------------------------------------
-  lazy var logInWebFacebook: ButtonWebView = {
-    let logInWebFacebook = ButtonWebView()
-    logInWebFacebook.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-    self.view.addSubview(logInWebFacebook)
-    return logInWebFacebook
-  }()
-  //--------------------------------------------------------------------------
-  lazy var logInWebMicrosoft: ButtonWebView = {
-    let logInWebMicrosoft = ButtonWebView()
-    logInWebMicrosoft.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-    self.view.addSubview(logInWebMicrosoft)
-    return logInWebMicrosoft
+  lazy var backUser_OR_Lawyer: ButtonWebView = {
+    let backUser_OR_Lawyer = ButtonWebView()
+    backUser_OR_Lawyer.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+    self.view.addSubview(backUser_OR_Lawyer)
+    return backUser_OR_Lawyer
   }()
   //--------------------------------------------------------------------------
   //MARK: - allConstraint
@@ -112,36 +98,26 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
       stackView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor,constant:250),
       stackView.widthAnchor.constraint(equalToConstant: 500),
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     NSLayoutConstraint.activate([
       labelSingIn.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30),
       labelSingIn.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant:50),
       labelSingIn.heightAnchor.constraint(equalToConstant: 50),
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     NSLayoutConstraint.activate([
       buttonSingIn.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30),
       buttonSingIn.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant:-50),
       buttonSingIn.heightAnchor.constraint(equalToConstant: 50),
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     NSLayoutConstraint.activate([
-      logInWebGoogle.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-      logInWebGoogle.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20),
-    ])
-    //------------------------------------------------------------------------
-    NSLayoutConstraint.activate([
-      logInWebFacebook.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-      logInWebFacebook.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-    ])
-    //------------------------------------------------------------------------
-    NSLayoutConstraint.activate([
-      logInWebMicrosoft.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-      logInWebMicrosoft.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
+      backUser_OR_Lawyer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+      backUser_OR_Lawyer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
     ])
   }
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   //MARK: - viewDidLoad LogIn_asUser
   
   var rememberData: Bool! = false
@@ -149,8 +125,8 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = .red
-    //    view.backgroundColor = UIColor (named: "myBackgroundColor")
+    view.backgroundColor = .orange
+    //     view.backgroundColor = UIColor (named: "myBackground")
     title = (NSLocalizedString("Log In", comment: ""))
     
     uEmail.delegate = self
@@ -162,7 +138,7 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     dismissKeyboard()
   }
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   //MARK: - dismissKeyboard
   
   func dismissKeyboard(){
@@ -171,7 +147,7 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     tapGesture.cancelsTouchesInView = false
   }
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   //MARK: - loginButtonTapped
   
   var rem: Bool! = false
@@ -201,28 +177,44 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
       }
       
       //oben TabVC bage
-      let vc = TabVC()
+      let vc = TabLawyer()
       vc.modalPresentationStyle = .fullScreen
       self.present(vc, animated: true, completion: nil)
     }
   }
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   //MARK: - SingUpButtonTapped
   
   @objc private func SingUpButtonTapped() {
-    let vc = SingUp_asUser()
+    let vc = SingUp_asLawyer()
     vc.modalPresentationStyle = .fullScreen
     self.present(vc, animated: true, completion: nil)
   }
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   //MARK: - textFieldShouldReturn
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     uEmail.resignFirstResponder()
     uPassword.resignFirstResponder()
     return true
+  }
+  //-------------------------------------------------------------------------
+  @objc private func backButtonTapped(sender: UIButton!) {
+    
+    let alert = UIAlertController(title: "هل تريد تسجيل الخروج؟",
+                                  message: "",
+                                  preferredStyle: .alert)
+    
+    alert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { action in
+      self.dismiss(animated: true, completion: nil)}))
+    
+    alert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { action in
+      print("Do not call")}))
+    
+    self.present(alert, animated: true)
+    
   }
 }
 //--------------------------------------------------------------------------

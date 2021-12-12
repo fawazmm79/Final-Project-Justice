@@ -7,16 +7,16 @@
 import UIKit
 
 class Service_Cell: UITableViewCell {
-  
+
   static let identifier = "Service_Cell_key"
-  
+
   let imageCell = UIImageView()
   let nameCell = UILabel()
   let stalyCell = UILabel()
-  
+
   //--------------------------------------------------------------------------
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
-    
+
     super.init(style: style , reuseIdentifier: reuseIdentifier)
     //------------------------------------------------------------------------
     imageCell.translatesAutoresizingMaskIntoConstraints = false
@@ -26,7 +26,7 @@ class Service_Cell: UITableViewCell {
     imageCell.layer.masksToBounds = true
     imageCell.layer.cornerRadius = 10
     imageCell.backgroundColor = .systemGray4
-    
+
     NSLayoutConstraint.activate([
       imageCell.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
       imageCell.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -41,25 +41,25 @@ class Service_Cell: UITableViewCell {
     stalyCell.backgroundColor = .systemGray4
     stalyCell.layer.cornerRadius = 10
     stalyCell.clipsToBounds = true
-    
+
     self.addSubview(stalyCell)
-    
+
     NSLayoutConstraint.activate([
       stalyCell.centerYAnchor.constraint(equalTo: centerYAnchor),
       stalyCell.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
       stalyCell.rightAnchor.constraint(equalTo:imageCell.leftAnchor, constant: -5),
       stalyCell.heightAnchor.constraint(equalToConstant: 50)
-      
+
     ])
     //------------------------------------------------------------------------
     nameCell.translatesAutoresizingMaskIntoConstraints = false
     self.addSubview(nameCell)
-    
+
     nameCell.textColor = .label
     nameCell.textAlignment = .right
     nameCell.backgroundColor = .systemGray4
     nameCell.font = UIFont.systemFont(ofSize: 20)
-    
+
     NSLayoutConstraint.activate([
       nameCell.rightAnchor.constraint(equalTo:imageCell.leftAnchor, constant: -15),
       nameCell.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),

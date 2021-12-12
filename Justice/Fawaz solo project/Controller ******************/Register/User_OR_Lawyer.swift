@@ -12,7 +12,7 @@ class User_OR_Lawyer: UIViewController {
   //--------------------------------------------------------------------------
   lazy var scrollView: UIScrollView = {
     let scrollView = UIScrollView(frame: .zero)
-    scrollView.backgroundColor = .systemGray
+    scrollView.backgroundColor = UIColor(named: "myBackgroundColor")
     scrollView.autoresizingMask = .flexibleHeight
     scrollView.showsHorizontalScrollIndicator = true
     scrollView.bounces = true
@@ -22,7 +22,7 @@ class User_OR_Lawyer: UIViewController {
   //--------------------------------------------------------------------------
   lazy var containerView: UIView = {
     let containerView = UIView()
-    containerView.backgroundColor = .systemBlue
+    containerView.backgroundColor = UIColor(named: "myBackgroundColor")
     containerView.translatesAutoresizingMaskIntoConstraints = false
     return containerView
   }()
@@ -31,10 +31,27 @@ class User_OR_Lawyer: UIViewController {
     let appIcon = UIImageView()
     appIcon.contentMode = .scaleAspectFit
     appIcon.translatesAutoresizingMaskIntoConstraints = false
-    appIcon.backgroundColor = .white
-    //    appIcon.layer.cornerRadius = 25
+    appIcon.backgroundColor = .orange
+    appIcon.layer.cornerRadius = 25
     appIcon.layer.masksToBounds = true
     return appIcon
+  }()
+  //--------------------------------------------------------------------------
+  lazy var label: UILabel = {
+    let label = UILabel()
+    label.text = """
+Welcome to the Justice application
+
+The application provides all judicial and legal services and provides certified lawyers to obtain legal advice and help you solve any case
+"""
+//    label.backgroundColor = .a
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.layer.cornerRadius = 25
+    label.layer.masksToBounds = true
+    label.textAlignment = .center
+    label.numberOfLines = 0
+    label.font = label.font.withSize(20)
+    return label
   }()
   //--------------------------------------------------------------------------
   lazy var userPage: UIButton = {
@@ -43,7 +60,7 @@ class User_OR_Lawyer: UIViewController {
     userPage.setTitle(NSLocalizedString("User", comment: ""), for: .normal)
     userPage.setTitleColor(.white, for: .normal)
     userPage.backgroundColor = .red
-    userPage.layer.cornerRadius = 0
+    userPage.layer.cornerRadius = 25
     userPage.layer.masksToBounds = true
     userPage.addTarget(self, action: #selector(logInUserButtonTapped), for: .touchUpInside)
     userPage.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
@@ -56,7 +73,7 @@ class User_OR_Lawyer: UIViewController {
     lawyerPage.setTitle(NSLocalizedString("Lawyer", comment: ""), for: .normal)
     lawyerPage.setTitleColor(.white, for: .normal)
     lawyerPage.backgroundColor = .orange
-    lawyerPage.layer.cornerRadius = 0
+    lawyerPage.layer.cornerRadius = 25
     lawyerPage.layer.masksToBounds = true
     lawyerPage.addTarget(self, action: #selector(logInLawyerButtonTapped), for: .touchUpInside)
     lawyerPage.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
@@ -87,14 +104,22 @@ class User_OR_Lawyer: UIViewController {
     containerView.addSubview(appIcon)
     NSLayoutConstraint.activate([
       appIcon.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-      appIcon.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 100),
+      appIcon.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 50),
       appIcon.widthAnchor.constraint(equalToConstant: 200),
       appIcon.heightAnchor.constraint(equalToConstant: 200),
     ])
     
+    containerView.addSubview(label)
+    NSLayoutConstraint.activate([
+      label.topAnchor.constraint(equalTo: appIcon.bottomAnchor, constant: 50),
+      label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+      label.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20),
+      label.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20),
+    ])
+    
     containerView.addSubview(userPage)
     NSLayoutConstraint.activate([
-      userPage.centerYAnchor.constraint(equalTo: containerView.centerYAnchor, constant: 150),
+      userPage.topAnchor.constraint(equalTo: label.bottomAnchor, constant:50),
       userPage.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
       userPage.widthAnchor.constraint(equalToConstant: 300),
       userPage.heightAnchor.constraint(equalToConstant: 80),

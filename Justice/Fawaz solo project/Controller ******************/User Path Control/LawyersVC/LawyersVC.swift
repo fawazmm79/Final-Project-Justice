@@ -9,6 +9,8 @@ import UIKit
 
 class LawyersVC: UIViewController {
   
+  var searchBar = UISearchBar()
+  
   //--------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -30,10 +32,25 @@ class LawyersVC: UIViewController {
       TV.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
       TV.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
     ])
+    
+    configureSearchBar()
+  }
+  //--------------------------------------------------------------------------
+  @objc func handleShowSearchBar(){
+    navigationItem.titleView = searchBar
+  }
+  //--------------------------------------------------------------------------
+  func configureSearchBar(){
+    
+    searchBar.sizeToFit()
+    navigationController?.navigationBar.barTintColor = UIColor(red:55/255, green:120/255, blue: 250/255,alpha: 1)
+    navigationController?.navigationBar.isTranslucent = false
+    navigationItem.rightBarButtonItem=UIBarButtonItem(barButtonSystemItem: .search, target: self,action: #selector (handleShowSearchBar))
   }
 }
+//--------------------------------------------------------------------------
 extension LawyersVC: UITableViewDelegate, UITableViewDataSource {
-  //--------------------------------------------------------------------------
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
     return data_Lawyers_str.count
