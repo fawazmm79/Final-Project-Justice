@@ -18,6 +18,7 @@
 		CC2AF90727547EA2006C5172 /* NewsPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2AF90627547EA2006C5172 /* NewsPageVC.swift */; };
 		CC2AF90927548C84006C5172 /* ServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2AF90827548C84006C5172 /* ServiceCell.swift */; };
 		CC4D82F9275E1D0600C59D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCDB1CB92752A9E80027D9A3 /* Assets.xcassets */; };
+		CC7CD7A42766364300CEED79 /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC7CD7A62766364300CEED79 /* Localization.strings */; };
 		CC9C8209275347E200A7C0ED /* Court.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9C8208275347E200A7C0ED /* Court.swift */; };
 		CC9C820B275348FD00A7C0ED /* CourtPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9C820A275348FD00A7C0ED /* CourtPageVC.swift */; };
 		CC9C82112753772F00A7C0ED /* Lawyers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9C82102753772F00A7C0ED /* Lawyers.swift */; };
@@ -38,8 +39,8 @@
 		CCDB3EF72752B36100CA9BA0 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB3EF62752B36100CA9BA0 /* MapVC.swift */; };
 		CCDB3EF92752B4B500CA9BA0 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB3EF82752B4B500CA9BA0 /* MyProfileVC.swift */; };
 		CCDB3EFB2752D74900CA9BA0 /* CourtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB3EFA2752D74900CA9BA0 /* CourtVC.swift */; };
-		CCF275BE27660E7500452DB0 /* Viewssssss.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF275BD27660E7500452DB0 /* Viewssssss.swift */; };
-		CCF275C027660F5700452DB0 /* Lawerrrrrrr.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF275BF27660F5700452DB0 /* Lawerrrrrrr.swift */; };
+		CCF275BE27660E7500452DB0 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF275BD27660E7500452DB0 /* Views.swift */; };
+		CCF275C027660F5700452DB0 /* Lawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF275BF27660F5700452DB0 /* Lawer.swift */; };
 		CCF275C227660FAE00452DB0 /* User_OR_Lawyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF275C127660FAE00452DB0 /* User_OR_Lawyer.swift */; };
 		CCF275C62766133B00452DB0 /* RegisterServiceLawyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF275C52766133B00452DB0 /* RegisterServiceLawyer.swift */; };
 		CCF275C82766135F00452DB0 /* LogIn_asLawyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF275C72766135F00452DB0 /* LogIn_asLawyer.swift */; };
@@ -58,7 +59,9 @@
 		CC2AF90427547E9C006C5172 /* NewsVC_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC_Cell.swift; sourceTree = "<group>"; };
 		CC2AF90627547EA2006C5172 /* NewsPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPageVC.swift; sourceTree = "<group>"; };
 		CC2AF90827548C84006C5172 /* ServiceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCell.swift; sourceTree = "<group>"; };
-		CC8DD90A275D511F0014F479 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CC7CD7A32766363A00CEED79 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CC7CD7A52766364300CEED79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
+		CC7CD7A72766364500CEED79 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localization.strings; sourceTree = "<group>"; };
 		CC9C8208275347E200A7C0ED /* Court.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Court.swift; sourceTree = "<group>"; };
 		CC9C820A275348FD00A7C0ED /* CourtPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtPageVC.swift; sourceTree = "<group>"; };
 		CC9C82102753772F00A7C0ED /* Lawyers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lawyers.swift; sourceTree = "<group>"; };
@@ -82,8 +85,8 @@
 		CCDB3EF62752B36100CA9BA0 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		CCDB3EF82752B4B500CA9BA0 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		CCDB3EFA2752D74900CA9BA0 /* CourtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtVC.swift; sourceTree = "<group>"; };
-		CCF275BD27660E7500452DB0 /* Viewssssss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewssssss.swift; sourceTree = "<group>"; };
-		CCF275BF27660F5700452DB0 /* Lawerrrrrrr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lawerrrrrrr.swift; sourceTree = "<group>"; };
+		CCF275BD27660E7500452DB0 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		CCF275BF27660F5700452DB0 /* Lawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lawer.swift; sourceTree = "<group>"; };
 		CCF275C127660FAE00452DB0 /* User_OR_Lawyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User_OR_Lawyer.swift; sourceTree = "<group>"; };
 		CCF275C52766133B00452DB0 /* RegisterServiceLawyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceLawyer.swift; sourceTree = "<group>"; };
 		CCF275C72766135F00452DB0 /* LogIn_asLawyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn_asLawyer.swift; sourceTree = "<group>"; };
@@ -121,6 +124,14 @@
 				CC0FC70F275753F400371ECD /* MyProfilePageVC.swift */,
 			);
 			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		CC7CD7A9276668A100CEED79 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				CC7CD7A62766364300CEED79 /* Localization.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		CC9C820C2753490600A7C0ED /* CourtVC */ = {
@@ -194,6 +205,7 @@
 				CCDB1CC42752AA350027D9A3 /* Model (Data) */,
 				CCF275B827660D8800452DB0 /* View */,
 				CCDB1CC62752AA570027D9A3 /* Controller */,
+				CC7CD7A9276668A100CEED79 /* Localization */,
 			);
 			path = "Fawaz solo project";
 			sourceTree = "<group>";
@@ -229,7 +241,7 @@
 		CCF275B627660D1200452DB0 /* Lawyer Path Model */ = {
 			isa = PBXGroup;
 			children = (
-				CCF275BF27660F5700452DB0 /* Lawerrrrrrr.swift */,
+				CCF275BF27660F5700452DB0 /* Lawer.swift */,
 			);
 			path = "Lawyer Path Model";
 			sourceTree = "<group>";
@@ -249,7 +261,7 @@
 		CCF275B827660D8800452DB0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CCF275BD27660E7500452DB0 /* Viewssssss.swift */,
+				CCF275BD27660E7500452DB0 /* Views.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -382,6 +394,7 @@
 			files = (
 				CCDB1CBD2752A9E80027D9A3 /* LaunchScreen.storyboard in Resources */,
 				CC4D82F9275E1D0600C59D2E /* Assets.xcassets in Resources */,
+				CC7CD7A42766364300CEED79 /* Localization.strings in Resources */,
 				CCDB1CC82752AC420027D9A3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,7 +465,7 @@
 				CCF275C227660FAE00452DB0 /* User_OR_Lawyer.swift in Sources */,
 				CCA9446527533D41000BEE49 /* NewsVC.swift in Sources */,
 				CC0FC710275753F400371ECD /* MyProfilePageVC.swift in Sources */,
-				CCF275BE27660E7500452DB0 /* Viewssssss.swift in Sources */,
+				CCF275BE27660E7500452DB0 /* Views.swift in Sources */,
 				CCDB3EED2752B13700CA9BA0 /* User.swift in Sources */,
 				CC0FC70D2757517A00371ECD /* Profile.swift in Sources */,
 				CC9C820B275348FD00A7C0ED /* CourtPageVC.swift in Sources */,
@@ -460,7 +473,7 @@
 				CC2AF90327547A40006C5172 /* LawyersPageVC.swift in Sources */,
 				CC2AF8FF27547748006C5172 /* CourtVC_Cell.swift in Sources */,
 				CC9C82112753772F00A7C0ED /* Lawyers.swift in Sources */,
-				CCF275C027660F5700452DB0 /* Lawerrrrrrr.swift in Sources */,
+				CCF275C027660F5700452DB0 /* Lawer.swift in Sources */,
 				CCF275CA2766136900452DB0 /* SingUp_asLawyer.swift in Sources */,
 				CCF275C62766133B00452DB0 /* RegisterServiceLawyer.swift in Sources */,
 				CCDB3EEF2752B13F00CA9BA0 /* RegisterServiceUser.swift in Sources */,
@@ -473,11 +486,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		CC7CD7A62766364300CEED79 /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC7CD7A52766364300CEED79 /* en */,
+				CC7CD7A72766364500CEED79 /* ar */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
 		CCDB1CBB2752A9E80027D9A3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CCDB1CBC2752A9E80027D9A3 /* Base */,
-				CC8DD90A275D511F0014F479 /* ar */,
+				CC7CD7A32766363A00CEED79 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

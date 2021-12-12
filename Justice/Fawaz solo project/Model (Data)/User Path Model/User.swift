@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 struct User {
   let id: String
@@ -13,4 +14,13 @@ struct User {
   let image: String
   let latitude: Double
   let longitude: Double
+  
+  var dict: [String: Any] {
+    return [
+      "name": name,
+      "id": id,
+      "latitude" : latitude,
+      "longitude" : longitude
+    ]
+  }
 }

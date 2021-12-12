@@ -12,16 +12,11 @@ class RegisterServiceLawyer {
   
   static let shared = RegisterServiceLawyer()
   
-  let lawyersCollection = Firestore.firestore().collection("users")
+  let lawyersCollection = Firestore.firestore().collection("lawyers")
   //--------------------------------------------------------------------------
-  // Add user to firestor
+  // Add user to firestor//computed properties
   func addLawyer(lawyer: Lawyer) {
-    lawyersCollection.document(lawyer.id).setData([
-      "name": lawyer.name,
-      "id": lawyer.id,
-      "latitude" : lawyer.latitude,
-      "longitude" : lawyer.longitude
-    ])
+    lawyersCollection.document(lawyer.id).setData(lawyer.dict)
   }
   //--------------------------------------------------------------------------
   func listenToLawyers(completion: @escaping (([Lawyer]) -> Void)) {

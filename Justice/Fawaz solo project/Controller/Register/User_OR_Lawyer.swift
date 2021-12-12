@@ -9,12 +9,10 @@ import UIKit
 
 class User_OR_Lawyer: UIViewController {
   
-//  lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 10)
   //--------------------------------------------------------------------------
   lazy var scrollView: UIScrollView = {
     let scrollView = UIScrollView(frame: .zero)
     scrollView.backgroundColor = .systemGray
-//    scrollView.contentSize = contentViewSize
     scrollView.autoresizingMask = .flexibleHeight
     scrollView.showsHorizontalScrollIndicator = true
     scrollView.bounces = true
@@ -25,7 +23,6 @@ class User_OR_Lawyer: UIViewController {
   lazy var containerView: UIView = {
     let containerView = UIView()
     containerView.backgroundColor = .systemBlue
-//    containerView.frame.size = contentViewSize
     containerView.translatesAutoresizingMaskIntoConstraints = false
     return containerView
   }()
@@ -70,8 +67,6 @@ class User_OR_Lawyer: UIViewController {
     
     view.addSubview(scrollView)
     scrollView.addSubview(containerView)
-    //    scrollView.contentSize = contentViewSize
-    //    containerView.frame.size = contentViewSize
     
     NSLayoutConstraint.activate([
       scrollView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -80,14 +75,14 @@ class User_OR_Lawyer: UIViewController {
       scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
     ])
     
-        NSLayoutConstraint.activate([
-          containerView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-          containerView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
-          containerView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
-          containerView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-          containerView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-          containerView.heightAnchor.constraint(equalToConstant: 900),
-        ])
+    NSLayoutConstraint.activate([
+      containerView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+      containerView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
+      containerView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+      containerView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+      containerView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+      containerView.heightAnchor.constraint(equalToConstant: 900),
+    ])
     
     containerView.addSubview(appIcon)
     NSLayoutConstraint.activate([

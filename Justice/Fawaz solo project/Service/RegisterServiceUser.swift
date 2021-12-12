@@ -14,14 +14,9 @@ class RegisterServiceUser {
   
   let usersCollection = Firestore.firestore().collection("users")
   //--------------------------------------------------------------------------
-  // Add user to firestor
+  // Add user to firestor//computed properties
   func addUser(user: User) {
-    usersCollection.document(user.id).setData([
-      "name": user.name,
-      "id": user.id,
-      "latitude" : user.latitude,
-      "longitude" : user.longitude
-    ])
+    usersCollection.document(user.id).setData(user.dict)
   }
   //--------------------------------------------------------------------------
   func listenToUsers(completion: @escaping (([User]) -> Void)) {

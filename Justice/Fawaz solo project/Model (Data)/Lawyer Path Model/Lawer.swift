@@ -13,5 +13,14 @@ struct Lawyer {
   let image: String
   let latitude: Double
   let longitude: Double
+  
+  var dict: [String: Any] {
+    return [
+      "name": name,
+      "id": id,
+      "latitude" : latitude,
+      "longitude" : longitude
+    ]
+  }
 }
 //--------------------------------------------------------------------------

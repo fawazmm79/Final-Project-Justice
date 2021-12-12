@@ -116,6 +116,7 @@ class ServicePageVC : UIViewController{
                                   preferredStyle: .alert)
     
     alert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { action in
+      UIApplication.shared.open(URL(string: "https://www.moj.gov.sa/ar/pages/default.aspx")! as URL, options: [:], completionHandler: nil)
       print("Yes, apply")}))
     alert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { action in
       print("Do not apply")}))
