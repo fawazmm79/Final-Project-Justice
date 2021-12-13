@@ -11,7 +11,7 @@ pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod ‘Firebase/Firestore'
 
-PlaygroundSupport
+pod 'TransitionButton'
 
 
 end

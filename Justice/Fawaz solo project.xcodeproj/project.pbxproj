@@ -41,6 +41,7 @@
 		CCDB3EF72752B36100CA9BA0 /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB3EF62752B36100CA9BA0 /* MapVC.swift */; };
 		CCDB3EF92752B4B500CA9BA0 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB3EF82752B4B500CA9BA0 /* MyProfileVC.swift */; };
 		CCDB3EFB2752D74900CA9BA0 /* CourtVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDB3EFA2752D74900CA9BA0 /* CourtVC.swift */; };
+		CCE28F0E276754F300101D9B /* Fiyedhcile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE28F0D276754F300101D9B /* Fiyedhcile.swift */; };
 		CCF275BE27660E7500452DB0 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF275BD27660E7500452DB0 /* Views.swift */; };
 		CCF275C027660F5700452DB0 /* Lawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF275BF27660F5700452DB0 /* Lawer.swift */; };
 		CCF275C227660FAE00452DB0 /* User_OR_Lawyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF275C127660FAE00452DB0 /* User_OR_Lawyer.swift */; };
@@ -89,6 +90,7 @@
 		CCDB3EF62752B36100CA9BA0 /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		CCDB3EF82752B4B500CA9BA0 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		CCDB3EFA2752D74900CA9BA0 /* CourtVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtVC.swift; sourceTree = "<group>"; };
+		CCE28F0D276754F300101D9B /* Fiyedhcile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fiyedhcile.swift; sourceTree = "<group>"; };
 		CCF275BD27660E7500452DB0 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		CCF275BF27660F5700452DB0 /* Lawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lawer.swift; sourceTree = "<group>"; };
 		CCF275C127660FAE00452DB0 /* User_OR_Lawyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User_OR_Lawyer.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				CCF275B827660D8800452DB0 /* View *********************** */,
 				CCDB1CC62752AA570027D9A3 /* Controller ****************** */,
 				CC7CD7A9276668A100CEED79 /* Localization **************** */,
+				CCE28F0D276754F300101D9B /* Fiyedhcile.swift */,
 			);
 			path = "Fawaz solo project";
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				CC2AF90327547A40006C5172 /* LawyersPageVC.swift in Sources */,
 				CC2AF8FF27547748006C5172 /* CourtVC_Cell.swift in Sources */,
 				CC9C82112753772F00A7C0ED /* Lawyers.swift in Sources */,
+				CCE28F0E276754F300101D9B /* Fiyedhcile.swift in Sources */,
 				CCF275C027660F5700452DB0 /* Lawer.swift in Sources */,
 				CCF275CA2766136900452DB0 /* SingUp_asLawyer.swift in Sources */,
 				CCF275C62766133B00452DB0 /* RegisterServiceLawyer.swift in Sources */,

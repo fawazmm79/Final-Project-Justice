@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TransitionButton
 
 class User_OR_Lawyer: UIViewController {
   
@@ -53,8 +54,8 @@ The application provides all judicial and legal services and provides certified 
     return label
   }()
   //--------------------------------------------------------------------------
-  lazy var userPage: UIButton = {
-    let userPage = UIButton()
+  lazy var userPage: TransitionButton = {
+    let userPage = TransitionButton()
     userPage.translatesAutoresizingMaskIntoConstraints = false
     userPage.setTitle(NSLocalizedString("User", comment: ""), for: .normal)
     userPage.setTitleColor(.white, for: .normal)
@@ -66,8 +67,8 @@ The application provides all judicial and legal services and provides certified 
     return userPage
   }()
   //--------------------------------------------------------------------------
-  lazy var lawyerPage: UIButton = {
-    let lawyerPage = UIButton()
+  lazy var lawyerPage: TransitionButton = {
+    let lawyerPage = TransitionButton()
     lawyerPage.translatesAutoresizingMaskIntoConstraints = false
     lawyerPage.setTitle(NSLocalizedString("Lawyer", comment: ""), for: .normal)
     lawyerPage.setTitleColor(.white, for: .normal)
@@ -141,15 +142,31 @@ The application provides all judicial and legal services and provides certified 
   }
   //--------------------------------------------------------------------------
   @objc private func logInUserButtonTapped() {
-    let vc = LogIn_asUser()
-    vc.modalPresentationStyle = .fullScreen
-    self.present(vc, animated: true, completion: nil)
+    
+    userPage.startAnimation()
+    
+    DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+      self.userPage.stopAnimation(animationStyle: .expand, revertAfterDelay:1)
+      DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+        let vc = LogIn_asUser()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
+      }
+    }
   }
   //--------------------------------------------------------------------------
   @objc private func logInLawyerButtonTapped() {
+    
+    lawyerPage.startAnimation()
+    
+    DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+      self.lawyerPage.stopAnimation(animationStyle: .expand, revertAfterDelay:1)
+      DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
     let vc = LogIn_asLawyer()
     vc.modalPresentationStyle = .fullScreen
     self.present(vc, animated: true, completion: nil)
+      }
+    }
   }
 }
 //--------------------------------------------------------------------------
