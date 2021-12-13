@@ -19,6 +19,24 @@ var data_Lawyers_str = [
   
   Lawyers_str(
     image: UIImage(named: "l1.jpeg"),
+    name: "Fawaz",
+    number: "055850661",
+    text: """
+معلومات عن مكتب المحامي .......
+
+
+اوقات العمل .......
+
+
+موقع مكتب المحامي
+
+ https://goo.gl/maps/j7RsUfiwY52RzhBb9
+"""
+  ),
+  
+  
+  Lawyers_str(
+    image: UIImage(named: "l1.jpeg"),
     name: "ابراهيم شايع عبدالله الحقيل",
     number: "055850661",
     text: """
