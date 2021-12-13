@@ -30,18 +30,17 @@ class CourtPageVC: UIViewController {
     TVs.translatesAutoresizingMaskIntoConstraints = false
     
     view.addSubview(TVs)
-    
     NSLayoutConstraint.activate([
       TVs.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       TVs.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
       TVs.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
       TVs.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
     ])
-    
   }
 }
+//--------------------------------------------------------------------------
 extension CourtPageVC: UITableViewDelegate, UITableViewDataSource {
-  //--------------------------------------------------------------------------
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
     return restFromVC?.a.count ?? 0

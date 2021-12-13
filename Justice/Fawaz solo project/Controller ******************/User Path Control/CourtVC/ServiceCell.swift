@@ -43,13 +43,11 @@ class Service_Cell: UITableViewCell {
     stalyCell.clipsToBounds = true
 
     self.addSubview(stalyCell)
-
     NSLayoutConstraint.activate([
       stalyCell.centerYAnchor.constraint(equalTo: centerYAnchor),
       stalyCell.leftAnchor.constraint(equalTo: leftAnchor, constant: 5),
       stalyCell.rightAnchor.constraint(equalTo:imageCell.leftAnchor, constant: -5),
       stalyCell.heightAnchor.constraint(equalToConstant: 50)
-
     ])
     //------------------------------------------------------------------------
     nameCell.translatesAutoresizingMaskIntoConstraints = false

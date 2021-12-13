@@ -13,6 +13,16 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
   //--------------------------------------------------------------------------
   //MARK: - All User
   
+  lazy var welcome: UILabel = {
+    let welcome = UILabel()
+    welcome.text = "Welcome as User in App"
+    welcome.translatesAutoresizingMaskIntoConstraints = false
+    welcome.textAlignment = .center
+    welcome.numberOfLines = 0
+    welcome.font = welcome.font.withSize(20)
+    return welcome
+  }()
+  //--------------------------------------------------------------------------
   lazy var uEmail: TextField_View = {
     let uEmail = TextField_View()
     uEmail.placeholder = (NSLocalizedString("Email", comment: ""))
@@ -26,7 +36,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     view.addSubview(uPassword)
     return uPassword
   }()
-  
   //--------------------------------------------------------------------------
   //MARK: - Login Button
   
@@ -37,7 +46,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     view.addSubview(logIn)
     return logIn
   }()
-  
   //--------------------------------------------------------------------------
   //MARK: - stackView
   
@@ -49,7 +57,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     stackView.spacing = 16.0
     return stackView
   }()
-  
   //--------------------------------------------------------------------------
   //MARK: - Go To SingIn Page
   
@@ -58,7 +65,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     labelSingIn.translatesAutoresizingMaskIntoConstraints = false
     labelSingIn.text = (NSLocalizedString("Don't have account?", comment: ""))
     self.view.addSubview(labelSingIn)
-    labelSingIn.backgroundColor = .orange
     return labelSingIn
   }()
   //--------------------------------------------------------------------------
@@ -66,19 +72,18 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     let buttonSingIn = UIButton()
     buttonSingIn.translatesAutoresizingMaskIntoConstraints = false
     buttonSingIn.setTitle(NSLocalizedString("Sing In", comment: ""), for: .normal)
-    buttonSingIn.backgroundColor = .orange
     buttonSingIn.setTitleColor(.blue, for: .normal)
     buttonSingIn.addTarget(self, action: #selector(SingUpButtonTapped), for: .touchUpInside)
     self.view.addSubview(buttonSingIn)
     return buttonSingIn
   }()
-  
   //--------------------------------------------------------------------------
   //MARK: - backUser_OR_Lawyer
   
-  lazy var backUser_OR_Lawyer: ButtonWebView = {
-    let backUser_OR_Lawyer = ButtonWebView()
+  lazy var backUser_OR_Lawyer: BackUser_OR_Lawyer = {
+    let backUser_OR_Lawyer = BackUser_OR_Lawyer()
     backUser_OR_Lawyer.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+    backUser_OR_Lawyer.setTitle(NSLocalizedString("Login as Lawyer", comment: ""), for: .normal)
     self.view.addSubview(backUser_OR_Lawyer)
     return backUser_OR_Lawyer
   }()
@@ -87,6 +92,14 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
   
   func allConstraint(){
     
+    view.addSubview(welcome)
+    NSLayoutConstraint.activate([
+      welcome.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
+      welcome.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      welcome.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20),
+      welcome.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+    ])
+    //------------------------------------------------------------------------
     stackView.addArrangedSubview(uEmail)
     stackView.addArrangedSubview(uPassword)
     stackView.addArrangedSubview(logIn)
@@ -95,7 +108,7 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     
     NSLayoutConstraint.activate([
       stackView.centerXAnchor.constraint(equalTo:view.centerXAnchor),
-      stackView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor,constant:250),
+      stackView.topAnchor.constraint(equalTo: welcome.bottomAnchor ,constant:50),
       stackView.widthAnchor.constraint(equalToConstant: 500),
     ])
     //------------------------------------------------------------------------
@@ -124,8 +137,7 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = .red
-    //    view.backgroundColor = UIColor (named: "myBackgroundColor")
+    view.backgroundColor = UIColor (named: "myBackgroundColor")
     title = (NSLocalizedString("Log In", comment: ""))
     
     uEmail.delegate = self
@@ -136,7 +148,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     allConstraint()
     dismissKeyboard()
   }
-  
   //--------------------------------------------------------------------------
   //MARK: - dismissKeyboard
   
@@ -145,7 +156,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     view.addGestureRecognizer(tapGesture)
     tapGesture.cancelsTouchesInView = false
   }
-  
   //--------------------------------------------------------------------------
   //MARK: - loginButtonTapped
   
@@ -181,7 +191,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
       self.present(vc, animated: true, completion: nil)
     }
   }
-  
   //--------------------------------------------------------------------------
   //MARK: - SingUpButtonTapped
   
@@ -190,7 +199,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     vc.modalPresentationStyle = .fullScreen
     self.present(vc, animated: true, completion: nil)
   }
-  
   //--------------------------------------------------------------------------
   //MARK: - textFieldShouldReturn
   
@@ -199,18 +207,21 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     uPassword.resignFirstResponder()
     return true
   }
+  func goBackButtonTapped(){
+    let goBack = User_OR_Lawyer()
+    goBack.modalPresentationStyle = .fullScreen
+    self.present(goBack, animated: true, completion: nil)
+  }
   //--------------------------------------------------------------------------
   @objc private func backButtonTapped(sender: UIButton!) {
     
-    let alert = UIAlertController(title: "هل تريد تسجيل الخروج؟",
-                                  message: "",
-                                  preferredStyle: .alert)
+    let alert = UIAlertController(title: "Do you want to go back to lawyer page?", message: "", preferredStyle: .alert)
     
-    alert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { action in
-      self.dismiss(animated: true, completion: nil)}))
+    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+      self.goBackButtonTapped()}))
     
-    alert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { action in
-      print("Do not call")}))
+    alert.addAction(UIAlertAction(title: "NO", style: .cancel, handler: { action in
+      print("Do not go back")}))
     
     self.present(alert, animated: true)
     

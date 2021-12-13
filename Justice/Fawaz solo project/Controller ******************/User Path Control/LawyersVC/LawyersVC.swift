@@ -32,7 +32,6 @@ class LawyersVC: UIViewController {
       TV.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
       TV.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
     ])
-    
     configureSearchBar()
   }
   //--------------------------------------------------------------------------

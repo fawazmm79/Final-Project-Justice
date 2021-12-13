@@ -28,22 +28,7 @@
         for:D(),
            title: NSLocalizedString("erfer", comment: ""),
            image: UIImage(systemName: "square.grid.2x2")!),
-      
-       createNavController(
-         for:CourtVC(),
-            title: NSLocalizedString("الخدمات الإلكترونيه", comment: ""),
-            image: UIImage(systemName: "square.grid.2x2")!),
-       
-       createNavController(
-         for:LawyersVC (),
-            title: NSLocalizedString("المحامين", comment: ""),
-            image: UIImage(systemName: "person.2.crop.square.stack")!),
-       
-       createNavController(
-         for:NewsVC (),
-            title: NSLocalizedString("اخبار", comment: ""),
-            image: UIImage(systemName: "newspaper")!),
-       
+             
        createNavController(
          for:MapVC (),
             title: NSLocalizedString("الموقع", comment: ""),

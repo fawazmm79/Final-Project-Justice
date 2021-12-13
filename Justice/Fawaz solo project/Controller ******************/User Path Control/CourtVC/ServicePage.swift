@@ -67,7 +67,6 @@ class ServicePageVC : UIViewController{
       staly.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
       staly.widthAnchor.constraint(equalToConstant: 350),
       staly.heightAnchor.constraint(equalToConstant: 410)
-      
     ])
     //------------------------------------------------------------------------
     

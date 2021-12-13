@@ -34,7 +34,6 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
   //--------------------------------------------------------------------------
   lazy var uImageName: UILabel = {
     let uImageName = UILabel()
-    uImageName.backgroundColor = .orange
     uImageName.translatesAutoresizingMaskIntoConstraints = false
     uImageName.textColor = .black
     uImageName.text = (NSLocalizedString("Add Picture", comment: ""))
@@ -58,7 +57,6 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     uPassword.placeholder = (NSLocalizedString("Password", comment: ""))
     return uPassword
   }()
-  
   //--------------------------------------------------------------------------
   //MARK: - SingUp Button
   
@@ -70,7 +68,6 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
       self, action: #selector(singUpButtonTapped), for: .touchUpInside)
     return singUp
   }()
-  
   //--------------------------------------------------------------------------
   //MARK: - stackView
   
@@ -82,7 +79,6 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     stackView.spacing = 16.0
     return stackView
   }()
-  
   //--------------------------------------------------------------------------
   //MARK: - Go To LogIn Page
   
@@ -90,7 +86,6 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     let labelLogIn = UILabel()
     labelLogIn.translatesAutoresizingMaskIntoConstraints = false
     self.view.addSubview(labelLogIn)
-    labelLogIn.backgroundColor = .orange
     labelLogIn.text = (NSLocalizedString("did you have account?", comment: ""))
     return labelLogIn
   }()
@@ -100,24 +95,21 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     buttonLogIn.translatesAutoresizingMaskIntoConstraints = false
     self.view.addSubview(buttonLogIn)
     buttonLogIn.setTitle(NSLocalizedString("Log In", comment: ""), for: .normal)
-    buttonLogIn.backgroundColor = .orange
     buttonLogIn.setTitleColor(.blue, for: .normal)
     buttonLogIn.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
     return buttonLogIn
   }()
-  
   //--------------------------------------------------------------------------
   //MARK: - allConstraint
   
   func allConstraint(){
     
-    //uImage
     view.addSubview(uImage)
     NSLayoutConstraint.activate([
       uImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
       uImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-      uImage.widthAnchor.constraint(equalToConstant: 100),
-      uImage.heightAnchor.constraint(equalToConstant: 100),
+      uImage.widthAnchor.constraint(equalToConstant: 150),
+      uImage.heightAnchor.constraint(equalToConstant: 150),
     ])
     //------------------------------------------------------------------------
     view.addSubview(uImageName)
@@ -136,7 +128,7 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     NSLayoutConstraint.activate([
       stackView.centerXAnchor.constraint(equalTo:view.centerXAnchor),
-      stackView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor,constant:250),
+      stackView.topAnchor.constraint(equalTo: uImageName.bottomAnchor, constant: 20),
       stackView.widthAnchor.constraint(equalToConstant: 500),
     ])
     //------------------------------------------------------------------------
@@ -159,8 +151,7 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = .red
-    //    view.backgroundColor = UIColor (named: "myBackgroundColor")
+    view.backgroundColor = UIColor (named: "myBackgroundColor")
     
     RegisterServiceUser.shared.listenToUsers { newUsers in
       self.users = newUsers

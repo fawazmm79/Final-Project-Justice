@@ -34,8 +34,6 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
   //-------------------------------------------------------------------------
   lazy var uImageName: UILabel = {
     let uImageName = UILabel()
-    uImageName.backgroundColor = .orange
-    uImageName.text = "ffff"
     uImageName.translatesAutoresizingMaskIntoConstraints = false
     uImageName.textColor = .black
     uImageName.text = (NSLocalizedString("Add Picture", comment: ""))
@@ -91,7 +89,6 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
     let labelLogIn = UILabel()
     labelLogIn.translatesAutoresizingMaskIntoConstraints = false
     self.view.addSubview(labelLogIn)
-    labelLogIn.backgroundColor = .orange
     labelLogIn.text = (NSLocalizedString("did you have account?", comment: ""))
     return labelLogIn
   }()
@@ -101,34 +98,10 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
     buttonLogIn.translatesAutoresizingMaskIntoConstraints = false
     self.view.addSubview(buttonLogIn)
     buttonLogIn.setTitle(NSLocalizedString("Log In", comment: ""), for: .normal)
-    buttonLogIn.backgroundColor = .orange
+
     buttonLogIn.setTitleColor(.blue, for: .normal)
     buttonLogIn.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
     return buttonLogIn
-  }()
-  
-  //-------------------------------------------------------------------------
-  //MARK: - logInWeb
-  
-  lazy var logInWebGoogle: ButtonWebView = {
-    let logInWebGoogle = ButtonWebView()
-    logInWebGoogle.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
-    self.view.addSubview(logInWebGoogle)
-    return logInWebGoogle
-  }()
-  //-------------------------------------------------------------------------
-  lazy var logInWebFacebook: ButtonWebView = {
-    let logInWebFacebook = ButtonWebView()
-    logInWebFacebook.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
-    self.view.addSubview(logInWebFacebook)
-    return logInWebFacebook
-  }()
-  //-------------------------------------------------------------------------
-  lazy var logInWebMicrosoft: ButtonWebView = {
-    let logInWebMicrosoft = ButtonWebView()
-    logInWebMicrosoft.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
-    self.view.addSubview(logInWebMicrosoft)
-    return logInWebMicrosoft
   }()
   
   //-------------------------------------------------------------------------
@@ -141,8 +114,8 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
     NSLayoutConstraint.activate([
       uImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
       uImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-      uImage.widthAnchor.constraint(equalToConstant: 100),
-      uImage.heightAnchor.constraint(equalToConstant: 100),
+      uImage.widthAnchor.constraint(equalToConstant: 150),
+      uImage.heightAnchor.constraint(equalToConstant: 150),
     ])
     //-----------------------------------------------------------------------
     view.addSubview(uImageName)
@@ -161,7 +134,7 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     NSLayoutConstraint.activate([
       stackView.centerXAnchor.constraint(equalTo:view.centerXAnchor),
-      stackView.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor,constant:250),
+      stackView.topAnchor.constraint(equalTo: uImageName.bottomAnchor, constant: 20),
       stackView.widthAnchor.constraint(equalToConstant: 500),
     ])
     //-----------------------------------------------------------------------
@@ -176,21 +149,6 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
       buttonLogIn.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant:-50),
       buttonLogIn.heightAnchor.constraint(equalToConstant: 50),
     ])
-    //-----------------------------------------------------------------------
-    NSLayoutConstraint.activate([
-      logInWebGoogle.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-      logInWebGoogle.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant: -20),
-    ])
-    //-----------------------------------------------------------------------
-    NSLayoutConstraint.activate([
-      logInWebFacebook.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-      logInWebFacebook.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-    ])
-    //-----------------------------------------------------------------------
-    NSLayoutConstraint.activate([
-      logInWebMicrosoft.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-      logInWebMicrosoft.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant: 20),
-    ])
   }
   
   //-------------------------------------------------------------------------
@@ -199,8 +157,7 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = .orange
-    //     view.backgroundColor = UIColor (named: "myBackground")
+    view.backgroundColor = UIColor (named: "myBackgroundColor")
     
     RegisterServiceLawyer.shared.listenToLawyers { newLawyer in
       self.lawyers = newLawyer

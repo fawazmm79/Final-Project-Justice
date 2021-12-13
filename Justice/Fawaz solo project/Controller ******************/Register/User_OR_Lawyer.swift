@@ -44,7 +44,6 @@ Welcome to the Justice application
 
 The application provides all judicial and legal services and provides certified lawyers to obtain legal advice and help you solve any case
 """
-//    label.backgroundColor = .a
     label.translatesAutoresizingMaskIntoConstraints = false
     label.layer.cornerRadius = 25
     label.layer.masksToBounds = true
@@ -83,15 +82,14 @@ The application provides all judicial and legal services and provides certified 
   func allConstraint(){
     
     view.addSubview(scrollView)
-    scrollView.addSubview(containerView)
-    
     NSLayoutConstraint.activate([
       scrollView.topAnchor.constraint(equalTo: view.topAnchor),
       scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
       scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
       scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
     ])
-    
+    //------------------------------------------------------------------------
+    scrollView.addSubview(containerView)
     NSLayoutConstraint.activate([
       containerView.topAnchor.constraint(equalTo: scrollView.topAnchor),
       containerView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
@@ -100,7 +98,7 @@ The application provides all judicial and legal services and provides certified 
       containerView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
       containerView.heightAnchor.constraint(equalToConstant: 900),
     ])
-    
+    //------------------------------------------------------------------------
     containerView.addSubview(appIcon)
     NSLayoutConstraint.activate([
       appIcon.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
@@ -108,7 +106,7 @@ The application provides all judicial and legal services and provides certified 
       appIcon.widthAnchor.constraint(equalToConstant: 200),
       appIcon.heightAnchor.constraint(equalToConstant: 200),
     ])
-    
+    //------------------------------------------------------------------------
     containerView.addSubview(label)
     NSLayoutConstraint.activate([
       label.topAnchor.constraint(equalTo: appIcon.bottomAnchor, constant: 50),
@@ -116,7 +114,7 @@ The application provides all judicial and legal services and provides certified 
       label.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20),
       label.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20),
     ])
-    
+    //------------------------------------------------------------------------
     containerView.addSubview(userPage)
     NSLayoutConstraint.activate([
       userPage.topAnchor.constraint(equalTo: label.bottomAnchor, constant:50),
@@ -124,7 +122,7 @@ The application provides all judicial and legal services and provides certified 
       userPage.widthAnchor.constraint(equalToConstant: 300),
       userPage.heightAnchor.constraint(equalToConstant: 80),
     ])
-    
+    //------------------------------------------------------------------------
     containerView.addSubview(lawyerPage)
     NSLayoutConstraint.activate([
       lawyerPage.topAnchor.constraint(equalTo: userPage.bottomAnchor, constant:30),

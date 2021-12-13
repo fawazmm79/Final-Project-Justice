@@ -13,6 +13,6 @@ class D: UIViewController{
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = .orange
+    view.backgroundColor = UIColor (named: "myBackgroundColor")
   }
 }

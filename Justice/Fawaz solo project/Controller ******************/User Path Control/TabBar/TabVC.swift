@@ -8,7 +8,7 @@
 import UIKit
 
 class TabVC: UITabBarController {
-  
+  //--------------------------------------------------------------------------
   fileprivate func createNavController(for rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
     
     let navController = UINavigationController(rootViewController: rootViewController)
@@ -60,7 +60,8 @@ class TabVC: UITabBarController {
     ]
     print(dictionary[2] ?? "CourtVC")
     
-    let a: Set<String> = ["CourtVC" , "LawyersVC" ,"NewsVC" ,"MapVC" ,"MyProfileVC"]
+    let sett: Set<String> = ["CourtVC" , "LawyersVC" ,"NewsVC" ,"MapVC" ,"MyProfileVC"]
+    print(sett)
     
   }
   //--------------------------------------------------------------------------

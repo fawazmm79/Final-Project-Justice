@@ -22,15 +22,14 @@ class Image_View: UIImageView {
     backgroundColor = .blue
     
     NSLayoutConstraint.activate([
-      widthAnchor.constraint(equalToConstant: 80),
-      heightAnchor.constraint(equalToConstant: 80)
+      widthAnchor.constraint(equalToConstant: 150),
+      heightAnchor.constraint(equalToConstant: 150)
     ])
   }
   required init?(coder: NSCoder) {
     super.init(coder: coder)
   }
 }
-
 //--------------------------------------------------------------------------
 // MARK: - TextField_View
 class TextField_View: UITextField{
@@ -54,7 +53,6 @@ class TextField_View: UITextField{
     super.init(coder: coder)
   }
 }
-
 //--------------------------------------------------------------------------
 // MARK: - Button_View
 class Button_View: UIButton{
@@ -78,7 +76,6 @@ class Button_View: UIButton{
     super.init(coder: coder)
   }
 }
-
 //--------------------------------------------------------------------------
 // MARK: - LabelTo_View
 class LabelTo_View: UILabel{
@@ -97,7 +94,6 @@ class LabelTo_View: UILabel{
     super.init(coder: coder)
   }
 }
-
 //--------------------------------------------------------------------------
 // MARK: - ButtonTo_View
 class ButtonTo_View: UIButton{
@@ -113,9 +109,9 @@ class ButtonTo_View: UIButton{
     super.init(coder: coder)
   }
 }
-
-// MARK: - ButtonWebView
-class ButtonWebView: UIButton{
+//------------------------------------------------------------------------
+// MARK: - BackUser_OR_Lawyer
+class BackUser_OR_Lawyer: UIButton{
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -128,8 +124,8 @@ class ButtonWebView: UIButton{
     titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
     
     NSLayoutConstraint.activate([
-      widthAnchor.constraint(equalToConstant: 100),
-      heightAnchor.constraint(equalToConstant: 100)
+      widthAnchor.constraint(equalToConstant: 300),
+      heightAnchor.constraint(equalToConstant: 50)
     ])
   }
   required init?(coder: NSCoder) {
