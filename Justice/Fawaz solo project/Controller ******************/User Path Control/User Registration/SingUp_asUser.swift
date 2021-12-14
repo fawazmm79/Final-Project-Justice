@@ -54,6 +54,7 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
   //--------------------------------------------------------------------------
   private let uPassword: TextField_View = {
     let uPassword = TextField_View()
+    uPassword.isSecureTextEntry = true
     uPassword.placeholder = (NSLocalizedString("Password", comment: ""))
     return uPassword
   }()

@@ -220,7 +220,6 @@
 				CCF275B827660D8800452DB0 /* View *********************** */,
 				CCDB1CC62752AA570027D9A3 /* Controller ****************** */,
 				CC7CD7A9276668A100CEED79 /* Localization **************** */,
-				CCE28F0D276754F300101D9B /* Fiyedhcile.swift */,
 			);
 			path = "Fawaz solo project";
 			sourceTree = "<group>";
@@ -335,6 +334,7 @@
 			children = (
 				CCF275C72766135F00452DB0 /* LogIn_asLawyer.swift */,
 				CCF275C92766136900452DB0 /* SingUp_asLawyer.swift */,
+				CCE28F0D276754F300101D9B /* Fiyedhcile.swift */,
 			);
 			path = "Lawyer Registration";
 			sourceTree = "<group>";

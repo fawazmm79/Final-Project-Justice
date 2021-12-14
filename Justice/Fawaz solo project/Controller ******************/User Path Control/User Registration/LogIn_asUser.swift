@@ -32,6 +32,7 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
   //--------------------------------------------------------------------------
   lazy var uPassword: TextField_View = {
     let uPassword = TextField_View()
+    uPassword.isSecureTextEntry = true
     uPassword.placeholder = (NSLocalizedString("Password", comment: ""))
     view.addSubview(uPassword)
     return uPassword

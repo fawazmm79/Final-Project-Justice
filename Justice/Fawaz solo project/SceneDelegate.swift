@@ -16,9 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     
     window = UIWindow(frame: UIScreen.main.bounds)
-    let navigationController = UINavigationController(rootViewController: User_OR_Lawyer())
+    let navigationController = UINavigationController(rootViewController: LawyersPageVC())
     
-    let home = User_OR_Lawyer()
+    let home = LawyersPageVC()
     self.window?.rootViewController = home
     window?.makeKeyAndVisible()
     window?.windowScene = windowScene

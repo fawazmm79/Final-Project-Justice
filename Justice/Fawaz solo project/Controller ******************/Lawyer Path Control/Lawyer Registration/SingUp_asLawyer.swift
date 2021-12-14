@@ -54,6 +54,7 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
   //-------------------------------------------------------------------------
   private let uPassword: TextField_View = {
     let uPassword = TextField_View()
+    uPassword.isSecureTextEntry = true
     uPassword.placeholder = (NSLocalizedString("Password", comment: ""))
     return uPassword
   }()

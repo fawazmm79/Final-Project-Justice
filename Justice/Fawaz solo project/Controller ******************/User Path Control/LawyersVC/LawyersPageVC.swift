@@ -9,26 +9,114 @@ import UIKit
 
 class LawyersPageVC : UIViewController{
   
-  let imageBlogPage = UIImageView()
-  let staly = UILabel()
-  let nameBlogPage = UILabel()
-  let numberBlogePage = UILabel()
-  let staly2 = UILabel()
-  let textBlogPage = UILabel()
-  let button = UIButton()
-  
   //--------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = UIColor (named: "myBackgroundColor")
+//    view.backgroundColor = UIColor (named: "myBackgroundColor")
+    view.backgroundColor = .red
     
+    allConstraint()
+  }
+  //--------------------------------------------------------------------------
+  fileprivate let application = UIApplication.shared
+  //--------------------------------------------------------------------------
+  lazy var imageBlogPage: UIImageView = {
+    let imageBlogPage = UIImageView()
     imageBlogPage.layer.masksToBounds = true
     imageBlogPage.layer.cornerRadius = 10
     imageBlogPage.translatesAutoresizingMaskIntoConstraints = false
+    imageBlogPage.backgroundColor = .systemGray
+    return imageBlogPage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var staly: UILabel = {
+    let staly = UILabel()
+    staly.textAlignment = .center
+    staly.backgroundColor = .systemGray4
+    staly.textColor = .label
+    staly.font = .systemFont(ofSize: 20)
+    staly.layer.cornerRadius = 10
+    staly.clipsToBounds = true
+    staly.backgroundColor = .orange
+    staly.translatesAutoresizingMaskIntoConstraints = false
+    return staly
+  }()
+  //--------------------------------------------------------------------------
+  lazy var nameBlogPage: UILabel = {
+    let nameBlogPage = UILabel()
+    nameBlogPage.textAlignment = .center
+    nameBlogPage.backgroundColor = .systemGray4
+    nameBlogPage.textColor = .label
+    nameBlogPage.font = .systemFont(ofSize: 20)
+    nameBlogPage.backgroundColor = .blue
+    nameBlogPage.translatesAutoresizingMaskIntoConstraints = false
+    return nameBlogPage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var numberBlogePage: UILabel = {
+    let numberBlogePage = UILabel()
+    numberBlogePage.textAlignment = .center
+    numberBlogePage.backgroundColor = .systemGray4
+    numberBlogePage.textColor = .label
+    numberBlogePage.font = .systemFont(ofSize: 20)
+    numberBlogePage.translatesAutoresizingMaskIntoConstraints = false
+    return numberBlogePage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var staly2: UILabel = {
+    let staly2 = UILabel()
+    staly2.font = UIFont.systemFont(ofSize: 18)
+    staly2.numberOfLines = 0
+    staly2.textColor = .label
+    staly2.translatesAutoresizingMaskIntoConstraints = false
+    staly2.backgroundColor = .systemBlue
+    staly2.layer.cornerRadius = 10
+    staly2.clipsToBounds = true
+    return staly2
+  }()
+  //--------------------------------------------------------------------------
+  lazy var textBlogPage: UILabel = {
+    let textBlogPage = UILabel()
+    textBlogPage.backgroundColor = .systemGray4
+    textBlogPage.textColor = .orange
+    textBlogPage.font = .systemFont(ofSize: 18)
+    textBlogPage.numberOfLines = 12
+    textBlogPage.textAlignment = .right
+    textBlogPage.translatesAutoresizingMaskIntoConstraints = false
+    return textBlogPage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var button: UIButton = {
+    let button = UIButton()
+    button.setTitle("اتصال", for: .normal)
+    button.setTitleColor(.label, for: .normal)
+    button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+    button.layer.cornerRadius = 20
+    button.clipsToBounds = true
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.backgroundColor = .systemGray4
+    //Add a Simple Alert with Buttons
+    button.addTarget(self, action: #selector(popupAlert), for: .touchUpInside)
+    return button
+  }()
+  //--------------------------------------------------------------------------
+  lazy var button2: UIButton = {
+    let button2 = UIButton()
+    button2.setTitle("اتصال", for: .normal)
+    button2.setTitleColor(.label, for: .normal)
+    button2.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+    button2.layer.cornerRadius = 20
+    button2.clipsToBounds = true
+    button2.translatesAutoresizingMaskIntoConstraints = false
+    button2.backgroundColor = .orange
+    //Add a Simple Alert with Buttons
+    button2.addTarget(self, action: #selector(popupAlert2), for: .touchUpInside)
+    return button2
+  }()
+  //--------------------------------------------------------------------------
+  func allConstraint(){
     view.addSubview(imageBlogPage)
-    imageBlogPage.backgroundColor = .systemGray4
-    
     NSLayoutConstraint.activate([
       imageBlogPage.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor),
       imageBlogPage.centerXAnchor.constraint(equalTo:view.centerXAnchor),
@@ -36,15 +124,7 @@ class LawyersPageVC : UIViewController{
       imageBlogPage.heightAnchor.constraint(equalToConstant: 100)
     ])
     //------------------------------------------------------------------------
-    staly.textAlignment = .center
-    staly.backgroundColor = .systemGray4
-    staly.textColor = .label
-    staly.font = .systemFont(ofSize: 20)
-    staly.layer.cornerRadius = 10
-    staly.clipsToBounds = true
-    staly.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(staly)
-    
     NSLayoutConstraint.activate([
       staly.topAnchor.constraint(equalTo: imageBlogPage.bottomAnchor, constant: 10),
       staly.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -52,13 +132,7 @@ class LawyersPageVC : UIViewController{
       staly.heightAnchor.constraint(equalToConstant: 80)
     ])
     //------------------------------------------------------------------------
-    nameBlogPage.textAlignment = .center
-    nameBlogPage.backgroundColor = .systemGray4
-    nameBlogPage.textColor = .label
-    nameBlogPage.font = .systemFont(ofSize: 20)
-    nameBlogPage.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(nameBlogPage)
-    
     NSLayoutConstraint.activate([
       nameBlogPage.topAnchor.constraint(equalTo: imageBlogPage.bottomAnchor, constant: 15),
       nameBlogPage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -66,13 +140,7 @@ class LawyersPageVC : UIViewController{
       nameBlogPage.heightAnchor.constraint(equalToConstant: 30)
     ])
     //------------------------------------------------------------------------
-    numberBlogePage.textAlignment = .center
-    numberBlogePage.backgroundColor = .systemGray4
-    numberBlogePage.textColor = .label
-    numberBlogePage.font = .systemFont(ofSize: 20)
-    numberBlogePage.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(numberBlogePage)
-    
     NSLayoutConstraint.activate([
       numberBlogePage.topAnchor.constraint(equalTo:nameBlogPage.bottomAnchor, constant: 10),
       numberBlogePage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -80,57 +148,52 @@ class LawyersPageVC : UIViewController{
       numberBlogePage.heightAnchor.constraint(equalToConstant: 30)
     ])
     //------------------------------------------------------------------------
-    staly2.font = UIFont.systemFont(ofSize: 18)
-    staly2.numberOfLines = 0
-    staly2.textColor = .label
-    staly2.translatesAutoresizingMaskIntoConstraints = false
-    staly2.backgroundColor = .systemGray4
-    staly2.layer.cornerRadius = 10
-    staly2.clipsToBounds = true
     view.addSubview(staly2)
-    
     NSLayoutConstraint.activate([
-      staly2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      staly2.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 40),
-      staly2.widthAnchor.constraint(equalToConstant: 350),
-      staly2.heightAnchor.constraint(equalToConstant: 330)
-      
+      staly2.topAnchor.constraint(equalTo: numberBlogePage.bottomAnchor, constant: 20),
+      staly2.leftAnchor.constraint(equalTo:view.leftAnchor,constant:20),
+      staly2.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+      staly2.heightAnchor.constraint(equalToConstant: 230)
     ])
     //------------------------------------------------------------------------
-    textBlogPage.backgroundColor = .systemGray4
-    textBlogPage.textColor = .label
-    textBlogPage.font = .systemFont(ofSize: 18)
-    textBlogPage.numberOfLines = 12
-    textBlogPage.textAlignment = .right
-    textBlogPage.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(textBlogPage)
-    
     NSLayoutConstraint.activate([
-      textBlogPage.widthAnchor.constraint(equalToConstant: 335),
-      textBlogPage.topAnchor.constraint(equalTo: nameBlogPage.bottomAnchor, constant: 70),
+      textBlogPage.topAnchor.constraint(equalTo: numberBlogePage.bottomAnchor, constant: 30),
       textBlogPage.leftAnchor.constraint(equalTo:view.leftAnchor,constant:30),
       textBlogPage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
     ])
     //------------------------------------------------------------------------
-    button.setTitle("اتصال", for: .normal)
-    button.setTitleColor(.label, for: .normal)
-    button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-    button.layer.cornerRadius = 20
-    button.clipsToBounds = true
-    button.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(button)
-    button.backgroundColor = .systemGray4
-    
+    self.view.addSubview(button)
     NSLayoutConstraint.activate([
       button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
+      button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -120),
       button.widthAnchor.constraint(equalToConstant: 350),
       button.heightAnchor.constraint(equalToConstant: 70)
     ])
-    
-    //Add a Simple Alert with Buttons
-    button.addTarget(self, action: #selector(popupAlert), for: .touchUpInside)
-    self.view.addSubview(button)
+    //------------------------------------------------------------------------
+    view.addSubview(button2)
+    self.view.addSubview(button2)
+    NSLayoutConstraint.activate([
+      button2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      button2.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 20),
+      button2.widthAnchor.constraint(equalToConstant: 350),
+      button2.heightAnchor.constraint(equalToConstant: 70)
+    ])
+  }
+  //--------------------------------------------------------------------------
+  func btnSettingClick() {
+    if let settingURL = URL(string: UIApplication.openSettingsURLString){
+      application.open(settingURL, options: [:])
+    }
+  }
+  //--------------------------------------------------------------------------
+  func btnCallClick() {
+    if let phoneURL = URL(string: "tel://0123456789") {
+      if application.canOpenURL(phoneURL){
+        application.open(phoneURL, options: [:], completionHandler: nil)
+      }
+    }
   }
   //--------------------------------------------------------------------------
   @objc func popupAlert(sender: UIButton!){
@@ -140,9 +203,28 @@ class LawyersPageVC : UIViewController{
                                   preferredStyle: .alert)
     
     alert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { action in
+      self.btnCallClick()
       print("Yes call")}))
     
     alert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { action in
+      self.btnSettingClick()
+      print("Do not call")}))
+    
+    self.present(alert, animated: true)
+  }
+  //--------------------------------------------------------------------------
+  @objc func popupAlert2(sender: UIButton!){
+    
+    let alert = UIAlertController(title: "هل تريد الاتصال بهذا الرقم؟",
+                                  message: "",
+                                  preferredStyle: .alert)
+    
+    alert.addAction(UIAlertAction(title: "نعم", style: .default, handler: { action in
+      self.btnCallClick()
+      print("Yes call")}))
+    
+    alert.addAction(UIAlertAction(title: "لا", style: .cancel, handler: { action in
+      self.btnSettingClick()
       print("Do not call")}))
     
     self.present(alert, animated: true)
