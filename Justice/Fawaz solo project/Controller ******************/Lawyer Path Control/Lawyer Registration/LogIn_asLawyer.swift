@@ -10,9 +10,18 @@ import FirebaseAuth
 
 class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
   
+  var rememberData: Bool! = false
+  //------------------------------------------------------------------------
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    view.backgroundColor = UIColor (named: "myBackgroundColor")
+    title = (NSLocalizedString("Log In", comment: ""))
+    
+    allConstraint()
+    dismissKeyboard()
+  }
   //-------------------------------------------------------------------------
-  //MARK: - All User
-  
   lazy var welcome: UILabel = {
     let welcome = UILabel()
     welcome.text = "Welcome as Lawyer in App"
@@ -27,6 +36,8 @@ class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
   //------------------------------------------------------------------------
   lazy var uEmail: TextField_View = {
     let uEmail = TextField_View()
+    uEmail.delegate = self
+    uEmail.text = UserDefaults.standard.value(forKey: "em") as? String
     uEmail.placeholder = (NSLocalizedString("Email", comment: ""))
     view.addSubview(uEmail)
     return uEmail
@@ -35,13 +46,13 @@ class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
   lazy var uPassword: TextField_View = {
     let uPassword = TextField_View()
     uPassword.isSecureTextEntry = true
+    uPassword.delegate = self
+    uPassword.text = UserDefaults.standard.value(forKey: "pa") as? String
     uPassword.placeholder = (NSLocalizedString("Password", comment: ""))
     view.addSubview(uPassword)
     return uPassword
   }()
   //------------------------------------------------------------------------
-  //MARK: - Login Button
-  
   lazy var logIn: Button_View = {
     let logIn = Button_View()
     logIn.setTitle(NSLocalizedString("Log In", comment: ""), for: .normal)
@@ -50,8 +61,6 @@ class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
     return logIn
   }()
   //------------------------------------------------------------------------
-  //MARK: - stackView
-  
   let stackView: UIStackView = {
     var stackView = UIStackView()
     stackView.axis = NSLayoutConstraint.Axis.vertical
@@ -61,8 +70,6 @@ class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
     return stackView
   }()
   //------------------------------------------------------------------------
-  //MARK: - Go To SingIn Page
-  
   lazy var labelSingIn: UILabel = {
     let labelSingIn = UILabel()
     labelSingIn.translatesAutoresizingMaskIntoConstraints = false
@@ -80,10 +87,7 @@ class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
     self.view.addSubview(buttonSingIn)
     return buttonSingIn
   }()
-  
   //--------------------------------------------------------------------------
-  //MARK: - backUser_OR_Lawyer
-  
   lazy var backUser_OR_Lawyer: BackUser_OR_Lawyer = {
     let backUser_OR_Lawyer = BackUser_OR_Lawyer()
     backUser_OR_Lawyer.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
@@ -92,8 +96,6 @@ class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
     return backUser_OR_Lawyer
   }()
   //--------------------------------------------------------------------------
-  //MARK: - allConstraint
-  
   func allConstraint(){
     
     view.addSubview(welcome)
@@ -108,8 +110,8 @@ class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
     stackView.addArrangedSubview(uPassword)
     stackView.addArrangedSubview(logIn)
     stackView.translatesAutoresizingMaskIntoConstraints = false
-    self.view.addSubview(stackView)
     
+    self.view.addSubview(stackView)
     NSLayoutConstraint.activate([
       stackView.centerXAnchor.constraint(equalTo:view.centerXAnchor),
       stackView.topAnchor.constraint(equalTo: welcome.bottomAnchor ,constant:50),
@@ -133,37 +135,13 @@ class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
       backUser_OR_Lawyer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
     ])
   }
-  
   //------------------------------------------------------------------------
-  //MARK: - viewDidLoad LogIn_asUser
-  
-  var rememberData: Bool! = false
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    view.backgroundColor = UIColor (named: "myBackgroundColor")
-    title = (NSLocalizedString("Log In", comment: ""))
-    
-    uEmail.delegate = self
-    uPassword.delegate = self
-    uEmail.text = UserDefaults.standard.value(forKey: "em") as? String
-    uPassword.text = UserDefaults.standard.value(forKey: "pa") as? String
-    
-    allConstraint()
-    dismissKeyboard()
-  }
-  //------------------------------------------------------------------------
-  //MARK: - dismissKeyboard
-  
   func dismissKeyboard(){
     let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
     view.addGestureRecognizer(tapGesture)
     tapGesture.cancelsTouchesInView = false
   }
   //------------------------------------------------------------------------
-  //MARK: - loginButtonTapped
-  
   var rem: Bool! = false
   @objc private func loginButtonTapped() {
     
@@ -197,16 +175,12 @@ class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
     }
   }
   //------------------------------------------------------------------------
-  //MARK: - SingUpButtonTapped
-  
   @objc private func SingUpButtonTapped() {
     let vc = SingUp_asLawyer()
     vc.modalPresentationStyle = .fullScreen
     self.present(vc, animated: true, completion: nil)
   }
   //------------------------------------------------------------------------
-  //MARK: - textFieldShouldReturn
-  
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     uEmail.resignFirstResponder()
     uPassword.resignFirstResponder()

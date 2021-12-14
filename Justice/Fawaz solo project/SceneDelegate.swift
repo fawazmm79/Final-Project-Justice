@@ -16,22 +16,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     
     window = UIWindow(frame: UIScreen.main.bounds)
-    let navigationController = UINavigationController(rootViewController: LawyersPageVC())
     
-    let home = LawyersPageVC()
+    let home = User_OR_Lawyer()
     self.window?.rootViewController = home
     window?.makeKeyAndVisible()
     window?.windowScene = windowScene
   }
   
-//  guard let windowScene = (scene as? UIWindowScene) else { return }
-//
-//      window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-//      window?.windowScene =  windowScene
-//      window?.rootViewController = RegisterVC()
-//      window?.makeKeyAndVisible()
-//    }
-
+  //  guard let windowScene = (scene as? UIWindowScene) else { return }
+  //
+  //      window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+  //      window?.windowScene =  windowScene
+  //      window?.rootViewController = RegisterVC()
+  //      window?.makeKeyAndVisible()
+  //    }
+  
   
   func sceneDidDisconnect(_ scene: UIScene) {
     // Called as the scene is being released by the system.

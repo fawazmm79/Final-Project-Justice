@@ -11,6 +11,15 @@ import MapKit
 
 class MapVC: UIViewController {
   
+  //--------------------------------------------------------------------------
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    configureLocationManager()
+    configureMapView()
+    enableLocationServices()
+  }
+  //--------------------------------------------------------------------------
   var locationManager: CLLocationManager!
   var mapView: MKMapView!
   //--------------------------------------------------------------------------
@@ -24,14 +33,6 @@ class MapVC: UIViewController {
     button.addTarget(self, action: #selector(handleCenterLocation), for: .touchUpInside)
     return button
   }()
-  //--------------------------------------------------------------------------
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    configureLocationManager()
-    configureMapView()
-    enableLocationServices()
-  }
   //--------------------------------------------------------------------------
   @objc func handleCenterLocation() {
     centerMapOnUserLocation()
@@ -55,7 +56,6 @@ class MapVC: UIViewController {
     centerMapButton.layer.cornerRadius = 70 / 2
     view.addSubview(centerMapButton)
     NSLayoutConstraint.activate([
-      
       centerMapButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 135),
       centerMapButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 270),
       centerMapButton.widthAnchor.constraint(equalToConstant: 70),
@@ -132,7 +132,6 @@ extension MapVC: MKMapViewDelegate {
       self.centerMapButton.alpha = 1
     }
   }
-  
 }
 //--------------------------------------------------------------------------
 extension MapVC: CLLocationManagerDelegate {

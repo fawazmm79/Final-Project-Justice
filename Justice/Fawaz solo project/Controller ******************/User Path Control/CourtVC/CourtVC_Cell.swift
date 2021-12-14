@@ -68,7 +68,6 @@ class CourtVC_Cell: UICollectionViewCell {
                         y: 160,
                         width: 160,
                         height: 45)
-    
   }
   //--------------------------------------------------------------------------
   public func configure(label: String) {
@@ -79,6 +78,5 @@ class CourtVC_Cell: UICollectionViewCell {
     super.prepareForReuse()
     name.text = nil
   }
-  
 }
 //--------------------------------------------------------------------------

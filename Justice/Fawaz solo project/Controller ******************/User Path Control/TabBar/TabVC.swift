@@ -8,12 +8,27 @@
 import UIKit
 
 class TabVC: UITabBarController {
+  
+  //--------------------------------------------------------------------------
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    view.backgroundColor = UIColor (named: "myBackgroundColor")
+    
+//    UITabBar.appearance().barTintColor = .systemBackground
+    
+    tabBar.tintColor = .orange
+    tabBar.backgroundColor = UIColor(named: "myBackgroundColor")
+    
+    setupVCs()
+  }
   //--------------------------------------------------------------------------
   fileprivate func createNavController(for rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
     
     let navController = UINavigationController(rootViewController: rootViewController)
     navController.tabBarItem.title = title
     navController.tabBarItem.image = image
+//    navController.navigationBar.backgroundColor = UIColor(named: "myBackgroundColor")
     
     rootViewController.navigationItem.title = title
     
@@ -62,19 +77,6 @@ class TabVC: UITabBarController {
     
     let sett: Set<String> = ["CourtVC" , "LawyersVC" ,"NewsVC" ,"MapVC" ,"MyProfileVC"]
     print(sett)
-    
-  }
-  //--------------------------------------------------------------------------
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    view.backgroundColor = UIColor (named: "myBackgroundColor")
-    
-    UITabBar.appearance().barTintColor = .systemBackground
-    
-    tabBar.tintColor = .label
-    
-    setupVCs()
     
   }
 }

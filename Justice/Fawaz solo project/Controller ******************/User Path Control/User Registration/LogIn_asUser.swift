@@ -10,9 +10,23 @@ import FirebaseAuth
 
 class LogIn_asUser: UIViewController, UITextFieldDelegate {
   
+  var rememberData: Bool! = false
   //--------------------------------------------------------------------------
-  //MARK: - All User
-  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    view.backgroundColor = UIColor (named: "myBackgroundColor")
+    title = (NSLocalizedString("Log In", comment: ""))
+    
+    uEmail.delegate = self
+    uPassword.delegate = self
+    uEmail.text = UserDefaults.standard.value(forKey: "em") as? String
+    uPassword.text = UserDefaults.standard.value(forKey: "pa") as? String
+    
+    allConstraint()
+    dismissKeyboard()
+  }
+  //--------------------------------------------------------------------------
   lazy var welcome: UILabel = {
     let welcome = UILabel()
     welcome.text = "Welcome as User in App"
@@ -38,8 +52,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     return uPassword
   }()
   //--------------------------------------------------------------------------
-  //MARK: - Login Button
-  
   lazy var logIn: Button_View = {
     let logIn = Button_View()
     logIn.setTitle(NSLocalizedString("Log In", comment: ""), for: .normal)
@@ -48,8 +60,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     return logIn
   }()
   //--------------------------------------------------------------------------
-  //MARK: - stackView
-  
   let stackView: UIStackView = {
     var stackView = UIStackView()
     stackView.axis = NSLayoutConstraint.Axis.vertical
@@ -59,8 +69,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     return stackView
   }()
   //--------------------------------------------------------------------------
-  //MARK: - Go To SingIn Page
-  
   lazy var labelSingIn: UILabel = {
     let labelSingIn = UILabel()
     labelSingIn.translatesAutoresizingMaskIntoConstraints = false
@@ -79,8 +87,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     return buttonSingIn
   }()
   //--------------------------------------------------------------------------
-  //MARK: - backUser_OR_Lawyer
-  
   lazy var backUser_OR_Lawyer: BackUser_OR_Lawyer = {
     let backUser_OR_Lawyer = BackUser_OR_Lawyer()
     backUser_OR_Lawyer.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
@@ -89,8 +95,6 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     return backUser_OR_Lawyer
   }()
   //--------------------------------------------------------------------------
-  //MARK: - allConstraint
-  
   func allConstraint(){
     
     view.addSubview(welcome)
@@ -131,35 +135,12 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     ])
   }
   //--------------------------------------------------------------------------
-  //MARK: - viewDidLoad LogIn_asUser
-  
-  var rememberData: Bool! = false
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    view.backgroundColor = UIColor (named: "myBackgroundColor")
-    title = (NSLocalizedString("Log In", comment: ""))
-    
-    uEmail.delegate = self
-    uPassword.delegate = self
-    uEmail.text = UserDefaults.standard.value(forKey: "em") as? String
-    uPassword.text = UserDefaults.standard.value(forKey: "pa") as? String
-    
-    allConstraint()
-    dismissKeyboard()
-  }
-  //--------------------------------------------------------------------------
-  //MARK: - dismissKeyboard
-  
   func dismissKeyboard(){
     let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
     view.addGestureRecognizer(tapGesture)
     tapGesture.cancelsTouchesInView = false
   }
   //--------------------------------------------------------------------------
-  //MARK: - loginButtonTapped
-  
   var rem: Bool! = false
   @objc private func loginButtonTapped() {
     
@@ -193,21 +174,18 @@ class LogIn_asUser: UIViewController, UITextFieldDelegate {
     }
   }
   //--------------------------------------------------------------------------
-  //MARK: - SingUpButtonTapped
-  
   @objc private func SingUpButtonTapped() {
     let vc = SingUp_asUser()
     vc.modalPresentationStyle = .fullScreen
     self.present(vc, animated: true, completion: nil)
   }
   //--------------------------------------------------------------------------
-  //MARK: - textFieldShouldReturn
-  
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     uEmail.resignFirstResponder()
     uPassword.resignFirstResponder()
     return true
   }
+  //--------------------------------------------------------------------------
   func goBackButtonTapped(){
     let goBack = User_OR_Lawyer()
     goBack.modalPresentationStyle = .fullScreen

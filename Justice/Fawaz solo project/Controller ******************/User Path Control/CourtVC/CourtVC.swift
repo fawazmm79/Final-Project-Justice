@@ -9,36 +9,41 @@ import UIKit
 
 class CourtVC: UIViewController {
   
+  
   private var collectionView: UICollectionView?
   //--------------------------------------------------------------------------
   override func viewDidLoad(){
     super.viewDidLoad()
     
     view.backgroundColor = UIColor (named: "myBackgroundColor")
-    
-    let layout = UICollectionViewFlowLayout()
-    layout.scrollDirection = .vertical
-    layout.minimumLineSpacing = 10
-    layout.minimumInteritemSpacing = 1
-    layout.sectionInset = UIEdgeInsets(top: 20,left: 10,bottom: 100,right: 10)
-    layout.itemSize = CGSize(width: 180, height: 220)
-    
+
     collectionView = UICollectionView(frame: .zero,
                                       collectionViewLayout: layout)
-    
+//    collectionView?.backgroundColor = UIColor (named: "myBackgroundColor")
     guard let collectionView = collectionView else {
       return
     }
-    
+    navigationController?.navigationBar.backgroundColor = UIColor (named: "myBackgroundColor")
     collectionView.register(CourtVC_Cell.self, forCellWithReuseIdentifier: CourtVC_Cell.identifier)
     collectionView.dataSource = self
     collectionView.delegate = self
     view.addSubview(collectionView)
     collectionView.frame = view.bounds
   }
-}
-extension CourtVC: UICollectionViewDelegate, UICollectionViewDataSource {
   //--------------------------------------------------------------------------
+  var layout: UICollectionViewFlowLayout = {
+    let layout = UICollectionViewFlowLayout()
+    layout.scrollDirection = .vertical
+    layout.minimumLineSpacing = 10
+    layout.minimumInteritemSpacing = 1
+    layout.sectionInset = UIEdgeInsets(top: 20,left: 10,bottom: 100,right: 10)
+    layout.itemSize = CGSize(width: 180, height: 220)
+    return layout
+  }()
+}
+//--------------------------------------------------------------------------
+extension CourtVC: UICollectionViewDelegate, UICollectionViewDataSource {
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) ->Int {
     
     return data_Court_str.count

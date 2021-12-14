@@ -10,103 +10,116 @@ import UIKit
 class ServicePageVC : UIViewController{
   
   var restFromVC2: A?
-  
-  let imageBlogPage = UIImageView()
-  let nameBlogPage = UILabel()
-  let staly = UILabel()
-  let textBlogPage = UILabel()
-  let button = UIButton()
-  
   //--------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    view.backgroundColor = UIColor (named: "myBackgroundColor")
+//    view.backgroundColor = UIColor (named: "myBackgroundColor")
     
-    imageBlogPage.layer.masksToBounds = true
-    imageBlogPage.layer.cornerRadius = 10
-    imageBlogPage.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(imageBlogPage)
-    imageBlogPage.backgroundColor = .systemGray4
-    
-    NSLayoutConstraint.activate([
-      imageBlogPage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      imageBlogPage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      imageBlogPage.widthAnchor.constraint(equalToConstant: 100),
-      imageBlogPage.heightAnchor.constraint(equalToConstant: 100)
-    ])
-    //------------------------------------------------------------------------
-    nameBlogPage.textAlignment = .center
-    nameBlogPage.backgroundColor = .systemGray4
-    nameBlogPage.textColor = .label
-    nameBlogPage.font = .systemFont(ofSize: 20)
-    nameBlogPage.layer.cornerRadius = 10
-    nameBlogPage.clipsToBounds = true
-    nameBlogPage.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(nameBlogPage)
-    
-    NSLayoutConstraint.activate([
-      nameBlogPage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      nameBlogPage.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -180),
-      nameBlogPage.widthAnchor.constraint(equalToConstant: 350),
-      nameBlogPage.heightAnchor.constraint(equalToConstant: 50)
-    ])
-    //------------------------------------------------------------------------
-    staly.font = UIFont.systemFont(ofSize: 18)
-    staly.backgroundColor = .systemGray4
-    staly.numberOfLines = 0
-    staly.textColor = .label
-    staly.translatesAutoresizingMaskIntoConstraints = false
-    staly.layer.cornerRadius = 10
-    staly.clipsToBounds = true
-    view.addSubview(staly)
-    
-    NSLayoutConstraint.activate([
-      staly.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      staly.topAnchor.constraint(equalTo: nameBlogPage.bottomAnchor, constant: 10),
-      staly.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
-      staly.widthAnchor.constraint(equalToConstant: 350),
-      staly.heightAnchor.constraint(equalToConstant: 410)
-    ])
-    //------------------------------------------------------------------------
-    
-    textBlogPage.backgroundColor = .systemGray4
-    textBlogPage.textColor = .label
-    textBlogPage.font = .systemFont(ofSize: 18)
-    textBlogPage.numberOfLines = 0
-    textBlogPage.textAlignment = .right
-    textBlogPage.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(textBlogPage)
-    
-    NSLayoutConstraint.activate([
-      textBlogPage.widthAnchor.constraint(equalToConstant: 335),
-      textBlogPage.topAnchor.constraint(equalTo: nameBlogPage.bottomAnchor, constant: 20),
-      textBlogPage.leftAnchor.constraint(equalTo:view.leftAnchor,constant:30),
-      textBlogPage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
-    ])
-    //------------------------------------------------------------------------
-    
-    button.setTitle("تقديم طلب", for: .normal)
-    button.setTitleColor(.label, for: .normal)
-    button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-    button.layer.cornerRadius = 20
-    button.clipsToBounds = true
-    button.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(button)
-    button.backgroundColor = .systemGray4
-    
-    NSLayoutConstraint.activate([
-      button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-      button.widthAnchor.constraint(equalToConstant: 350),
-      button.heightAnchor.constraint(equalToConstant: 70)
-    ])
-    
-    //Add a Simple Alert with Buttons
-    button.addTarget(self, action: #selector(popupAlert), for: .touchUpInside)
-    self.view.addSubview(button)
+    allConstraint()
   }
-  
+  //--------------------------------------------------------------------------
+  lazy var imageServicePage: UIImageView = {
+    let imageServicePage = UIImageView()
+    imageServicePage.layer.masksToBounds = true
+    imageServicePage.layer.cornerRadius = 10
+    imageServicePage.translatesAutoresizingMaskIntoConstraints = false
+    imageServicePage.backgroundColor = .systemGray4
+    return imageServicePage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var nameServicePage: UILabel = {
+    let nameServicePage = UILabel()
+    nameServicePage.textAlignment = .center
+    nameServicePage.backgroundColor = .systemGray4
+    nameServicePage.textColor = .label
+    nameServicePage.font = .systemFont(ofSize: 20)
+    nameServicePage.layer.cornerRadius = 10
+    nameServicePage.clipsToBounds = true
+    nameServicePage.translatesAutoresizingMaskIntoConstraints = false
+    return nameServicePage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var stalyServicePage: UILabel = {
+    let stalyServicePage = UILabel()
+    stalyServicePage.font = UIFont.systemFont(ofSize: 18)
+    stalyServicePage.backgroundColor = .systemGray4
+    stalyServicePage.numberOfLines = 0
+    stalyServicePage.textColor = .label
+    stalyServicePage.translatesAutoresizingMaskIntoConstraints = false
+    stalyServicePage.layer.cornerRadius = 10
+    stalyServicePage.clipsToBounds = true
+    return stalyServicePage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var textServicePage: UILabel = {
+    let textServicePage = UILabel()
+    textServicePage.backgroundColor = .systemGray4
+    textServicePage.textColor = .label
+    textServicePage.font = .systemFont(ofSize: 18)
+    textServicePage.numberOfLines = 0
+    textServicePage.textAlignment = .right
+    textServicePage.translatesAutoresizingMaskIntoConstraints = false
+    return textServicePage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var buttonServicePage: UIButton = {
+    let buttonServicePage = UIButton()
+    buttonServicePage.setTitle("تقديم طلب", for: .normal)
+    buttonServicePage.setTitleColor(.label, for: .normal)
+    buttonServicePage.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+    buttonServicePage.layer.cornerRadius = 20
+    buttonServicePage.clipsToBounds = true
+    buttonServicePage.translatesAutoresizingMaskIntoConstraints = false
+    buttonServicePage.backgroundColor = .systemGray4
+    buttonServicePage.addTarget(self, action: #selector(popupAlert), for: .touchUpInside)
+    self.view.addSubview(buttonServicePage)
+    return buttonServicePage
+  }()
+  //--------------------------------------------------------------------------
+  func allConstraint(){
+    
+    view.addSubview(imageServicePage)
+    NSLayoutConstraint.activate([
+      imageServicePage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      imageServicePage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      imageServicePage.widthAnchor.constraint(equalToConstant: 100),
+      imageServicePage.heightAnchor.constraint(equalToConstant: 100)
+    ])
+    //------------------------------------------------------------------------
+    view.addSubview(nameServicePage)
+    NSLayoutConstraint.activate([
+      nameServicePage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      nameServicePage.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -180),
+      nameServicePage.widthAnchor.constraint(equalToConstant: 350),
+      nameServicePage.heightAnchor.constraint(equalToConstant: 50)
+    ])
+    //------------------------------------------------------------------------
+    view.addSubview(stalyServicePage)
+    NSLayoutConstraint.activate([
+      stalyServicePage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      stalyServicePage.topAnchor.constraint(equalTo: nameServicePage.bottomAnchor, constant: 10),
+      stalyServicePage.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -100),
+      stalyServicePage.widthAnchor.constraint(equalToConstant: 350),
+      stalyServicePage.heightAnchor.constraint(equalToConstant: 410)
+    ])
+    //------------------------------------------------------------------------
+    view.addSubview(textServicePage)
+    NSLayoutConstraint.activate([
+      textServicePage.widthAnchor.constraint(equalToConstant: 335),
+      textServicePage.topAnchor.constraint(equalTo: nameServicePage.bottomAnchor, constant: 20),
+      textServicePage.leftAnchor.constraint(equalTo:view.leftAnchor,constant:30),
+      textServicePage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
+    ])
+    //------------------------------------------------------------------------
+    view.addSubview(buttonServicePage)
+    NSLayoutConstraint.activate([
+      buttonServicePage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      buttonServicePage.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+      buttonServicePage.widthAnchor.constraint(equalToConstant: 350),
+      buttonServicePage.heightAnchor.constraint(equalToConstant: 70)
+    ])
+  }
   //--------------------------------------------------------------------------
   @objc func popupAlert(sender: UIButton!){
     
@@ -122,6 +135,5 @@ class ServicePageVC : UIViewController{
     
     self.present(alert, animated: true)
   }
-  
 }
 //--------------------------------------------------------------------------

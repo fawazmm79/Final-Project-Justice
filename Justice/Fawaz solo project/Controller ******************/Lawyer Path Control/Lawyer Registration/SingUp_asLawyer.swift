@@ -11,10 +11,23 @@ import FirebaseAuth
 class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
   
   var lawyers: Array<Lawyer> = []
-  
   //-------------------------------------------------------------------------
-  //MARK: - All Lawyer
-  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    view.backgroundColor = UIColor (named: "myBackgroundColor")
+    
+    RegisterServiceLawyer.shared.listenToLawyers { newLawyer in
+      self.lawyers = newLawyer
+    }
+    let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+    uImage.addGestureRecognizer(tapRecognizer)
+    title = (NSLocalizedString("Register ", comment: ""))
+    
+    allConstraint()
+    dismissKeyboard()
+  }
+  //-------------------------------------------------------------------------
   lazy var uImage: UIImageView = {
     let uImage = UIImageView()
     uImage.translatesAutoresizingMaskIntoConstraints = false
@@ -60,8 +73,6 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
   }()
   
   //-------------------------------------------------------------------------
-  //MARK: - SingUp Button
-  
   private let singUp: Button_View = {
     let singUp = Button_View()
     singUp.setTitle(
@@ -72,8 +83,6 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
   }()
   
   //-------------------------------------------------------------------------
-  //MARK: - stackView
-  
   let stackView: UIStackView = {
     var stackView = UIStackView()
     stackView.axis  = NSLayoutConstraint.Axis.vertical
@@ -84,8 +93,6 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
   }()
   
   //-------------------------------------------------------------------------
-  //MARK: - Go To LogIn Page
-  
   lazy var labelLogIn: UILabel = {
     let labelLogIn = UILabel()
     labelLogIn.translatesAutoresizingMaskIntoConstraints = false
@@ -99,18 +106,14 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
     buttonLogIn.translatesAutoresizingMaskIntoConstraints = false
     self.view.addSubview(buttonLogIn)
     buttonLogIn.setTitle(NSLocalizedString("Log In", comment: ""), for: .normal)
-
+    
     buttonLogIn.setTitleColor(.blue, for: .normal)
     buttonLogIn.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
     return buttonLogIn
   }()
-  
   //-------------------------------------------------------------------------
-  //MARK: - allConstraint
-  
   func allConstraint(){
     
-    //uImage
     view.addSubview(uImage)
     NSLayoutConstraint.activate([
       uImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
@@ -151,38 +154,13 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
       buttonLogIn.heightAnchor.constraint(equalToConstant: 50),
     ])
   }
-  
   //-------------------------------------------------------------------------
-  //MARK: - viewDidLoad SingUpVC
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    view.backgroundColor = UIColor (named: "myBackgroundColor")
-    
-    RegisterServiceLawyer.shared.listenToLawyers { newLawyer in
-      self.lawyers = newLawyer
-    }
-    let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-    uImage.addGestureRecognizer(tapRecognizer)
-    title = (NSLocalizedString("Register ", comment: ""))
-    
-    allConstraint()
-    dismissKeyboard()
-  }
-  
-  //-------------------------------------------------------------------------
-  //MARK: - dismissKeyboard
-  
   func dismissKeyboard(){
     let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
     view.addGestureRecognizer(tapGesture)
     tapGesture.cancelsTouchesInView = false
   }
-  
   //-------------------------------------------------------------------------
-  //MARK: - singUpButtonTapped
-  
   @objc private func singUpButtonTapped() {
     
     // linke with firebase
@@ -211,25 +189,18 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
     vc.modalPresentationStyle = .fullScreen
     self.present(vc, animated: true, completion: nil)
   }
-  
   //-------------------------------------------------------------------------
-  // image picker in register page
-  
-  @objc func imageTapped() {
+  @objc func imageTapped() { // image picker in register page
     print("Image tapped")
     present(uImagePicker, animated: true)
   }
-  
   //-------------------------------------------------------------------------
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     let image = info[.editedImage] ?? info [.originalImage] as? UIImage
     uImage.image = image as? UIImage
     dismiss(animated: true)
   }
-  
   //-------------------------------------------------------------------------
-  //MARK: - logInButtonTapped
-  
   @objc private func logInButtonTapped() {
     let vc = LogIn_asLawyer()
     vc.modalPresentationStyle = .fullScreen

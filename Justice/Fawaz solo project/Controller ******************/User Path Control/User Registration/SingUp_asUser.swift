@@ -10,11 +10,25 @@ import FirebaseAuth
 
 class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
   
-  var users: Array<User> = []
-  
   //--------------------------------------------------------------------------
-  //MARK: - All User
-  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    view.backgroundColor = UIColor (named: "myBackgroundColor")
+    
+    RegisterServiceUser.shared.listenToUsers { newUsers in
+      self.users = newUsers
+    }
+    let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+    uImage.addGestureRecognizer(tapRecognizer)
+    title = (NSLocalizedString("Register ", comment: ""))
+    
+    allConstraint()
+    dismissKeyboard()
+  }
+  //--------------------------------------------------------------------------
+  var users: Array<User> = []
+  //--------------------------------------------------------------------------
   lazy var uImage: UIImageView = {
     let uImage = UIImageView()
     uImage.translatesAutoresizingMaskIntoConstraints = false
@@ -59,8 +73,6 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     return uPassword
   }()
   //--------------------------------------------------------------------------
-  //MARK: - SingUp Button
-  
   private let singUp: Button_View = {
     let singUp = Button_View()
     singUp.setTitle(
@@ -70,8 +82,6 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     return singUp
   }()
   //--------------------------------------------------------------------------
-  //MARK: - stackView
-  
   let stackView: UIStackView = {
     var stackView = UIStackView()
     stackView.axis  = NSLayoutConstraint.Axis.vertical
@@ -81,8 +91,6 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     return stackView
   }()
   //--------------------------------------------------------------------------
-  //MARK: - Go To LogIn Page
-  
   lazy var labelLogIn: UILabel = {
     let labelLogIn = UILabel()
     labelLogIn.translatesAutoresizingMaskIntoConstraints = false
@@ -101,21 +109,19 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     return buttonLogIn
   }()
   //--------------------------------------------------------------------------
-  //MARK: - allConstraint
-  
   func allConstraint(){
     
     view.addSubview(uImage)
     NSLayoutConstraint.activate([
-      uImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-      uImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+      uImage.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor),
+      uImage.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor, constant: 50),
       uImage.widthAnchor.constraint(equalToConstant: 150),
       uImage.heightAnchor.constraint(equalToConstant: 150),
     ])
     //------------------------------------------------------------------------
     view.addSubview(uImageName)
     NSLayoutConstraint.activate([
-      uImageName.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+      uImageName.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor),
       uImageName.topAnchor.constraint(equalTo: uImage.bottomAnchor, constant: 20),
       uImageName.heightAnchor.constraint(equalToConstant: 40),
     ])
@@ -125,8 +131,8 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     stackView.addArrangedSubview(uPassword)
     stackView.addArrangedSubview(singUp)
     stackView.translatesAutoresizingMaskIntoConstraints = false
-    self.view.addSubview(stackView)
     
+    self.view.addSubview(stackView)
     NSLayoutConstraint.activate([
       stackView.centerXAnchor.constraint(equalTo:view.centerXAnchor),
       stackView.topAnchor.constraint(equalTo: uImageName.bottomAnchor, constant: 20),
@@ -135,48 +141,23 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     //------------------------------------------------------------------------
     NSLayoutConstraint.activate([
       labelLogIn.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30),
-      labelLogIn.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor, constant:50),
+      labelLogIn.leftAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leftAnchor, constant:50),
       labelLogIn.heightAnchor.constraint(equalToConstant: 50),
     ])
     //------------------------------------------------------------------------
     NSLayoutConstraint.activate([
       buttonLogIn.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30),
-      buttonLogIn.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor, constant:-50),
+      buttonLogIn.rightAnchor.constraint(equalTo:view.safeAreaLayoutGuide.rightAnchor, constant:-50),
       buttonLogIn.heightAnchor.constraint(equalToConstant: 50),
     ])
   }
-  
   //--------------------------------------------------------------------------
-  //MARK: - viewDidLoad SingUpVC
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    view.backgroundColor = UIColor (named: "myBackgroundColor")
-    
-    RegisterServiceUser.shared.listenToUsers { newUsers in
-      self.users = newUsers
-    }
-    let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-    uImage.addGestureRecognizer(tapRecognizer)
-    title = (NSLocalizedString("Register ", comment: ""))
-    
-    allConstraint()
-    dismissKeyboard()
-  }
-  
-  //--------------------------------------------------------------------------
-  //MARK: - dismissKeyboard
-  
   func dismissKeyboard(){
     let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
     view.addGestureRecognizer(tapGesture)
     tapGesture.cancelsTouchesInView = false
   }
-  
   //--------------------------------------------------------------------------
-  //MARK: - singUpButtonTapped
-  
   @objc private func singUpButtonTapped() {
     
     // linke with firebase
@@ -185,7 +166,6 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     let name = uName.text ?? ""
     let email = uEmail.text ?? ""
     let password = uPassword.text ?? ""
-    
     
     if name.isEmpty || email.isEmpty || password.isEmpty {
       return
@@ -206,25 +186,18 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     vc.modalPresentationStyle = .fullScreen
     self.present(vc, animated: true, completion: nil)
   }
-  
   //--------------------------------------------------------------------------
-  // image picker in register page
-  
-  @objc func imageTapped() {
+  @objc func imageTapped() { // image picker in register page
     print("Image tapped")
     present(uImagePicker, animated: true)
   }
-  
   //--------------------------------------------------------------------------
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     let image = info[.editedImage] ?? info [.originalImage] as? UIImage
     uImage.image = image as? UIImage
     dismiss(animated: true)
   }
-  
   //--------------------------------------------------------------------------
-  //MARK: - logInButtonTapped
-  
   @objc private func logInButtonTapped() {
     let vc = LogIn_asUser()
     vc.modalPresentationStyle = .fullScreen

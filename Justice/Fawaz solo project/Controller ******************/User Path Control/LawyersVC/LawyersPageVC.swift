@@ -13,7 +13,7 @@ class LawyersPageVC : UIViewController{
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    view.backgroundColor = UIColor (named: "myBackgroundColor")
+    //    view.backgroundColor = UIColor (named: "myBackgroundColor")
     view.backgroundColor = .red
     
     allConstraint()
@@ -21,164 +21,165 @@ class LawyersPageVC : UIViewController{
   //--------------------------------------------------------------------------
   fileprivate let application = UIApplication.shared
   //--------------------------------------------------------------------------
-  lazy var imageBlogPage: UIImageView = {
-    let imageBlogPage = UIImageView()
-    imageBlogPage.layer.masksToBounds = true
-    imageBlogPage.layer.cornerRadius = 10
-    imageBlogPage.translatesAutoresizingMaskIntoConstraints = false
-    imageBlogPage.backgroundColor = .systemGray
-    return imageBlogPage
+  lazy var imageLawyersPage: UIImageView = {
+    let imageLawyersPage = UIImageView()
+    imageLawyersPage.layer.masksToBounds = true
+    imageLawyersPage.layer.cornerRadius = 10
+    imageLawyersPage.translatesAutoresizingMaskIntoConstraints = false
+    imageLawyersPage.backgroundColor = .systemGray
+    return imageLawyersPage
   }()
   //--------------------------------------------------------------------------
-  lazy var staly: UILabel = {
-    let staly = UILabel()
-    staly.textAlignment = .center
-    staly.backgroundColor = .systemGray4
-    staly.textColor = .label
-    staly.font = .systemFont(ofSize: 20)
-    staly.layer.cornerRadius = 10
-    staly.clipsToBounds = true
-    staly.backgroundColor = .orange
-    staly.translatesAutoresizingMaskIntoConstraints = false
-    return staly
+  lazy var stalyLawyersPage: UILabel = {
+    let stalyLawyersPage = UILabel()
+    stalyLawyersPage.textAlignment = .center
+    stalyLawyersPage.backgroundColor = .systemGray4
+    stalyLawyersPage.textColor = .label
+    stalyLawyersPage.font = .systemFont(ofSize: 20)
+    stalyLawyersPage.layer.cornerRadius = 10
+    stalyLawyersPage.clipsToBounds = true
+    stalyLawyersPage.backgroundColor = .orange
+    stalyLawyersPage.translatesAutoresizingMaskIntoConstraints = false
+    return stalyLawyersPage
   }()
   //--------------------------------------------------------------------------
-  lazy var nameBlogPage: UILabel = {
-    let nameBlogPage = UILabel()
-    nameBlogPage.textAlignment = .center
-    nameBlogPage.backgroundColor = .systemGray4
-    nameBlogPage.textColor = .label
-    nameBlogPage.font = .systemFont(ofSize: 20)
-    nameBlogPage.backgroundColor = .blue
-    nameBlogPage.translatesAutoresizingMaskIntoConstraints = false
-    return nameBlogPage
+  lazy var nameLawyersPage: UILabel = {
+    let nameLawyersPage = UILabel()
+    nameLawyersPage.textAlignment = .center
+    nameLawyersPage.backgroundColor = .systemGray4
+    nameLawyersPage.textColor = .label
+    nameLawyersPage.font = .systemFont(ofSize: 20)
+    nameLawyersPage.backgroundColor = .blue
+    nameLawyersPage.translatesAutoresizingMaskIntoConstraints = false
+    return nameLawyersPage
   }()
   //--------------------------------------------------------------------------
-  lazy var numberBlogePage: UILabel = {
-    let numberBlogePage = UILabel()
-    numberBlogePage.textAlignment = .center
-    numberBlogePage.backgroundColor = .systemGray4
-    numberBlogePage.textColor = .label
-    numberBlogePage.font = .systemFont(ofSize: 20)
-    numberBlogePage.translatesAutoresizingMaskIntoConstraints = false
-    return numberBlogePage
+  lazy var numberLawyersPage: UILabel = {
+    let numberLawyersPage = UILabel()
+    numberLawyersPage.textAlignment = .center
+    numberLawyersPage.backgroundColor = .systemGray4
+    numberLawyersPage.textColor = .label
+    numberLawyersPage.font = .systemFont(ofSize: 20)
+    numberLawyersPage.translatesAutoresizingMaskIntoConstraints = false
+    return numberLawyersPage
   }()
   //--------------------------------------------------------------------------
-  lazy var staly2: UILabel = {
-    let staly2 = UILabel()
-    staly2.font = UIFont.systemFont(ofSize: 18)
-    staly2.numberOfLines = 0
-    staly2.textColor = .label
-    staly2.translatesAutoresizingMaskIntoConstraints = false
-    staly2.backgroundColor = .systemBlue
-    staly2.layer.cornerRadius = 10
-    staly2.clipsToBounds = true
-    return staly2
+  lazy var staly2LawyersPage: UILabel = {
+    let staly2LawyersPage = UILabel()
+    staly2LawyersPage.font = UIFont.systemFont(ofSize: 18)
+    staly2LawyersPage.numberOfLines = 0
+    staly2LawyersPage.textColor = .label
+    staly2LawyersPage.translatesAutoresizingMaskIntoConstraints = false
+    staly2LawyersPage.backgroundColor = .systemBlue
+    staly2LawyersPage.layer.cornerRadius = 10
+    staly2LawyersPage.clipsToBounds = true
+    return staly2LawyersPage
   }()
   //--------------------------------------------------------------------------
-  lazy var textBlogPage: UILabel = {
-    let textBlogPage = UILabel()
-    textBlogPage.backgroundColor = .systemGray4
-    textBlogPage.textColor = .orange
-    textBlogPage.font = .systemFont(ofSize: 18)
-    textBlogPage.numberOfLines = 12
-    textBlogPage.textAlignment = .right
-    textBlogPage.translatesAutoresizingMaskIntoConstraints = false
-    return textBlogPage
+  lazy var textLawyersPage: UILabel = {
+    let textLawyersPage = UILabel()
+    textLawyersPage.backgroundColor = .systemGray4
+    textLawyersPage.textColor = .orange
+    textLawyersPage.font = .systemFont(ofSize: 18)
+    textLawyersPage.numberOfLines = 12
+    textLawyersPage.textAlignment = .right
+    textLawyersPage.translatesAutoresizingMaskIntoConstraints = false
+    return textLawyersPage
   }()
   //--------------------------------------------------------------------------
-  lazy var button: UIButton = {
-    let button = UIButton()
-    button.setTitle("اتصال", for: .normal)
-    button.setTitleColor(.label, for: .normal)
-    button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-    button.layer.cornerRadius = 20
-    button.clipsToBounds = true
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.backgroundColor = .systemGray4
+  lazy var buttonLawyersPage: UIButton = {
+    let buttonLawyersPage = UIButton()
+    buttonLawyersPage.setTitle("اتصال", for: .normal)
+    buttonLawyersPage.setTitleColor(.label, for: .normal)
+    buttonLawyersPage.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+    buttonLawyersPage.layer.cornerRadius = 20
+    buttonLawyersPage.clipsToBounds = true
+    buttonLawyersPage.translatesAutoresizingMaskIntoConstraints = false
+    buttonLawyersPage.backgroundColor = .systemGray4
     //Add a Simple Alert with Buttons
-    button.addTarget(self, action: #selector(popupAlert), for: .touchUpInside)
-    return button
+    buttonLawyersPage.addTarget(self, action: #selector(popupAlert), for: .touchUpInside)
+    return buttonLawyersPage
   }()
   //--------------------------------------------------------------------------
-  lazy var button2: UIButton = {
-    let button2 = UIButton()
-    button2.setTitle("اتصال", for: .normal)
-    button2.setTitleColor(.label, for: .normal)
-    button2.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-    button2.layer.cornerRadius = 20
-    button2.clipsToBounds = true
-    button2.translatesAutoresizingMaskIntoConstraints = false
-    button2.backgroundColor = .orange
+  lazy var button2LawyersPage: UIButton = {
+    let button2LawyersPage = UIButton()
+    button2LawyersPage.setTitle("اتصال", for: .normal)
+    button2LawyersPage.setTitleColor(.label, for: .normal)
+    button2LawyersPage.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+    button2LawyersPage.layer.cornerRadius = 20
+    button2LawyersPage.clipsToBounds = true
+    button2LawyersPage.translatesAutoresizingMaskIntoConstraints = false
+    button2LawyersPage.backgroundColor = .orange
     //Add a Simple Alert with Buttons
-    button2.addTarget(self, action: #selector(popupAlert2), for: .touchUpInside)
-    return button2
+    button2LawyersPage.addTarget(self, action: #selector(popupAlert2), for: .touchUpInside)
+    return button2LawyersPage
   }()
   //--------------------------------------------------------------------------
   func allConstraint(){
-    view.addSubview(imageBlogPage)
+    
+    view.addSubview(imageLawyersPage)
     NSLayoutConstraint.activate([
-      imageBlogPage.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor),
-      imageBlogPage.centerXAnchor.constraint(equalTo:view.centerXAnchor),
-      imageBlogPage.widthAnchor.constraint(equalToConstant: 100),
-      imageBlogPage.heightAnchor.constraint(equalToConstant: 100)
+      imageLawyersPage.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor),
+      imageLawyersPage.centerXAnchor.constraint(equalTo:view.centerXAnchor),
+      imageLawyersPage.widthAnchor.constraint(equalToConstant: 100),
+      imageLawyersPage.heightAnchor.constraint(equalToConstant: 100)
     ])
     //------------------------------------------------------------------------
-    view.addSubview(staly)
+    view.addSubview(stalyLawyersPage)
     NSLayoutConstraint.activate([
-      staly.topAnchor.constraint(equalTo: imageBlogPage.bottomAnchor, constant: 10),
-      staly.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      staly.widthAnchor.constraint(equalToConstant: 350),
-      staly.heightAnchor.constraint(equalToConstant: 80)
+      stalyLawyersPage.topAnchor.constraint(equalTo: imageLawyersPage.bottomAnchor, constant: 10),
+      stalyLawyersPage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      stalyLawyersPage.widthAnchor.constraint(equalToConstant: 350),
+      stalyLawyersPage.heightAnchor.constraint(equalToConstant: 80)
     ])
     //------------------------------------------------------------------------
-    view.addSubview(nameBlogPage)
+    view.addSubview(nameLawyersPage)
     NSLayoutConstraint.activate([
-      nameBlogPage.topAnchor.constraint(equalTo: imageBlogPage.bottomAnchor, constant: 15),
-      nameBlogPage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      nameBlogPage.widthAnchor.constraint(equalToConstant: 340),
-      nameBlogPage.heightAnchor.constraint(equalToConstant: 30)
+      nameLawyersPage.topAnchor.constraint(equalTo: imageLawyersPage.bottomAnchor, constant: 15),
+      nameLawyersPage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      nameLawyersPage.widthAnchor.constraint(equalToConstant: 340),
+      nameLawyersPage.heightAnchor.constraint(equalToConstant: 30)
     ])
     //------------------------------------------------------------------------
-    view.addSubview(numberBlogePage)
+    view.addSubview(numberLawyersPage)
     NSLayoutConstraint.activate([
-      numberBlogePage.topAnchor.constraint(equalTo:nameBlogPage.bottomAnchor, constant: 10),
-      numberBlogePage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      numberBlogePage.widthAnchor.constraint(equalToConstant: 340),
-      numberBlogePage.heightAnchor.constraint(equalToConstant: 30)
+      numberLawyersPage.topAnchor.constraint(equalTo:nameLawyersPage.bottomAnchor, constant: 10),
+      numberLawyersPage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      numberLawyersPage.widthAnchor.constraint(equalToConstant: 340),
+      numberLawyersPage.heightAnchor.constraint(equalToConstant: 30)
     ])
     //------------------------------------------------------------------------
-    view.addSubview(staly2)
+    view.addSubview(staly2LawyersPage)
     NSLayoutConstraint.activate([
-      staly2.topAnchor.constraint(equalTo: numberBlogePage.bottomAnchor, constant: 20),
-      staly2.leftAnchor.constraint(equalTo:view.leftAnchor,constant:20),
-      staly2.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
-      staly2.heightAnchor.constraint(equalToConstant: 230)
+      staly2LawyersPage.topAnchor.constraint(equalTo: numberLawyersPage.bottomAnchor, constant: 20),
+      staly2LawyersPage.leftAnchor.constraint(equalTo:view.leftAnchor,constant:20),
+      staly2LawyersPage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
+      staly2LawyersPage.heightAnchor.constraint(equalToConstant: 230)
     ])
     //------------------------------------------------------------------------
-    view.addSubview(textBlogPage)
+    view.addSubview(textLawyersPage)
     NSLayoutConstraint.activate([
-      textBlogPage.topAnchor.constraint(equalTo: numberBlogePage.bottomAnchor, constant: 30),
-      textBlogPage.leftAnchor.constraint(equalTo:view.leftAnchor,constant:30),
-      textBlogPage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
+      textLawyersPage.topAnchor.constraint(equalTo: numberLawyersPage.bottomAnchor, constant: 30),
+      textLawyersPage.leftAnchor.constraint(equalTo:view.leftAnchor,constant:30),
+      textLawyersPage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
     ])
     //------------------------------------------------------------------------
-    view.addSubview(button)
-    self.view.addSubview(button)
+    view.addSubview(buttonLawyersPage)
+    self.view.addSubview(buttonLawyersPage)
     NSLayoutConstraint.activate([
-      button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -120),
-      button.widthAnchor.constraint(equalToConstant: 350),
-      button.heightAnchor.constraint(equalToConstant: 70)
+      buttonLawyersPage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      buttonLawyersPage.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -120),
+      buttonLawyersPage.widthAnchor.constraint(equalToConstant: 350),
+      buttonLawyersPage.heightAnchor.constraint(equalToConstant: 70)
     ])
     //------------------------------------------------------------------------
-    view.addSubview(button2)
-    self.view.addSubview(button2)
+    view.addSubview(button2LawyersPage)
+    self.view.addSubview(button2LawyersPage)
     NSLayoutConstraint.activate([
-      button2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      button2.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 20),
-      button2.widthAnchor.constraint(equalToConstant: 350),
-      button2.heightAnchor.constraint(equalToConstant: 70)
+      button2LawyersPage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      button2LawyersPage.topAnchor.constraint(equalTo: buttonLawyersPage.bottomAnchor, constant: 20),
+      button2LawyersPage.widthAnchor.constraint(equalToConstant: 350),
+      button2LawyersPage.heightAnchor.constraint(equalToConstant: 70)
     ])
   }
   //--------------------------------------------------------------------------

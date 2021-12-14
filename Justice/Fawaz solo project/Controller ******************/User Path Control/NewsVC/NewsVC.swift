@@ -14,18 +14,23 @@ class NewsVC: UIViewController {
     super.viewDidLoad()
     
     view.backgroundColor = UIColor (named: "myBackgroundColor")
-    let TV = UITableView()
     
+    allConstraint()
+  }
+  //--------------------------------------------------------------------------
+  lazy var TV: UITableView = {
+    let TV = UITableView()
+    TV.translatesAutoresizingMaskIntoConstraints = false
     TV.dataSource = self
     TV.delegate = self
-    
-    TV.register(NewsVC_Cell.self, forCellReuseIdentifier: NewsVC_Cell.identifier)
-    
     TV.rowHeight = 130
-    TV.translatesAutoresizingMaskIntoConstraints = false
+    TV.register(NewsVC_Cell.self, forCellReuseIdentifier: NewsVC_Cell.identifier)
+    return TV
+  }()
+  //--------------------------------------------------------------------------
+  func allConstraint(){
     
     view.addSubview(TV)
-    
     NSLayoutConstraint.activate([
       TV.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
       TV.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
@@ -61,9 +66,9 @@ extension NewsVC: UITableViewDelegate, UITableViewDataSource {
     let data3 = data_News_str[indexPath.row]
     
     let VC4_NewsPageVC = NewsPageVC()
-    VC4_NewsPageVC.imageBlogPage.image = data3.image
-    VC4_NewsPageVC.nameBlogPage.text = data3.title
-    VC4_NewsPageVC.textBlogPage.text = data3.text
+    VC4_NewsPageVC.imageNewsPage.image = data3.image
+    VC4_NewsPageVC.nameNewsPage.text = data3.title
+    VC4_NewsPageVC.textNewsPage.text = data3.text
     navigationController?.pushViewController(VC4_NewsPageVC, animated: true)
   }
 }

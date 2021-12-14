@@ -9,6 +9,15 @@ import UIKit
 
 class NewsPageVC: UIViewController{
   
+  //--------------------------------------------------------------------------
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    view.backgroundColor = UIColor (named: "myBackgroundColor")
+    
+    allConstraint()
+  }
+  //--------------------------------------------------------------------------
   lazy var scrollView: UIScrollView = {
     let scrollView = UIScrollView(frame: .zero)
     scrollView.backgroundColor = .systemGray
@@ -26,29 +35,75 @@ class NewsPageVC: UIViewController{
     return containerView
   }()
   //--------------------------------------------------------------------------
-  let imageBlogPage = UIImageView()
-  let staly = UILabel()
-  let nameBlogPage = UILabel()
-  let staly2 = UILabel()
-  let textBlogPage = UILabel()
-  let button = UIButton()
-  
+  lazy var imageNewsPage: UIImageView = {
+    let imageNewsPage = UIImageView()
+    imageNewsPage.translatesAutoresizingMaskIntoConstraints = false
+    imageNewsPage.backgroundColor = .systemGray4
+    return imageNewsPage
+  }()
   //--------------------------------------------------------------------------
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    view.backgroundColor = UIColor (named: "myBackgroundColor")
+  lazy var stalyNewsPage: UILabel = {
+    let stalyNewsPage = UILabel()
+    stalyNewsPage.textAlignment = .center
+    stalyNewsPage.backgroundColor = .systemGray4
+    stalyNewsPage.textColor = .label
+    stalyNewsPage.font = .systemFont(ofSize: 20)
+    stalyNewsPage.layer.cornerRadius = 10
+    stalyNewsPage.clipsToBounds = true
+    stalyNewsPage.translatesAutoresizingMaskIntoConstraints = false
+    return stalyNewsPage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var nameNewsPage: UILabel = {
+    let nameNewsPage = UILabel()
+    nameNewsPage.textAlignment = .center
+    nameNewsPage.backgroundColor = .systemGray4
+    nameNewsPage.numberOfLines = 0
+    nameNewsPage.textColor = .label
+    nameNewsPage.font = .systemFont(ofSize: 20)
+    nameNewsPage.translatesAutoresizingMaskIntoConstraints = false
+    return nameNewsPage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var staly2NewsPage: UILabel = {
+    let staly2NewsPage = UILabel()
+    staly2NewsPage.font = UIFont.systemFont(ofSize: 18)
+    staly2NewsPage.numberOfLines = 0
+    staly2NewsPage.textColor = .label
+    staly2NewsPage.translatesAutoresizingMaskIntoConstraints = false
+    staly2NewsPage.backgroundColor = .systemGray4
+    staly2NewsPage.layer.cornerRadius = 10
+    staly2NewsPage.clipsToBounds = true
+    return staly2NewsPage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var textNewsPage: UILabel = {
+    let textNewsPage = UILabel()
+    textNewsPage.backgroundColor = .systemGray4
+    textNewsPage.textColor = .label
+    textNewsPage.font = .systemFont(ofSize: 18)
+    textNewsPage.numberOfLines = 12
+    textNewsPage.textAlignment = .right
+    textNewsPage.translatesAutoresizingMaskIntoConstraints = false
+    return textNewsPage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var buttonNewsPage: UIButton = {
+    let buttonNewsPage = UIButton()
+    return buttonNewsPage
+  }()
+  //--------------------------------------------------------------------------
+  func allConstraint(){
     
     view.addSubview(scrollView)
-    scrollView.addSubview(containerView)
-    
     NSLayoutConstraint.activate([
       scrollView.topAnchor.constraint(equalTo: view.topAnchor),
       scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
       scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
       scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
     ])
-    
+    //------------------------------------------------------------------------
+    scrollView.addSubview(containerView)
     NSLayoutConstraint.activate([
       containerView.topAnchor.constraint(equalTo: scrollView.topAnchor),
       containerView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
@@ -57,80 +112,45 @@ class NewsPageVC: UIViewController{
       containerView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
       containerView.heightAnchor.constraint(equalToConstant: 900),
     ])
-    
     //------------------------------------------------------------------------
-    imageBlogPage.translatesAutoresizingMaskIntoConstraints = false
-    containerView.addSubview(imageBlogPage)
-    imageBlogPage.backgroundColor = .systemGray4
-    
+    containerView.addSubview(imageNewsPage)
     NSLayoutConstraint.activate([
-      imageBlogPage.topAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.topAnchor,constant: 10),
-      imageBlogPage.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-      imageBlogPage.heightAnchor.constraint(equalToConstant: 300),
-      imageBlogPage.leftAnchor.constraint(equalTo: containerView.leftAnchor),
-      imageBlogPage.rightAnchor.constraint(equalTo: containerView.rightAnchor)
+      imageNewsPage.topAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.topAnchor,constant: 10),
+      imageNewsPage.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+      imageNewsPage.heightAnchor.constraint(equalToConstant: 300),
+      imageNewsPage.leftAnchor.constraint(equalTo: containerView.leftAnchor),
+      imageNewsPage.rightAnchor.constraint(equalTo: containerView.rightAnchor)
     ])
     //------------------------------------------------------------------------
-    staly.textAlignment = .center
-    staly.backgroundColor = .systemGray4
-    staly.textColor = .label
-    staly.font = .systemFont(ofSize: 20)
-    staly.layer.cornerRadius = 10
-    staly.clipsToBounds = true
-    staly.translatesAutoresizingMaskIntoConstraints = false
-    containerView.addSubview(staly)
-    
+    containerView.addSubview(stalyNewsPage)
     NSLayoutConstraint.activate([
-      staly.topAnchor.constraint(equalTo: imageBlogPage.bottomAnchor, constant: 10),
-      staly.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-      staly.heightAnchor.constraint(equalToConstant: 80),
-      staly.widthAnchor.constraint(equalToConstant: 380),
+      stalyNewsPage.topAnchor.constraint(equalTo: imageNewsPage.bottomAnchor, constant: 10),
+      stalyNewsPage.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+      stalyNewsPage.heightAnchor.constraint(equalToConstant: 80),
+      stalyNewsPage.widthAnchor.constraint(equalToConstant: 380),
     ])
     //------------------------------------------------------------------------
-    nameBlogPage.textAlignment = .center
-    nameBlogPage.backgroundColor = .systemGray4
-    nameBlogPage.numberOfLines = 0
-    nameBlogPage.textColor = .label
-    nameBlogPage.font = .systemFont(ofSize: 20)
-    nameBlogPage.translatesAutoresizingMaskIntoConstraints = false
-    containerView.addSubview(nameBlogPage)
-    
+    containerView.addSubview(nameNewsPage)
     NSLayoutConstraint.activate([
-      nameBlogPage.topAnchor.constraint(equalTo: imageBlogPage.bottomAnchor, constant: 15),
-      nameBlogPage.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-      nameBlogPage.heightAnchor.constraint(equalToConstant: 70),
-      nameBlogPage.widthAnchor.constraint(equalToConstant: 370)
+      nameNewsPage.topAnchor.constraint(equalTo: imageNewsPage.bottomAnchor, constant: 15),
+      nameNewsPage.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+      nameNewsPage.heightAnchor.constraint(equalToConstant: 70),
+      nameNewsPage.widthAnchor.constraint(equalToConstant: 370)
     ])
     //------------------------------------------------------------------------
-    staly2.font = UIFont.systemFont(ofSize: 18)
-    staly2.numberOfLines = 0
-    staly2.textColor = .label
-    staly2.translatesAutoresizingMaskIntoConstraints = false
-    staly2.backgroundColor = .systemGray4
-    staly2.layer.cornerRadius = 10
-    staly2.clipsToBounds = true
-    containerView.addSubview(staly2)
-    
+    containerView.addSubview(staly2NewsPage)
     NSLayoutConstraint.activate([
-      staly2.topAnchor.constraint(equalTo: nameBlogPage.bottomAnchor, constant: 15),
-      staly2.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-      staly2.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor, constant: -15),
-      staly2.widthAnchor.constraint(equalToConstant: 370)
+      staly2NewsPage.topAnchor.constraint(equalTo: nameNewsPage.bottomAnchor, constant: 15),
+      staly2NewsPage.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+      staly2NewsPage.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor, constant: -15),
+      staly2NewsPage.widthAnchor.constraint(equalToConstant: 370)
     ])
     //------------------------------------------------------------------------
-    textBlogPage.backgroundColor = .systemGray4
-    textBlogPage.textColor = .label
-    textBlogPage.font = .systemFont(ofSize: 18)
-    textBlogPage.numberOfLines = 12
-    textBlogPage.textAlignment = .right
-    textBlogPage.translatesAutoresizingMaskIntoConstraints = false
-    containerView.addSubview(textBlogPage)
-    
+    containerView.addSubview(textNewsPage)
     NSLayoutConstraint.activate([
-      textBlogPage.topAnchor.constraint(equalTo: nameBlogPage.bottomAnchor, constant: 25),
-      textBlogPage.bottomAnchor.constraint(equalTo: containerView.safeAreaLayoutGuide.bottomAnchor, constant: -25),
-      textBlogPage.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-      textBlogPage.widthAnchor.constraint(equalToConstant: 350)
+      textNewsPage.topAnchor.constraint(equalTo: nameNewsPage.bottomAnchor, constant: 25),
+      textNewsPage.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+      textNewsPage.widthAnchor.constraint(equalToConstant: 350)
     ])
   }
 }

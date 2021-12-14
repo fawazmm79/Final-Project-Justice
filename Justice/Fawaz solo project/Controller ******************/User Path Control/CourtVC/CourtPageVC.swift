@@ -10,31 +10,45 @@ import UIKit
 class CourtPageVC: UIViewController {
   
   var restFromVC: Court_str?
-  
-  let imageCourtPage = UIImageView()
-  let nameCourtPage = UILabel()
   //--------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
     
     view.backgroundColor = UIColor (named: "myBackgroundColor")
     
+    all()
+  }
+  //--------------------------------------------------------------------------
+  lazy var TV: UITableView = {
+    let TV = UITableView()
+    TV.translatesAutoresizingMaskIntoConstraints = false
+    TV.rowHeight = 80
+    TV.dataSource = self
+    TV.delegate = self
+    TV.register(Service_Cell.self, forCellReuseIdentifier: Service_Cell.identifier)
+    return TV
+  }()
+  //--------------------------------------------------------------------------
+  lazy var imageCourtPage: UIImageView = {
+    let imageCourtPage = UIImageView()
     imageCourtPage.translatesAutoresizingMaskIntoConstraints = false
+    return imageCourtPage
+  }()
+  //--------------------------------------------------------------------------
+  lazy var nameCourtPage: UILabel = {
+    let nameCourtPage = UILabel()
     nameCourtPage.translatesAutoresizingMaskIntoConstraints = false
+    return nameCourtPage
+  }()
+  //--------------------------------------------------------------------------
+  func all(){
     
-    let TVs = UITableView()
-    TVs.dataSource = self
-    TVs.delegate = self
-    TVs.register(Service_Cell.self, forCellReuseIdentifier: Service_Cell.identifier)
-    TVs.rowHeight = 80
-    TVs.translatesAutoresizingMaskIntoConstraints = false
-    
-    view.addSubview(TVs)
+    view.addSubview(TV)
     NSLayoutConstraint.activate([
-      TVs.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      TVs.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-      TVs.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-      TVs.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
+      TV.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      TV.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      TV.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+      TV.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
     ])
   }
 }
@@ -64,13 +78,12 @@ extension CourtPageVC: UITableViewDelegate, UITableViewDataSource {
     let data2 = restFromVC!.a[indexPath.row]
     
     let VC2_ServicePageVC = ServicePageVC()
-    VC2_ServicePageVC.imageBlogPage.image = data2.imageA
-    VC2_ServicePageVC.nameBlogPage.text = data2.nameA
-    VC2_ServicePageVC.textBlogPage.text = data2.summaryA
+    VC2_ServicePageVC.imageServicePage.image = data2.imageA
+    VC2_ServicePageVC.nameServicePage.text = data2.nameA
+    VC2_ServicePageVC.textServicePage.text = data2.summaryA
     VC2_ServicePageVC.restFromVC2 = data2
     
     navigationController?.pushViewController(VC2_ServicePageVC, animated: true)
-    
   }
 }
 //--------------------------------------------------------------------------

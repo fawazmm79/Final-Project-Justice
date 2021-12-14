@@ -10,19 +10,19 @@ import UIKit
 
 class MyProfilePageVC : UIViewController{
   
-  let imageBlogPage = UIImageView()
-  let staly = UILabel()
-  let nameBlogPage = UILabel()
-  let numberBlogePage = UILabel()
-  let staly2 = UILabel()
-  let textBlogPage = UILabel()
-  let button = UIButton()
-  
   //--------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
     
     view.backgroundColor = UIColor (named: "myBackgroundColor")
   }
+  //--------------------------------------------------------------------------
+  let imageMyProfilePage = UIImageView()
+  let stalyMyProfilePage = UILabel()
+  let nameMyProfilePage = UILabel()
+  let numberMyProfilePage = UILabel()
+  let staly2MyProfilePage = UILabel()
+  let textMyProfilePage = UILabel()
+  let buttonMyProfilePage = UIButton()
 }
 //--------------------------------------------------------------------------

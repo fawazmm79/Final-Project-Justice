@@ -11,6 +11,14 @@ import TransitionButton
 class User_OR_Lawyer: UIViewController {
   
   //--------------------------------------------------------------------------
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    view.backgroundColor = .white
+    
+    allConstraint()
+  }
+  //--------------------------------------------------------------------------
   lazy var scrollView: UIScrollView = {
     let scrollView = UIScrollView(frame: .zero)
     scrollView.backgroundColor = UIColor(named: "myBackgroundColor")
@@ -38,7 +46,7 @@ class User_OR_Lawyer: UIViewController {
     return appIcon
   }()
   //--------------------------------------------------------------------------
-  lazy var label: UILabel = {
+  lazy var labelWelcome: UILabel = {
     let label = UILabel()
     label.text = """
 Welcome to the Justice application
@@ -108,17 +116,17 @@ The application provides all judicial and legal services and provides certified 
       appIcon.heightAnchor.constraint(equalToConstant: 200),
     ])
     //------------------------------------------------------------------------
-    containerView.addSubview(label)
+    containerView.addSubview(labelWelcome)
     NSLayoutConstraint.activate([
-      label.topAnchor.constraint(equalTo: appIcon.bottomAnchor, constant: 50),
-      label.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-      label.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20),
-      label.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20),
+      labelWelcome.topAnchor.constraint(equalTo: appIcon.bottomAnchor, constant: 50),
+      labelWelcome.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+      labelWelcome.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20),
+      labelWelcome.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20),
     ])
     //------------------------------------------------------------------------
     containerView.addSubview(userPage)
     NSLayoutConstraint.activate([
-      userPage.topAnchor.constraint(equalTo: label.bottomAnchor, constant:50),
+      userPage.topAnchor.constraint(equalTo: labelWelcome.bottomAnchor, constant:50),
       userPage.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
       userPage.widthAnchor.constraint(equalToConstant: 300),
       userPage.heightAnchor.constraint(equalToConstant: 80),
@@ -131,14 +139,6 @@ The application provides all judicial and legal services and provides certified 
       lawyerPage.widthAnchor.constraint(equalToConstant: 300),
       lawyerPage.heightAnchor.constraint(equalToConstant: 80),
     ])
-  }
-  //--------------------------------------------------------------------------
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    view.backgroundColor = .white
-    
-    allConstraint()
   }
   //--------------------------------------------------------------------------
   @objc private func logInUserButtonTapped() {
