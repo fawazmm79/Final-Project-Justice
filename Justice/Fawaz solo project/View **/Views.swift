@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 //--------------------------------------------------------------------------
-// MARK: - Image_View
 class Image_View: UIImageView {
   
   override init(frame: CGRect) {
@@ -31,7 +30,6 @@ class Image_View: UIImageView {
   }
 }
 //--------------------------------------------------------------------------
-// MARK: - TextField_View
 class TextField_View: UITextField{
   
   override init(frame: CGRect) {
@@ -54,7 +52,6 @@ class TextField_View: UITextField{
   }
 }
 //--------------------------------------------------------------------------
-// MARK: - Button_View
 class Button_View: UIButton{
   
   override init(frame: CGRect) {
@@ -77,7 +74,6 @@ class Button_View: UIButton{
   }
 }
 //--------------------------------------------------------------------------
-// MARK: - LabelTo_View
 class LabelTo_View: UILabel{
   
   override init(frame: CGRect) {
@@ -95,7 +91,6 @@ class LabelTo_View: UILabel{
   }
 }
 //--------------------------------------------------------------------------
-// MARK: - ButtonTo_View
 class ButtonTo_View: UIButton{
   
   override init(frame: CGRect) {
@@ -110,7 +105,6 @@ class ButtonTo_View: UIButton{
   }
 }
 //------------------------------------------------------------------------
-// MARK: - BackUser_OR_Lawyer
 class BackUser_OR_Lawyer: UIButton{
   
   override init(frame: CGRect) {

@@ -1,20 +1,19 @@
 //
-//  User.swift
+//  Lawerrrrrrr.swift
 //  Fawaz solo project
 //
-//  Created by Fawaz on 27/11/2021.
+//  Created by Fawaz on 12/12/2021.
 //
 
 import UIKit
-import MapKit
-
-struct User {
+//--------------------------------------------------------------------------
+struct Lawyer {
   let id: String
   let name: String
   let image: String
   let latitude: Double
   let longitude: Double
-  
+
   var dict: [String: Any] {
     return [
       "name": name,
@@ -24,3 +23,4 @@ struct User {
     ]
   }
 }
+//--------------------------------------------------------------------------

@@ -6,8 +6,10 @@
 //
 
 import UIKit
-
-class TabVC: UITabBarController {
+protocol fawaz{
+  
+}
+class TabVC: UITabBarController,fawaz {
   
   //--------------------------------------------------------------------------
   override func viewDidLoad() {
