@@ -132,6 +132,34 @@
 			path = MyProfile;
 			sourceTree = "<group>";
 		};
+		CC46AA0F2769F3C30035D004 /* User Path ** */ = {
+			isa = PBXGroup;
+			children = (
+				CCF275B727660D1800452DB0 /* Model User */,
+				CC46AA112769F3F20035D004 /* Service User */,
+				CCF275BC27660E2E00452DB0 /* Controller User */,
+			);
+			path = "User Path **";
+			sourceTree = "<group>";
+		};
+		CC46AA102769F3D20035D004 /* Lawyer Path ** */ = {
+			isa = PBXGroup;
+			children = (
+				CCDB1CC42752AA350027D9A3 /* Model Lawyer */,
+				CCDB1CC52752AA4C0027D9A3 /* Service Lawyer */,
+				CCF275BB27660E2300452DB0 /* Controller Lawyer */,
+			);
+			path = "Lawyer Path **";
+			sourceTree = "<group>";
+		};
+		CC46AA112769F3F20035D004 /* Service User */ = {
+			isa = PBXGroup;
+			children = (
+				CCDB3EEE2752B13F00CA9BA0 /* RegisterServiceUser.swift */,
+			);
+			path = "Service User";
+			sourceTree = "<group>";
+		};
 		CC7CD7A9276668A100CEED79 /* Localization ** */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,12 +208,12 @@
 			path = NewsVC;
 			sourceTree = "<group>";
 		};
-		CC9C820F27534B3000A7C0ED /* Register */ = {
+		CC9C820F27534B3000A7C0ED /* Register ** */ = {
 			isa = PBXGroup;
 			children = (
 				CCF275C127660FAE00452DB0 /* User_OR_Lawyer.swift */,
 			);
-			path = Register;
+			path = "Register **";
 			sourceTree = "<group>";
 		};
 		CCDB1CA42752A9E80027D9A3 = {
@@ -216,40 +244,28 @@
 				CCDB1CBE2752A9E80027D9A3 /* Info.plist */,
 				CCDB1CC72752AC420027D9A3 /* GoogleService-Info.plist */,
 				CC7CD7A9276668A100CEED79 /* Localization ** */,
-				CCDB1CC52752AA4C0027D9A3 /* Service ** */,
-				CCDB1CC42752AA350027D9A3 /* Model (Data) ** */,
 				CCF275B827660D8800452DB0 /* View ** */,
-				CCDB1CC62752AA570027D9A3 /* Controller ** */,
+				CC9C820F27534B3000A7C0ED /* Register ** */,
+				CC46AA0F2769F3C30035D004 /* User Path ** */,
+				CC46AA102769F3D20035D004 /* Lawyer Path ** */,
 			);
 			path = "Fawaz solo project";
 			sourceTree = "<group>";
 		};
-		CCDB1CC42752AA350027D9A3 /* Model (Data) ** */ = {
+		CCDB1CC42752AA350027D9A3 /* Model Lawyer */ = {
 			isa = PBXGroup;
 			children = (
-				CCF275B727660D1800452DB0 /* User Path Model */,
 				CCF275B627660D1200452DB0 /* Lawyer Path Model */,
 			);
-			path = "Model (Data) **";
+			path = "Model Lawyer";
 			sourceTree = "<group>";
 		};
-		CCDB1CC52752AA4C0027D9A3 /* Service ** */ = {
+		CCDB1CC52752AA4C0027D9A3 /* Service Lawyer */ = {
 			isa = PBXGroup;
 			children = (
-				CCDB3EEE2752B13F00CA9BA0 /* RegisterServiceUser.swift */,
 				CCF275C52766133B00452DB0 /* RegisterServiceLawyer.swift */,
 			);
-			path = "Service **";
-			sourceTree = "<group>";
-		};
-		CCDB1CC62752AA570027D9A3 /* Controller ** */ = {
-			isa = PBXGroup;
-			children = (
-				CC9C820F27534B3000A7C0ED /* Register */,
-				CCF275BC27660E2E00452DB0 /* User Path Control */,
-				CCF275BB27660E2300452DB0 /* Lawyer Path Control */,
-			);
-			path = "Controller **";
+			path = "Service Lawyer";
 			sourceTree = "<group>";
 		};
 		CCF275B627660D1200452DB0 /* Lawyer Path Model */ = {
@@ -260,7 +276,7 @@
 			path = "Lawyer Path Model";
 			sourceTree = "<group>";
 		};
-		CCF275B727660D1800452DB0 /* User Path Model */ = {
+		CCF275B727660D1800452DB0 /* Model User */ = {
 			isa = PBXGroup;
 			children = (
 				CCDB3EEC2752B13700CA9BA0 /* User.swift */,
@@ -269,7 +285,7 @@
 				CC9C821227539C9600A7C0ED /* News.swift */,
 				CC0FC70C2757517A00371ECD /* Profile.swift */,
 			);
-			path = "User Path Model";
+			path = "Model User";
 			sourceTree = "<group>";
 		};
 		CCF275B827660D8800452DB0 /* View ** */ = {
@@ -296,20 +312,20 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		CCF275BB27660E2300452DB0 /* Lawyer Path Control */ = {
+		CCF275BB27660E2300452DB0 /* Controller Lawyer */ = {
 			isa = PBXGroup;
 			children = (
 				CCF275C42766126F00452DB0 /* Lawyer Registration */,
 				CC932EB0276693C00072F603 /* TabBar */,
 				CC932EB3276695A40072F603 /* d.swift */,
 			);
-			path = "Lawyer Path Control";
+			path = "Controller Lawyer";
 			sourceTree = "<group>";
 		};
-		CCF275BC27660E2E00452DB0 /* User Path Control */ = {
+		CCF275BC27660E2E00452DB0 /* Controller User */ = {
 			isa = PBXGroup;
 			children = (
-				CCF275C3276610AD00452DB0 /* User Registration */,
+				CCF275C3276610AD00452DB0 /* Registration */,
 				CCF275B927660DDA00452DB0 /* TabBar */,
 				CC9C820C2753490600A7C0ED /* CourtVC */,
 				CC9C820D2753491A00A7C0ED /* LawyersVC */,
@@ -317,16 +333,16 @@
 				CCF275BA27660DEE00452DB0 /* Map */,
 				CC0FC70E2757527600371ECD /* MyProfile */,
 			);
-			path = "User Path Control";
+			path = "Controller User";
 			sourceTree = "<group>";
 		};
-		CCF275C3276610AD00452DB0 /* User Registration */ = {
+		CCF275C3276610AD00452DB0 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
 				CCDB3EF02752B14B00CA9BA0 /* LogIn_asUser.swift */,
 				CCDB3EF22752B18B00CA9BA0 /* SingUp_asUser.swift */,
 			);
-			path = "User Registration";
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		CCF275C42766126F00452DB0 /* Lawyer Registration */ = {
