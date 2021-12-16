@@ -17,8 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     window = UIWindow(frame: UIScreen.main.bounds)
     
-//    let home = User_OR_Lawyer()LogIn_asUser
-    let home = LogIn_asUser()
+    let home = User_OR_Lawyer()
+//    let home = LogIn_asUser()
     self.window?.rootViewController = home
     window?.makeKeyAndVisible()
     window?.windowScene = windowScene
