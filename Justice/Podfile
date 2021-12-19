@@ -13,5 +13,9 @@ pod ‘Firebase/Firestore'
 
 pod 'TransitionButton'
 
+pod 'Firebase/Storage'
+pod 'MessageKit'
+
+
 
 end

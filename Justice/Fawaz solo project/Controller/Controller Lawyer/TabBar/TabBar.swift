@@ -38,19 +38,9 @@ class TabLawyer: UITabBarController {
     viewControllers = [
       
       createNavController(
-        for:D(),
-           title: NSLocalizedString("fffff", comment: ""),
+        for:ChatVC(),
+           title: NSLocalizedString("Chat", comment: ""),
            image: UIImage(systemName: "square.grid.2x2")!),
-      
-      createNavController(
-        for:CourtVC(),
-           title: NSLocalizedString("الخدمات الإلكترونيه", comment: ""),
-           image: UIImage(systemName: "square.grid.2x2")!),
-      
-      createNavController(
-        for:LawyersVC (),
-           title: NSLocalizedString("المحامين", comment: ""),
-           image: UIImage(systemName: "person.2.crop.square.stack")!),
       
       createNavController(
         for:NewsVC (),

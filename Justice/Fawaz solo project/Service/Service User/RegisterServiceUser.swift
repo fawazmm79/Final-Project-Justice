@@ -34,9 +34,11 @@ class RegisterServiceUser {
           id: (data["id"] as? String) ?? "No id",
           name: (data["name"] as? String) ?? "No name",
           image: (data["image"] as? String) ?? "no image",
+          userEmail: (data["email"] as? String) ?? "no email",
+          status: (data["status"] as? String) ?? "no status",
           latitude: (data["latitude"] as? Double) ?? 0.0,
           longitude: (data["longitude"] as? Double) ?? 0.0
-        )
+          )
         users.append(user)
       }
       

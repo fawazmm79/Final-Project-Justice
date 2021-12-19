@@ -205,7 +205,14 @@ class ServicePageVC : UIViewController{
                                   preferredStyle: .alert)
     
     alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-      self.btnCallClick()
+      
+      let vc = DMScreen()
+      vc.modalPresentationStyle = .fullScreen
+      self.present(vc, animated: true, completion: nil)
+      
+      
+      
+//      self.btnCallClick()
       print("Yes call")}))
     
     alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in

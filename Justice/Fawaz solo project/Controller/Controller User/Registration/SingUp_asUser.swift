@@ -178,7 +178,11 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
     
     RegisterServiceUser.shared.addUser(
-      user: User(id: uuid, name: name, image: "f", latitude: 0.0, longitude: 0.0)
+      user: User(id: uuid, name: name, image: "", userEmail: email, status: "", latitude: 0.0, longitude: 0.0)
+      
+      
+      
+//      (id: uuid, name: name, image: "f", latitude: 0.0, longitude: 0.0)
     )
     
     //open TabVC bage

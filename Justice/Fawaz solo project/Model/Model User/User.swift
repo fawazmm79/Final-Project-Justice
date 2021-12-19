@@ -10,11 +10,13 @@ import MapKit
 //--------------------------------------------------------------------------
 struct User {
   let id: String
-  let name: String
-  let image: String
-  let latitude: Double
-  let longitude: Double
-
+  var name: String
+  var image: String
+  var userEmail: String
+  var status: String
+  var latitude: Double
+  var longitude: Double
+  
   var dict: [String: Any] {
     return [
       "name": name,
