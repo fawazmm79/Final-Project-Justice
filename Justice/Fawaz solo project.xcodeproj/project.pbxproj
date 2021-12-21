@@ -22,7 +22,6 @@
 		CC37E6BA276B584B001AFA98 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC37E6B9276B584B001AFA98 /* ChatVC.swift */; };
 		CC37E6BC276B5851001AFA98 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC37E6BB276B5851001AFA98 /* ChatCell.swift */; };
 		CC37E6BE276B585B001AFA98 /* DMScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC37E6BD276B585B001AFA98 /* DMScreen.swift */; };
-		CC37E6C0276EFE05001AFA98 /* RegisterServiceLawyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC37E6BF276EFE05001AFA98 /* RegisterServiceLawyer.swift */; };
 		CC4D82F9275E1D0600C59D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCDB1CB92752A9E80027D9A3 /* Assets.xcassets */; };
 		CC7CD7A42766364300CEED79 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC7CD7A62766364300CEED79 /* Localizable.strings */; };
 		CC932EB2276694060072F603 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC932EB1276694060072F603 /* TabBar.swift */; };
@@ -72,7 +71,6 @@
 		CC37E6B9276B584B001AFA98 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		CC37E6BB276B5851001AFA98 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		CC37E6BD276B585B001AFA98 /* DMScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreen.swift; sourceTree = "<group>"; };
-		CC37E6BF276EFE05001AFA98 /* RegisterServiceLawyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterServiceLawyer.swift; sourceTree = "<group>"; };
 		CC7CD7A32766363A00CEED79 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CC7CD7A52766364300CEED79 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CC7CD7A72766364500CEED79 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				CCDB3EEE2752B13F00CA9BA0 /* RegisterServiceUser.swift */,
-				CC37E6BF276EFE05001AFA98 /* RegisterServiceLawyer.swift */,
 			);
 			path = "Service User";
 			sourceTree = "<group>";
@@ -287,7 +284,7 @@
 		CCDB1CC42752AA350027D9A3 /* Model Lawyer */ = {
 			isa = PBXGroup;
 			children = (
-				CCF275B627660D1200452DB0 /* Lawyer Path Model */,
+				CCF275BF27660F5700452DB0 /* Lawer.swift */,
 			);
 			path = "Model Lawyer";
 			sourceTree = "<group>";
@@ -298,14 +295,6 @@
 				CCF275C52766133B00452DB0 /* RegisterServiceLawyer.swift */,
 			);
 			path = "Service Lawyer";
-			sourceTree = "<group>";
-		};
-		CCF275B627660D1200452DB0 /* Lawyer Path Model */ = {
-			isa = PBXGroup;
-			children = (
-				CCF275BF27660F5700452DB0 /* Lawer.swift */,
-			);
-			path = "Lawyer Path Model";
 			sourceTree = "<group>";
 		};
 		CCF275B727660D1800452DB0 /* Model User */ = {
@@ -528,7 +517,6 @@
 				CC2AF90927548C84006C5172 /* ServiceCell.swift in Sources */,
 				CC37E6BC276B5851001AFA98 /* ChatCell.swift in Sources */,
 				CCDB3EFB2752D74900CA9BA0 /* CourtVC.swift in Sources */,
-				CC37E6C0276EFE05001AFA98 /* RegisterServiceLawyer.swift in Sources */,
 				CC2AF90727547EA2006C5172 /* NewsPageVC.swift in Sources */,
 				CCF275C227660FAE00452DB0 /* User_OR_Lawyer.swift in Sources */,
 				CCA9446527533D41000BEE49 /* NewsVC.swift in Sources */,

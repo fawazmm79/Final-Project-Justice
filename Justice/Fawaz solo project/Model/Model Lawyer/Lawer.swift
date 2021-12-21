@@ -14,7 +14,7 @@ struct Lawyer {
   let latitude: Double
   let longitude: Double
 
-  var dict: [String: Any] {
+  var dictLawyer: [String: Any] {
     return [
       "name": name,
       "id": id,

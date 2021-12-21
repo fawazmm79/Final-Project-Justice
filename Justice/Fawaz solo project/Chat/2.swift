@@ -10,8 +10,8 @@ import CoreLocation
 import MessageKit
 
 struct LocationMKit: LocationItem{
-    var location: CLLocation
-    var size: CGSize
+  var location: CLLocation
+  var size: CGSize
 }
 
 struct UserAnnotation: Decodable {
@@ -22,8 +22,8 @@ struct UserAnnotation: Decodable {
 }
 
 struct Location: Codable {
-    var long: String
-    var lat: String
+  var long: String
+  var lat: String
 }
 
 

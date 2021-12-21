@@ -95,19 +95,19 @@ class ChatVC: UIViewController {
                   print("userName: \(userName)")
                   
                   let newUser = User(
-//                    id: userId,
-//                    name: userName,
-//                    userEmail: userEmail,
-//                    status: userIsOnline
+                    //                    id: userId,
+                    //                    name: userName,
+                    //                    userEmail: userEmail,
+                    //                    status: userIsOnline
                     
-                      id: (data["id"] as? String) ?? "No id",
-                      name: (data["name"] as? String) ?? "No name",
-                      image: (data["image"] as? String) ?? "no image",
-                      userEmail: (data["email"] as? String) ?? "no email",
-                      status: (data["status"] as? String) ?? "no status",
-                      latitude: (data["latitude"] as? Double) ?? 0.0,
-                      longitude: (data["longitude"] as? Double) ?? 0.0
-                      
+                    id: (data["id"] as? String) ?? "No id",
+                    name: (data["name"] as? String) ?? "No name",
+                    image: (data["image"] as? String) ?? "no image",
+                    userEmail: (data["email"] as? String) ?? "no email",
+                    status: (data["status"] as? String) ?? "no status",
+                    latitude: (data["latitude"] as? Double) ?? 0.0,
+                    longitude: (data["longitude"] as? Double) ?? 0.0
+                    
                     
                   )
                   self.users.append(newUser)

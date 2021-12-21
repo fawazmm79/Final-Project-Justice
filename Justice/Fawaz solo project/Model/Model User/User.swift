@@ -17,11 +17,17 @@ struct User {
   var latitude: Double
   var longitude: Double
   
-  var dict: [String: Any] {
+  
+  
+  
+  
+  
+  var dictUser: [String: Any] {
     return [
       "name": name,
       "id": id,
       "latitude" : latitude,
+      
       "longitude" : longitude
     ]
   }

@@ -16,7 +16,7 @@ class RegisterServiceLawyer {
   //--------------------------------------------------------------------------
   // Add user to firestor//computed properties
   func addLawyer(lawyer: Lawyer) {
-    lawyersCollection.document(lawyer.id).setData(lawyer.dict)
+    lawyersCollection.document(lawyer.id).setData(lawyer.dictLawyer)
   }
   //--------------------------------------------------------------------------
   func listenToLawyers(completion: @escaping (([Lawyer]) -> Void)) {
