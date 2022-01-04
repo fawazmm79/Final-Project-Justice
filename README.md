@@ -94,13 +94,25 @@ Path Component
 
 # Server / Backend
 ## Models
+
 ### User model
 {
   id:{String},\
   name: {String},\
-  image: {String},
-  userEmail: {String},
-  status: {String},
-  latitude: {Double},
-  longitude: {Double},
+  image: {String},\
+  userEmail: {String},\
+  status: {String},\
+  latitude: {Double},\
+  longitude: {Double},\
+}
+
+### Lawyer model
+{
+  id:{String},\
+  name: {String},\
+  image: {String},\
+  userEmail: {String},\
+  status: {String},\
+  latitude: {Double},\
+  longitude: {Double},\
 }
