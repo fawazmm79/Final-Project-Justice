@@ -119,5 +119,9 @@ Path Component
 # Links
 
 # Git
+[Github Home Page Link](https://github.com/fawazmm79)
+
+[Project Repository Link] (https://github.com/fawazmm79/Final-Project-Justice.git)
 
 # Slides
+[Slides Link] (https://drive.google.com/file/d/1b4fRQ9xpeKBJ8UaSd5tVWHBn_0a5EiHG/view?usp=sharing)
