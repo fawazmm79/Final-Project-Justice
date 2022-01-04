@@ -97,22 +97,22 @@ Path Component
 
 ### User model
 {
-  id:{String},\
-  name: {String},\
-  image: {String},\
-  userEmail: {String},\
-  status: {String},\
-  latitude: {Double},\
-  longitude: {Double},\
+  id: {type: String, required: true, unique: true},\
+  name: {type: String, required: true, unique: true},\
+  image: {type: String, required: true, unique: false},\
+  userEmail: {type: String, required: true, unique: true},\
+  status: {type: String, required: true, unique: false},\
+  latitude: {type: String, required: true, unique: false},\
+  longitude: {type: String, required: true, unique: false},\
 }
 
 ### Lawyer model
 {
-  id:{String},\
-  name: {String},\
-  image: {String},\
-  userEmail: {String},\
-  status: {String},\
-  latitude: {Double},\
-  longitude: {Double},\
+  id: {type: String, required: true, unique: true},\
+  name: {type: String, required: true, unique: true},\
+  image: {type: String, required: true, unique: false},\
+  userEmail: {type: String, required: true, unique: true},\
+  status: {type: String, required: true, unique: false},\
+  latitude: {type: String, required: true, unique: false},\
+  longitude: {type: String, required: true, unique: false},\
 }
