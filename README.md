@@ -39,9 +39,24 @@ Justice is an application that provides certified lawyers classified according t
 | -------------- | ----------- | ---------------------------------------------------------------------- |
 | /              | Splash Page | The main page to specify the path of the user as a user or as a lawyer |
 | /user login    | Login Page  | Login, navigate to homepage after login                                |
-| /user signup   | Signup Page | signup, navigate to homepage after signup                              |
+| /user signup   | Signup Page | Signup, navigate to homepage after signup                              |
+| /home page     | Categories Cases |                                                                        |
+|                |             |                                                                        |
+|                |             |                                                                        |
+|                |             |                                                                        |
+|                |             |                                                                        |
+|                |             |                                                                        |
+|                |             |                                                                        |
+|                |             |                                                                        |
+|                |             |                                                                        |
+|                |             |                                                                        |
 | /Lawyer login  | Login Page  | Login, navigate to homepage after login                                |
 | /Lawyer signup | Signup Page | signup, navigate to homepage after signup                              |
+|                |             |                                                                        |
+|                |             |                                                                        |
+|                |             |                                                                        |
+|                |             |                                                                        |
+|                |             |                                                                        |
 |                |             |                                                                        |
 
 # Components
