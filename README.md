@@ -2,7 +2,7 @@
 
 [![wakatime](https://wakatime.com/badge/github/fawazmm79/Final-Project-Justice.svg)](https://wakatime.com/badge/github/fawazmm79/Final-Project-Justice)
 
-Description
+# Description
 Justice is an application that provides certified lawyers classified according to cases and provides legal information as well as the locations of lawyers' offices and courts on the map.
 
 User Stories
