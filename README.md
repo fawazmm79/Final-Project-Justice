@@ -41,22 +41,6 @@ Justice is an application that provides certified lawyers classified according t
 |/user signup|Signup Page|signup, navigate to homepage after signup|
 |/Lawyer login|Login Page|Login, navigate to homepage after login|
 |/Lawyer signup|Signup Page|signup, navigate to homepage after signup|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-Path Component
-/	SplashPage
-/signup	SignupPage
 
 # Components
 ### User path
