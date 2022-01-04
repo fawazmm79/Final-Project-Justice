@@ -35,29 +35,30 @@ Justice is an application that provides certified lawyers classified according t
 * see exit point
 
 # Client / Frontend
-| Path           | Component   | Behavior                                                               |
-| -------------- | ----------- | ---------------------------------------------------------------------- |
-| /              | Splash Page | The main page to specify the path of the user as a user or as a lawyer |
-| /user login    | Login Page  | Login, navigate to homepage after login                                |
-| /user signup   | Signup Page | Signup, navigate to homepage after signup                              |
-| /home page     | Categories Cases |                                                                        |
-|                |             |                                                                        |
-|                |             |                                                                        |
-|                |             |                                                                        |
-|                |             |                                                                        |
-|                |             |                                                                        |
-|                |             |                                                                        |
-|                |             |                                                                        |
-|                |             |                                                                        |
-|                |             |                                                                        |
-| /Lawyer login  | Login Page  | Login, navigate to homepage after login                                |
-| /Lawyer signup | Signup Page | signup, navigate to homepage after signup                              |
-|                |             |                                                                        |
-|                |             |                                                                        |
-|                |             |                                                                        |
-|                |             |                                                                        |
-|                |             |                                                                        |
-|                |             |                                                                        |
+| User Path          | Component             | User Behavior                                                                            |
+| ------------------ | --------------------- | ---------------------------------------------------------------------------------------- |
+| /                  | Splash Page           | The main page to specify the path of the user as a user or as a lawyer                   |
+| /user login        | Login Page            | Login, navigate to homepage after login                                                  |
+| /user signup       | Signup Page           | Signup, navigate to homepage after signup                                                |
+| /home page         | Categories Cases      | Browse all case categories                                                               |
+| /lawyers page      | all lawyers           | Browse all lawyers in the application to communicate with one of the lawyers             |
+| /conversation page | All the conversations | All conversations you have made or will be doing will appear                             |
+| /news page         | All News page         | Browse all news about new courts and laws                                                |
+| /locations page    | All locations         | Browse all the locations added in the application for courts places and lawyers' offices |
+| /more page         | All Settings page     | for app settings                                                                         |
+| ------------------ | --------------------- | ---------------------------------------------------------------------------------------- |
+| Lawyer Path        | Component             | Lawyer Behavior                                                                          |
+| ------------------ | --------------------- | ---------------------------------------------------------------------------------------- |
+| /                  | Splash Page           | The main page to specify the path of the user as a user or as a lawyer                   |
+| /user login        | Login Page            | Login, navigate to homepage after login                                                  |
+| /user signup       | Signup Page           | Signup, navigate to homepage after signup                                                |
+| /home page         | Categories Cases      | Browse all case categories                                                               |
+| /lawyers page      | all lawyers           | Browse all lawyers in the application to communicate with one of the lawyers             |
+| /conversation page | All the conversations | All conversations you have made or will be doing will appear                             |
+| /news page         | All News page         | Browse all news about new courts and laws                                                |
+| /locations page    | All locations         | Browse all the locations added in the application for courts places and lawyers' offices |
+| /more page         | All Settings page     | for app settings                                                                         |
+| ------------------ | --------------------- | ---------------------------------------------------------------------------------------- |
 
 # Components
 ### User path
