@@ -38,4 +38,24 @@ Path	Component
 /	SplashPage
 /signup	SignupPage
 
+Components for User path
+* Page for Selection Path as user or Lawyer
+* Page for Login as User
+* Page for Signup as User
+* Tab Bar
+* Page for Categories Cases
+* Page for all lawyers names in app
+* Page for Previous Conversations
+* Page for News about courts and laws
+* Page for Locations on the map
+* Page for More Settings
+
+Components for Lawyer path
+* Page for Selection Path as user or Lawyer
+* Page for Login as Lawyer
+* Page for Signup as Lawyer
+* Tab Bar
+* Page for Previous Conversations with users
+* Page for Locations on the map
+* Page for More Settings
 
