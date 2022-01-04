@@ -30,7 +30,7 @@ Justice is an application that provides certified lawyers classified according t
 * see my profile
 * see exit point
 
-### lawyer profile:
+### Lawyer profile:
 * see my profile
 * see exit point
 
