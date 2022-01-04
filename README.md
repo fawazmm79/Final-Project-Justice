@@ -5,7 +5,7 @@
 # Description
 Justice is an application that provides certified lawyers classified according to cases and provides legal information as well as the locations of lawyers' offices and courts on the map.
 
-User Stories
+# User Stories
 * As a user I want to Go to the registration page as a user So that I can start use the app.
 * As a user I want to login to my account So that I can use my account on the app.
 * As a user I want to create my account So that I can start use the app.
@@ -16,7 +16,7 @@ User Stories
 * As a user I want to Browse the news of courts and laws in the Kingdom of Saudi Arabia So that I can know all the news about the courts and their new laws and news.
 * As a user I want to See the locations of the courts and lawyers' offices that are on the map and close to my location So that I can access them easily.
 
-Lawyer Stories
+# Lawyer Stories
 * As a lawyer I want to Go to the registration page as a lawyer So that I can start use the app.
 * As a lawyer I want to login to my account So that I can use my account on the app.
 * As a lawyer I want to create my account So that I can start use the app.
@@ -24,7 +24,7 @@ Lawyer Stories
 * As a lawyer I want to Receive user questions through chat So that I can Answering user questions.
 * As a lawyer I want to Receive user questions through a call So that I can Answering user questions.
 
-Backlog
+# Backlog
 User profile:
 * see my profile
 * see exit point
@@ -33,12 +33,12 @@ lawyer profile:
 * see my profile
 * see exit point
 
-Client / Frontend
+# Client / Frontend
 Path	Component
 /	SplashPage
 /signup	SignupPage
 
-Components for User path
+# Components for User path
 * Page for Selection Path as user or Lawyer
 * Page for Login as User
 * Page for Signup as User
@@ -50,7 +50,7 @@ Components for User path
 * Page for Locations on the map
 * Page for More Settings
 
-Components for Lawyer path
+# Components for Lawyer path
 * Page for Selection Path as user or Lawyer
 * Page for Login as Lawyer
 * Page for Signup as Lawyer
@@ -59,7 +59,7 @@ Components for Lawyer path
 * Page for Locations on the map
 * Page for More Settings
 
-Services for User
+# Services for User
 * Auth Service
     * auth.login(user)
     * auth.signup(user)
@@ -74,7 +74,7 @@ Services for User
 * User Service
     * user.detail(id)
 
-Services for Lawyer
+# Services for Lawyer
 * Auth Service
     * auth.login(Lawyer)
     * auth.signup(Lawyer)
