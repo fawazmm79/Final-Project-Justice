@@ -26,20 +26,21 @@ Justice is an application that provides certified lawyers classified according t
 * As a lawyer I want to Receive user questions through a call So that I can Answering user questions.
 
 # Backlog
-User profile:
+### User profile:
 * see my profile
 * see exit point
 
-lawyer profile:
+### lawyer profile:
 * see my profile
 * see exit point
 
 # Client / Frontend
-Path	Component
+Path Component
 /	SplashPage
 /signup	SignupPage
 
-# Components for User path
+# Components
+### User path
 * Page for Selection Path as user or Lawyer
 * Page for Login as User
 * Page for Signup as User
@@ -51,7 +52,7 @@ Path	Component
 * Page for Locations on the map
 * Page for More Settings
 
-# Components for Lawyer path
+### Lawyer path
 * Page for Selection Path as user or Lawyer
 * Page for Login as Lawyer
 * Page for Signup as Lawyer
@@ -60,7 +61,8 @@ Path	Component
 * Page for Locations on the map
 * Page for More Settings
 
-# Services for User
+# Services
+### User
 * Auth Service
     * auth.login(user)
     * auth.signup(user)
@@ -75,7 +77,7 @@ Path	Component
 * User Service
     * user.detail(id)
 
-# Services for Lawyer
+### Lawyer
 * Auth Service
     * auth.login(Lawyer)
     * auth.signup(Lawyer)
