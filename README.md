@@ -35,6 +35,8 @@ Justice is an application that provides certified lawyers classified according t
 * see exit point
 
 # Client / Frontend
+|Path|
+|----|
 Path Component
 /	SplashPage
 /signup	SignupPage
