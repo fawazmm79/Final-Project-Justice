@@ -95,7 +95,7 @@ Path Component
 # Server / Backend
 ## Models
 
-### User model path\
+### User model path
 {\
   id: {type: String, required: true, unique: true},\
   name: {type: String, required: true, unique: true},\
@@ -106,7 +106,7 @@ Path Component
   longitude: {type: String, required: true, unique: false},\
 }
 
-### Lawyer model path\
+### Lawyer model path
 {\
   id: {type: String, required: true, unique: true},\
   name: {type: String, required: true, unique: true},\
@@ -116,3 +116,9 @@ Path Component
   latitude: {type: String, required: true, unique: false},\
   longitude: {type: String, required: true, unique: false},\
 }
+
+# Links
+
+# Git
+
+# Slides
