@@ -59,3 +59,33 @@ Components for Lawyer path
 * Page for Locations on the map
 * Page for More Settings
 
+Services for User
+* Auth Service
+    * auth.login(user)
+    * auth.signup(user)
+    * auth.logout()
+    * auth.me()
+    * auth.getUser() // synchronous
+* Exit Point Service
+    * exitPoint.list()
+    * exitPoint.detail(id)
+    * exitPoint.add(id)
+    * exitPoint.delete(id)
+* User Service
+    * user.detail(id)
+
+Services for Lawyer
+* Auth Service
+    * auth.login(Lawyer)
+    * auth.signup(Lawyer)
+    * auth.logout()
+    * auth.me()
+    * auth.getUser() // synchronous
+* Exit Point Service
+    * exitPoint.list()
+    * exitPoint.detail(id)
+    * exitPoint.add(id)
+    * exitPoint.delete(id)
+* Lawyer Service
+    * user.detail(id)
+
