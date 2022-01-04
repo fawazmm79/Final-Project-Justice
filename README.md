@@ -35,31 +35,14 @@ Justice is an application that provides certified lawyers classified according t
 * see exit point
 
 # Client / Frontend
-| Path.         | Component  | Behavior                                                              |
-| /             | Splash Page| The main page to specify the path of the user as a user or as a lawyer|
-| /user login   | Login Page | Login, navigate to homepage after login                               |
-| /user signup  | Signup Page| signup, navigate to homepage after signup                             |
-| /Lawyer login | Login Page | Login, navigate to homepage after login                               |
-| /Lawyer signup| Signup Page| signup, navigate to homepage after signup                             |
-
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-|----|---------|--------|
-Path Component
-/	SplashPage
-/signup	SignupPage
-
-
+| Path           | Component   | Behavior                                                               |
+| -------------- | ----------- | ---------------------------------------------------------------------- |
+| /              | Splash Page | The main page to specify the path of the user as a user or as a lawyer |
+| /user login    | Login Page  | Login, navigate to homepage after login                                |
+| /user signup   | Signup Page | signup, navigate to homepage after signup                              |
+| /Lawyer login  | Login Page  | Login, navigate to homepage after login                                |
+| /Lawyer signup | Signup Page | signup, navigate to homepage after signup                              |
+|                |             |                                                                        |
 
 # Components
 ### User path
