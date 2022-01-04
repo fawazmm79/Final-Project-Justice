@@ -92,8 +92,7 @@ Path Component
 * Lawyer Service
     * user.detail(id)
 
-# Server / Backend
-## Models
+# Models (Server / Backend)
 
 ### User model path
 {\
