@@ -46,7 +46,7 @@ Justice is an application that provides certified lawyers classified according t
 | /news page         | All News page         | Browse all news about new courts and laws                                                |
 | /locations page    | All locations         | Browse all the locations added in the application for courts places and lawyers' offices |
 | /more page         | All Settings page     | for app settings                                                                         |
-| ------------------ | --------------------- | ---------------------------------------------------------------------------------------- |
+|                    |                       |                                                                                          |
 | Lawyer Path        | Component             | Lawyer Behavior                                                                          |
 | ------------------ | --------------------- | ---------------------------------------------------------------------------------------- |
 | /                  | Splash Page           | The main page to specify the path of the user as a user or as a lawyer                   |
