@@ -96,8 +96,8 @@ Path Component
 ## Models
 ### User model
 {
-  id:{String},\n
-  name: {String},
+  id:{String},\
+  name: {String},\
   image: {String},
   userEmail: {String},
   status: {String},
