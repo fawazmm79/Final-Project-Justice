@@ -24,9 +24,18 @@ Lawyer Stories
 * As a lawyer I want to Receive user questions through chat So that I can Answering user questions.
 * As a lawyer I want to Receive user questions through a call So that I can Answering user questions.
 
+Backlog
 User profile:
+* see my profile
 * see exit point
 
 lawyer profile:
+* see my profile
 * see exit point
+
+Client / Frontend
+Path	Component
+/	SplashPage
+/signup	SignupPage
+
 
