@@ -92,3 +92,15 @@ Path Component
 * Lawyer Service
     * user.detail(id)
 
+# Server / Backend
+## Models
+### User model
+{
+  id: {String},
+  name: {String},
+  image: {String},
+  userEmail: {String},
+  status: {String},
+  latitude: {Double},
+  longitude: {Double},
+}
