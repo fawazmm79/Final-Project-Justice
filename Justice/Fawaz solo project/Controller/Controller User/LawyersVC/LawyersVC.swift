@@ -17,11 +17,20 @@ class LawyersVC: UIViewController {
     
     allConstraint()
     configureUI()
+    
+    TV.dataSource = self
+    TV.delegate = self
   }
   //--------------------------------------------------------------------------
   let searchBar = UISearchBar()
   var users = data_Lawyers_str
   var search = false
+  
+  //  var SearchBar: UISearchBar!
+  
+  //  var ProductsVC: UICollectionView!
+  
+  //  var searchedProducts = data_Lawyers_str
   //--------------------------------------------------------------------------
   lazy var TV: UITableView = {
     let TV = UITableView()
@@ -87,21 +96,15 @@ extension LawyersVC: UISearchBarDelegate {
     users = data_Lawyers_str
   }
   //--------------------------------------------------------------------------
-  func searchBar(_ searchBar: UISearchBar,textDidChange searchText: String) {
-    if !searchText.isEmpty{
-      
-      search = true
-      users.removeAll()
-      
-      for i in users {
-        if i.name.lowercased().contains(searchText.lowercased()){
-          users.append(i)
-        }
-      }
-    }else{
-      search = false
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    if searchText.isEmpty {
       users = data_Lawyers_str
+    } else{
+      users = data_Lawyers_str.filter({i in
+        return i.name.lowercased().starts(with: searchText.lowercased())
+      })
     }
+    TV.reloadData()
   }
 }
 //--------------------------------------------------------------------------
@@ -125,7 +128,7 @@ extension LawyersVC: UITableViewDelegate, UITableViewDataSource {
   //--------------------------------------------------------------------------
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
-    tableView.reloadData()
+    TV.reloadData()
     
     let data3 = users[indexPath.row]
     
