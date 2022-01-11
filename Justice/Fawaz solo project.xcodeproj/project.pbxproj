@@ -172,6 +172,8 @@
 		CC46AA16276ADB110035D004 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CC9C820F27534B3000A7C0ED /* Register */,
+				CC37E6B4276B5828001AFA98 /* Chat */,
 				CCF275BC27660E2E00452DB0 /* Controller User */,
 				CCF275BB27660E2300452DB0 /* Controller Lawyer */,
 			);
@@ -270,9 +272,7 @@
 				CCDB1CB22752A9E80027D9A3 /* SceneDelegate.swift */,
 				CCDB1CBE2752A9E80027D9A3 /* Info.plist */,
 				CCDB1CC72752AC420027D9A3 /* GoogleService-Info.plist */,
-				CC37E6B4276B5828001AFA98 /* Chat */,
 				CC7CD7A9276668A100CEED79 /* Localization */,
-				CC9C820F27534B3000A7C0ED /* Register */,
 				CC46AA17276ADB4F0035D004 /* Service */,
 				CC46AA14276ADAEC0035D004 /* Model */,
 				CCF275B827660D8800452DB0 /* View */,

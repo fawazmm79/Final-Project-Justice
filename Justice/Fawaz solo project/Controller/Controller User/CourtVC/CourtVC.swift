@@ -16,21 +16,37 @@ class CourtVC: UIViewController {
     super.viewDidLoad()
     
     view.backgroundColor = UIColor (named: "myBackgroundColor")
-
+    
     collectionView = UICollectionView(frame: .zero,
                                       collectionViewLayout: layout)
     guard let collectionView = collectionView else {
       return
     }
-
+    
     collectionView.backgroundColor = UIColor (named: "myBackgroundColor")
     
-//    navigationController?.navigationBar.backgroundColor = UIColor (named: "myBackgroundColor")
+    //    navigationController?.navigationBar.backgroundColor = UIColor (named: "myBackgroundColor")
     collectionView.register(CourtVC_Cell.self, forCellWithReuseIdentifier: CourtVC_Cell.identifier)
     collectionView.dataSource = self
     collectionView.delegate = self
     view.addSubview(collectionView)
     collectionView.frame = view.bounds
+    
+    let oldChat = UIButton()
+    oldChat.setImage(UIImage(systemName: "message"), for: .normal)
+    oldChat.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+    oldChat.layer.cornerRadius = 8
+    oldChat.clipsToBounds = true
+    oldChat.translatesAutoresizingMaskIntoConstraints = false
+    oldChat.addTarget(self, action: #selector(openChat), for: .touchUpInside)
+    navigationItem.leftBarButtonItem = UIBarButtonItem(
+      customView: oldChat
+    )
+  }
+  //--------------------------------------------------------------------------
+  @objc func openChat(sender: UIButton!){
+    let vc = ChatVC()
+    navigationController?.pushViewController(vc, animated: true)
   }
   //--------------------------------------------------------------------------
   var layout: UICollectionViewFlowLayout = {

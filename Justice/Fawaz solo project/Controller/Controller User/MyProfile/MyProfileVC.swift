@@ -25,10 +25,16 @@ class MyProfileVC: UIViewController {
     }
     
     title = "More"
+
+    let singOut = UIButton()
+    singOut.setImage(UIImage(systemName: "power"), for: .normal)
+    singOut.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+    singOut.layer.cornerRadius = 8
+    singOut.clipsToBounds = true
+    singOut.translatesAutoresizingMaskIntoConstraints = false
+    singOut.addTarget(self, action: #selector(singOutButtonTapped), for: .touchUpInside)
     navigationItem.rightBarButtonItem = UIBarButtonItem(
-      barButtonSystemItem: .close,
-      target: self,
-      action: #selector(singOutButtonTapped)
+      customView: singOut
     )
   }
   //--------------------------------------------------------------------------
@@ -113,6 +119,12 @@ extension MyProfileVC: UITableViewDelegate, UITableViewDataSource {
       print("Do not log out")}))
     
     self.present(alert, animated: true)
+    
+  }
+  
+  @objc private func openConversation(sender: UIButton!) {
+    
+    self.present(ChatVC(), animated: true)
     
   }
 }

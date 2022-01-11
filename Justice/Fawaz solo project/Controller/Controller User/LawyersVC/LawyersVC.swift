@@ -20,6 +20,22 @@ class LawyersVC: UIViewController {
     
     TV.dataSource = self
     TV.delegate = self
+    
+    let oldChat = UIButton()
+    oldChat.setImage(UIImage(systemName: "message"), for: .normal)
+    oldChat.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+    oldChat.layer.cornerRadius = 8
+    oldChat.clipsToBounds = true
+    oldChat.translatesAutoresizingMaskIntoConstraints = false
+    oldChat.addTarget(self, action: #selector(openChat), for: .touchUpInside)
+    navigationItem.leftBarButtonItem = UIBarButtonItem(
+      customView: oldChat
+    )
+  }
+  //--------------------------------------------------------------------------
+  @objc func openChat(sender: UIButton!){
+    let vc = ChatVC()
+    navigationController?.pushViewController(vc, animated: true)
   }
   //--------------------------------------------------------------------------
   let searchBar = UISearchBar()

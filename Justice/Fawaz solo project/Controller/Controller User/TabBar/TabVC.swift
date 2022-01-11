@@ -68,8 +68,6 @@ class TabVC: UITabBarController,fawaz {
 //       }
     }
     
-    
-    
   //--------------------------------------------------------------------------
   fileprivate func createNavController(for rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
     
@@ -87,11 +85,6 @@ class TabVC: UITabBarController,fawaz {
     
     viewControllers = [
       
-      createNavController(
-        for:ChatVC(),
-           title: NSLocalizedString("Chat", comment: ""),
-           image: UIImage(systemName: "square.grid.2x2")!),
-            
       createNavController(
         for:CourtVC(),
            title: NSLocalizedString("Categories", comment: ""),

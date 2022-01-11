@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 
 class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+  
+  let db = Firestore.firestore()
   
   //--------------------------------------------------------------------------
   override func viewDidLoad() {
