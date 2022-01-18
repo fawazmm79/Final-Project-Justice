@@ -23,7 +23,7 @@
 		CC37E6BC276B5851001AFA98 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC37E6BB276B5851001AFA98 /* ChatCell.swift */; };
 		CC37E6BE276B585B001AFA98 /* DMScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC37E6BD276B585B001AFA98 /* DMScreen.swift */; };
 		CC4D82F9275E1D0600C59D2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCDB1CB92752A9E80027D9A3 /* Assets.xcassets */; };
-		CC7CD7A42766364300CEED79 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC7CD7A62766364300CEED79 /* Localizable.strings */; };
+		CC7B1768278EE90A00742250 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CC7CD7A62766364300CEED79 /* Localizable.strings */; };
 		CC932EB2276694060072F603 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC932EB1276694060072F603 /* TabBar.swift */; };
 		CC9C8209275347E200A7C0ED /* Court.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9C8208275347E200A7C0ED /* Court.swift */; };
 		CC9C820B275348FD00A7C0ED /* CourtPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9C820A275348FD00A7C0ED /* CourtPageVC.swift */; };
@@ -446,8 +446,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCDB1CBD2752A9E80027D9A3 /* LaunchScreen.storyboard in Resources */,
+				CC7B1768278EE90A00742250 /* Localizable.strings in Resources */,
 				CC4D82F9275E1D0600C59D2E /* Assets.xcassets in Resources */,
-				CC7CD7A42766364300CEED79 /* Localizable.strings in Resources */,
 				CCDB1CC82752AC420027D9A3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -693,7 +693,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TUQH58C925;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fawaz solo project/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "عدل";
@@ -723,7 +723,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TUQH58C925;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fawaz solo project/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "عدل";

@@ -2,12 +2,13 @@
  Localization.strings
  Fawaz solo project
  
- Created by Fawaz on 12/12/2021.
+  Created by Fawaz on 12/12/2021.
  
  */
 
 
 "User" = "User";
 "Lawyer" = "Lawyer";
-
+"Log In" = "Log In";
+"Sing In" = "Sing In";
 
