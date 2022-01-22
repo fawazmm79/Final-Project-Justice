@@ -146,4 +146,4 @@ Justice is an application that provides certified lawyers classified according t
 [Project Repository Link](https://github.com/fawazmm79/Final-Project-Justice.git)
 
 # Slides
-[Slides Link](https://drive.google.com/file/d/1b4fRQ9xpeKBJ8UaSd5tVWHBn_0a5EiHG/view?usp=sharing)
+[Slides Link](https://docs.google.com/presentation/d/1GwZmX_kvtdThPlv8vWDNb9bFS4FuB7Dn2sbGFNQkzjQ/edit?usp=sharing)
