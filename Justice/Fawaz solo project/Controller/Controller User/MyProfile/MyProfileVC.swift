@@ -11,7 +11,7 @@ import FirebaseFirestore
 
 class MyProfileVC: UIViewController {
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func viewDidLoad () {
     super.viewDidLoad()
     
@@ -37,9 +37,9 @@ class MyProfileVC: UIViewController {
       customView: singOut
     )
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   var users: Array<User> = []
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var TV: UITableView = {
     let TV = UITableView()
     TV.dataSource = self
@@ -49,7 +49,7 @@ class MyProfileVC: UIViewController {
     TV.register(MyProfileVC_Cell.self, forCellReuseIdentifier: MyProfileVC_Cell.identifier)
     return TV
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var singOutButton: UIButton = {
     let buttonSingOut = UIButton(type: .system)
     buttonSingOut.setTitle(NSLocalizedString("singOut", comment: ""), for: .normal)
@@ -59,7 +59,7 @@ class MyProfileVC: UIViewController {
     buttonSingOut.addTarget(self, action: #selector(singOutButtonTapped), for: .touchUpInside)
     return buttonSingOut
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func allConstraint(){
     
     view.addSubview(TV)
@@ -71,14 +71,14 @@ class MyProfileVC: UIViewController {
     ])
   }
 }
-//----------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 extension MyProfileVC: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
     return data_MyProfile_str.count
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let list = data_MyProfile_str[indexPath.row]
@@ -90,7 +90,7 @@ extension MyProfileVC: UITableViewDelegate, UITableViewDataSource {
     cell.stalyCell.text = list.text
     return cell
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     tableView.reloadData()
@@ -104,8 +104,8 @@ extension MyProfileVC: UITableViewDelegate, UITableViewDataSource {
     VC4_MyProfileVC.textMyProfilePage.text = data4.text
     navigationController?.pushViewController(VC4_MyProfileVC, animated: false)
   }
-  //--------------------------------------------------------------------------
-  //sing out from snap chat
+  //-------------------------------------------------------------------------
+  //sing out
   @objc private func singOutButtonTapped(sender: UIButton!) {
     
     let alert = UIAlertController(title: "Do you want to log out?",

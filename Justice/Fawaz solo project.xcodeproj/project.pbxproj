@@ -10,7 +10,7 @@
 		B14ED23D88EA394BFDA914FE /* Pods_Fawaz_solo_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E840346B558699FC8194E271 /* Pods_Fawaz_solo_project.framework */; };
 		CC0FC70B275750AA00371ECD /* MyProfileVC_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC70A275750AA00371ECD /* MyProfileVC_Cell.swift */; };
 		CC0FC70D2757517A00371ECD /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC70C2757517A00371ECD /* Profile.swift */; };
-		CC0FC710275753F400371ECD /* MyProfilePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC70F275753F400371ECD /* MyProfilePageVC.swift */; };
+		CC0FC710275753F400371ECD /* LanguagePageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0FC70F275753F400371ECD /* LanguagePageVC.swift */; };
 		CC2AF8FF27547748006C5172 /* CourtVC_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2AF8FE27547748006C5172 /* CourtVC_Cell.swift */; };
 		CC2AF901275479BE006C5172 /* LawyersVC_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2AF900275479BE006C5172 /* LawyersVC_Cell.swift */; };
 		CC2AF90327547A40006C5172 /* LawyersPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2AF90227547A40006C5172 /* LawyersPageVC.swift */; };
@@ -59,7 +59,7 @@
 		1813FD0F2D0B8B9110BC7433 /* Pods-Fawaz solo project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fawaz solo project.release.xcconfig"; path = "Target Support Files/Pods-Fawaz solo project/Pods-Fawaz solo project.release.xcconfig"; sourceTree = "<group>"; };
 		CC0FC70A275750AA00371ECD /* MyProfileVC_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC_Cell.swift; sourceTree = "<group>"; };
 		CC0FC70C2757517A00371ECD /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		CC0FC70F275753F400371ECD /* MyProfilePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfilePageVC.swift; sourceTree = "<group>"; };
+		CC0FC70F275753F400371ECD /* LanguagePageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePageVC.swift; sourceTree = "<group>"; };
 		CC2AF8FE27547748006C5172 /* CourtVC_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourtVC_Cell.swift; sourceTree = "<group>"; };
 		CC2AF900275479BE006C5172 /* LawyersVC_Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyersVC_Cell.swift; sourceTree = "<group>"; };
 		CC2AF90227547A40006C5172 /* LawyersPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyersPageVC.swift; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 			children = (
 				CCDB3EF82752B4B500CA9BA0 /* MyProfileVC.swift */,
 				CC0FC70A275750AA00371ECD /* MyProfileVC_Cell.swift */,
-				CC0FC70F275753F400371ECD /* MyProfilePageVC.swift */,
+				CC0FC70F275753F400371ECD /* LanguagePageVC.swift */,
 			);
 			path = MyProfile;
 			sourceTree = "<group>";
@@ -520,7 +520,7 @@
 				CC2AF90727547EA2006C5172 /* NewsPageVC.swift in Sources */,
 				CCF275C227660FAE00452DB0 /* User_OR_Lawyer.swift in Sources */,
 				CCA9446527533D41000BEE49 /* NewsVC.swift in Sources */,
-				CC0FC710275753F400371ECD /* MyProfilePageVC.swift in Sources */,
+				CC0FC710275753F400371ECD /* LanguagePageVC.swift in Sources */,
 				CCF275BE27660E7500452DB0 /* Views.swift in Sources */,
 				CCDB3EED2752B13700CA9BA0 /* User.swift in Sources */,
 				CC0FC70D2757517A00371ECD /* Profile.swift in Sources */,
@@ -723,7 +723,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TUQH58C925;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Fawaz solo project/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "عدل";

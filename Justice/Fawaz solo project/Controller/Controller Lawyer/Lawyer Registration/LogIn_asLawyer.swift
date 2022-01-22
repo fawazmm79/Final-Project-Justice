@@ -24,7 +24,7 @@ class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
   //-------------------------------------------------------------------------
   lazy var welcome: UILabel = {
     let welcome = UILabel()
-    welcome.text = "Welcome as Lawyer in App"
+    welcome.text = (NSLocalizedString("Welcome as Lawyer in App", comment: ""))
     welcome.translatesAutoresizingMaskIntoConstraints = false
     welcome.layer.cornerRadius = 25
     welcome.layer.masksToBounds = true
@@ -87,7 +87,7 @@ class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
     self.view.addSubview(buttonSingIn)
     return buttonSingIn
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var backUser_OR_Lawyer: BackUser_OR_Lawyer = {
     let backUser_OR_Lawyer = BackUser_OR_Lawyer()
     backUser_OR_Lawyer.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
@@ -95,7 +95,7 @@ class LogIn_asLawyer : UIViewController, UITextFieldDelegate {
     self.view.addSubview(backUser_OR_Lawyer)
     return backUser_OR_Lawyer
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func allConstraint(){
     
     view.addSubview(welcome)

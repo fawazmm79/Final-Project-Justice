@@ -75,8 +75,7 @@ class SingUp_asLawyer: UIViewController, UIImagePickerControllerDelegate, UINavi
   //-------------------------------------------------------------------------
   private let singUp: Button_View = {
     let singUp = Button_View()
-    singUp.setTitle(
-      NSLocalizedString("Sign In", comment: ""), for: .normal)
+      singUp.setTitle(NSLocalizedString("Sing In", comment: ""), for: .normal)
     singUp.addTarget(
       self, action: #selector(singUpButtonTapped), for: .touchUpInside)
     return singUp

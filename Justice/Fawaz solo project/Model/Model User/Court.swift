@@ -29,7 +29,7 @@ var data_Court_str = [
   
   Court_str(
     image: UIImage(named: "d0.png"),
-    name: "Crimes",
+    name: (NSLocalizedString("Crimes", comment: "")),
     
     a: [A(
       imageA: UIImage(named: "l1.jpeg"),
@@ -269,33 +269,7 @@ Region:
   //==========================================================================
   Court_str(
     image: UIImage(named: "d0.png"),
-    name: "Commercial",
-    
-    a: [A(
-      imageA: UIImage(named: "l1.jpeg"),
-      nameA: "",
-      numberA: "",
-      staly: "",
-      summaryA: """
-About the lawyer:
-......
-......
-......
-Of experience:
-......
-......
-......
-Region:
-......
-
-"""
-    )]
-  ),
-  
-  //==========================================================================
-  Court_str(
-    image: UIImage(named: "d0.png"),
-    name: "Personal Status",
+    name: (NSLocalizedString("Commercial", comment: "")),
     
     a: [A(
       imageA: UIImage(named: "l1.jpeg"),
@@ -533,7 +507,7 @@ Region:
   //==========================================================================
   Court_str(
     image: UIImage(named: "d0.png"),
-    name: "Employees",
+    name: (NSLocalizedString("Personal Status", comment: "")),
     
     a: [A(
       imageA: UIImage(named: "l1.jpeg"),
@@ -771,7 +745,7 @@ Region:
   //==========================================================================
   Court_str(
     image: UIImage(named: "d0.png"),
-    name: "Implementation and Service Interruption",
+    name: (NSLocalizedString("Employees", comment: "")),
     
     a: [A(
       imageA: UIImage(named: "l1.jpeg"),
@@ -1009,7 +983,7 @@ Region:
   //==========================================================================
   Court_str(
     image: UIImage(named: "d0.png"),
-    name: "My Rights",
+    name: (NSLocalizedString("Implementation and Service Interruption", comment: "")),
     
     a: [A(
       imageA: UIImage(named: "l1.jpeg"),
@@ -1247,7 +1221,7 @@ Region:
   //==========================================================================
   Court_str(
     image: UIImage(named: "d0.png"),
-    name: "Vehicles",
+    name: (NSLocalizedString("My Rights", comment: "")),
     
     a: [A(
       imageA: UIImage(named: "l1.jpeg"),
@@ -1485,7 +1459,7 @@ Region:
   //==========================================================================
   Court_str(
     image: UIImage(named: "d0.png"),
-    name: "Comp",
+    name: (NSLocalizedString("Vehicles", comment: "")),
     
     a: [A(
       imageA: UIImage(named: "l1.jpeg"),
@@ -1723,7 +1697,7 @@ Region:
   //==========================================================================
   Court_str(
     image: UIImage(named: "d0.png"),
-    name: "Hotels and Flights",
+    name: (NSLocalizedString("Comp", comment: "")),
     
     a: [A(
       imageA: UIImage(named: "l1.jpeg"),
@@ -1961,7 +1935,7 @@ Region:
   //==========================================================================
   Court_str(
     image: UIImage(named: "d0.png"),
-    name: "Inheritance",
+    name: (NSLocalizedString("Hotels and Flights", comment: "")),
     
     a: [A(
       imageA: UIImage(named: "l1.jpeg"),
@@ -2199,7 +2173,7 @@ Region:
   //==========================================================================
   Court_str(
     image: UIImage(named: "d0.png"),
-    name: "Medical Errors",
+    name: (NSLocalizedString("Inheritance", comment: "")),
     
     a: [A(
       imageA: UIImage(named: "l1.jpeg"),
@@ -2437,7 +2411,245 @@ Region:
   //==========================================================================
   Court_str(
     image: UIImage(named: "d0.png"),
-    name: "Trademarks",
+    name: (NSLocalizedString("Medical Errors", comment: "")),
+    
+    a: [A(
+      imageA: UIImage(named: "l1.jpeg"),
+      nameA: "Shaya Ibrahim",
+      numberA: "0554839430",
+      staly: "",
+      summaryA: """
+About the lawyer:
+......
+......
+......
+Of experience:
+......
+......
+......
+Region:
+......
+
+"""
+    ),
+        A(
+          imageA: UIImage(named: "l1.jpeg"),
+          nameA: "Mohammed Abdullah",
+          numberA: "0503959302",
+          staly: "",
+          summaryA: """
+    About the lawyer:
+    ......
+    ......
+    ......
+    Of experience:
+    ......
+    ......
+    ......
+    Region:
+    ......
+    
+    """
+        ),
+        
+        A(
+          imageA: UIImage(named: "l1.jpeg"),
+          nameA: "Sami Abdullah",
+          numberA: "0594356075",
+          staly: "",
+          summaryA: """
+    About the lawyer:
+    ......
+    ......
+    ......
+    Of experience:
+    ......
+    ......
+    ......
+    Region:
+    ......
+    
+    """
+        ),
+        
+        A(
+          imageA: UIImage(named: "l1.jpeg"),
+          nameA: "Khaled Abdulaziz",
+          numberA: "",
+          staly: "",
+          summaryA: """
+    About the lawyer:
+    ......
+    ......
+    ......
+    Of experience:
+    ......
+    ......
+    ......
+    Region:
+    ......
+    
+    """
+        ),
+        
+        A(
+          imageA: UIImage(named: "l1.jpeg"),
+          nameA: "Talal Ahmed",
+          numberA: "",
+          staly: "",
+          summaryA: """
+    About the lawyer:
+    ......
+    ......
+    ......
+    Of experience:
+    ......
+    ......
+    ......
+    Region:
+    ......
+    
+    """
+        ),
+        
+        A(
+          imageA: UIImage(named: "l1.jpeg"),
+          nameA: "Nasser Zeid",
+          numberA: "",
+          staly: "",
+          summaryA: """
+    About the lawyer:
+    ......
+    ......
+    ......
+    Of experience:
+    ......
+    ......
+    ......
+    Region:
+    ......
+    
+    """
+        ),
+        
+        A(
+          imageA: UIImage(named: "l1.jpeg"),
+          nameA: "Hassan Ibrahim",
+          numberA: "",
+          staly: "",
+          summaryA: """
+    About the lawyer:
+    ......
+    ......
+    ......
+    Of experience:
+    ......
+    ......
+    ......
+    Region:
+    ......
+    
+    """
+        ),
+        
+        A(
+          imageA: UIImage(named: "l1.jpeg"),
+          nameA: "Nafie Al Ali",
+          numberA: "",
+          staly: "",
+          summaryA: """
+About the lawyer:
+......
+......
+......
+Of experience:
+......
+......
+......
+Region:
+......
+
+"""
+        ),
+        
+        A(
+          imageA: UIImage(named: "l1.jpeg"),
+          nameA: "Ibrahim Osama",
+          numberA: "",
+          staly: "",
+          summaryA: """
+About the lawyer:
+......
+......
+......
+Of experience:
+......
+......
+......
+Region:
+......
+
+"""
+        ),
+        
+        A(
+          imageA: UIImage(named: "l1.jpeg"),
+          nameA: "Mohamed Rady",
+          numberA: "",
+          staly: "",
+          summaryA: """
+About the lawyer:
+......
+......
+......
+Of experience:
+......
+......
+......
+Region:
+......
+
+"""
+        ),
+        
+        A(
+          imageA: UIImage(named: "l1.jpeg"),
+          nameA: "Osama Nawaf",
+          numberA: "",
+          staly: "",
+          summaryA: """
+About the lawyer:
+......
+......
+......
+Of experience:
+......
+......
+......
+Region:
+......
+
+"""
+        ),
+        
+        A(
+          imageA: UIImage(named: "l1.jpeg"),
+          nameA: "Ahmed Asiri",
+          numberA: "",
+          staly: "",
+          summaryA: """
+
+
+"""
+        ),
+        
+       ]
+  ),
+  
+  //==========================================================================
+  Court_str(
+    image: UIImage(named: "d0.png"),
+    name: (NSLocalizedString("Trademarks", comment: "")),
     
     a: [A(
       imageA: UIImage(named: "l1.jpeg"),

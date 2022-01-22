@@ -9,7 +9,7 @@ import UIKit
 
 class NewsVC: UIViewController {
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -17,7 +17,7 @@ class NewsVC: UIViewController {
     
     allConstraint()
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var TV: UITableView = {
     let TV = UITableView()
     TV.translatesAutoresizingMaskIntoConstraints = false
@@ -27,7 +27,7 @@ class NewsVC: UIViewController {
     TV.register(NewsVC_Cell.self, forCellReuseIdentifier: NewsVC_Cell.identifier)
     return TV
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func allConstraint(){
     
     view.addSubview(TV)
@@ -46,7 +46,7 @@ extension NewsVC: UITableViewDelegate, UITableViewDataSource {
     
     return data_News_str.count
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let list = data_News_str[indexPath.row]
@@ -58,7 +58,7 @@ extension NewsVC: UITableViewDelegate, UITableViewDataSource {
     
     return cell
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     tableView.reloadData()

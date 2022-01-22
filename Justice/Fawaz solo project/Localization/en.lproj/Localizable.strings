@@ -6,9 +6,22 @@
  
  */
 
+"Welcome" = "Welcome to the justice application
+
+The application provides legal information and advice from certified lawyers to help you solve any case";
 
 "User" = "User";
 "Lawyer" = "Lawyer";
+
+"Change Language" = "Change Language to Arabic?";
+
+"Welcome as User in App" = "Welcome as User in App";
+"Welcome as Lawyer in App" = "Welcome as Lawyer in App";
 "Log In" = "Log In";
 "Sing In" = "Sing In";
+"Don't have account?" = "Don't have account?";
 
+"Login as User" = "Login as User";
+"Login as Lawyer" = "Login as Lawyer";
+
+"Do you want to change the language?" = "Change Language to Arabic";

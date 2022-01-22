@@ -11,7 +11,7 @@ protocol fawaz{
 }
 class TabVC: UITabBarController,fawaz {
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -68,7 +68,7 @@ class TabVC: UITabBarController,fawaz {
 //       }
     }
     
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   fileprivate func createNavController(for rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
     
     let navController = UINavigationController(rootViewController: rootViewController)
@@ -80,7 +80,7 @@ class TabVC: UITabBarController,fawaz {
     
     return navController
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func setupVCs() {
     
     viewControllers = [
@@ -102,7 +102,7 @@ class TabVC: UITabBarController,fawaz {
       
       createNavController(
         for:MapVC (),
-           title: NSLocalizedString("Location", comment: ""),
+           title: NSLocalizedString("Map", comment: ""),
            image: UIImage(systemName: "location")!),
       
       createNavController(

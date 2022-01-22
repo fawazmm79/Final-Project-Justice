@@ -11,7 +11,7 @@ class CourtVC: UIViewController {
   
   
   private var collectionView: UICollectionView?
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func viewDidLoad(){
     super.viewDidLoad()
     
@@ -43,12 +43,12 @@ class CourtVC: UIViewController {
       customView: oldChat
     )
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   @objc func openChat(sender: UIButton!){
-    let vc = ChatVC()
+    let vc = DMScreen()
     navigationController?.pushViewController(vc, animated: true)
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   var layout: UICollectionViewFlowLayout = {
     let layout = UICollectionViewFlowLayout()
     layout.scrollDirection = .vertical
@@ -66,7 +66,7 @@ extension CourtVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     return data_Court_str.count
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
     
     let list = data_Court_str[indexPath.row]
@@ -78,7 +78,7 @@ extension CourtVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     return cell
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
     let data1 = data_Court_str[indexPath.row]
@@ -91,4 +91,4 @@ extension CourtVC: UICollectionViewDelegate, UICollectionViewDataSource {
     navigationController?.pushViewController(VC1_CourtPageVC, animated: true)
   }
 }
-//--------------------------------------------------------------------------
+//---------------------------------------------------------------------------

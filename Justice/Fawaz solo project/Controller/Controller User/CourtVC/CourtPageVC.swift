@@ -10,7 +10,7 @@ import UIKit
 class CourtPageVC: UIViewController {
   
   var restFromVC: Court_str?
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -18,7 +18,7 @@ class CourtPageVC: UIViewController {
     
     all()
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var TV: UITableView = {
     let TV = UITableView()
     TV.translatesAutoresizingMaskIntoConstraints = false
@@ -29,19 +29,19 @@ class CourtPageVC: UIViewController {
     TV.register(Service_Cell.self, forCellReuseIdentifier: Service_Cell.identifier)
     return TV
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var imageCourtPage: UIImageView = {
     let imageCourtPage = UIImageView()
     imageCourtPage.translatesAutoresizingMaskIntoConstraints = false
     return imageCourtPage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var nameCourtPage: UILabel = {
     let nameCourtPage = UILabel()
     nameCourtPage.translatesAutoresizingMaskIntoConstraints = false
     return nameCourtPage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func all(){
     
     view.addSubview(TV)
@@ -60,7 +60,7 @@ extension CourtPageVC: UITableViewDelegate, UITableViewDataSource {
     
     return restFromVC?.a.count ?? 0
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let list = restFromVC!.a[indexPath.row]
@@ -71,7 +71,7 @@ extension CourtPageVC: UITableViewDelegate, UITableViewDataSource {
     
     return cell
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     tableView.reloadData()

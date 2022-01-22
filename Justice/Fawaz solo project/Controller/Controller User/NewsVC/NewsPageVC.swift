@@ -20,7 +20,7 @@ class NewsPageVC: UIViewController{
   //--------------------------------------------------------------------------
   lazy var scrollView: UIScrollView = {
     let scrollView = UIScrollView(frame: .zero)
-    scrollView.backgroundColor = .systemGray
+    scrollView.backgroundColor = UIColor (named: "myBackgroundColor")
     scrollView.autoresizingMask = .flexibleHeight
     scrollView.showsHorizontalScrollIndicator = true
     scrollView.bounces = true
@@ -30,7 +30,7 @@ class NewsPageVC: UIViewController{
   //--------------------------------------------------------------------------
   lazy var containerView: UIView = {
     let containerView = UIView()
-    containerView.backgroundColor = .systemBlue
+    containerView.backgroundColor = UIColor (named: "myBackgroundColor")
     containerView.translatesAutoresizingMaskIntoConstraints = false
     return containerView
   }()
@@ -38,14 +38,14 @@ class NewsPageVC: UIViewController{
   lazy var imageNewsPage: UIImageView = {
     let imageNewsPage = UIImageView()
     imageNewsPage.translatesAutoresizingMaskIntoConstraints = false
-    imageNewsPage.backgroundColor = .systemGray4
+    imageNewsPage.backgroundColor = .systemGray5
     return imageNewsPage
   }()
   //--------------------------------------------------------------------------
   lazy var stalyNewsPage: UILabel = {
     let stalyNewsPage = UILabel()
     stalyNewsPage.textAlignment = .center
-    stalyNewsPage.backgroundColor = .systemGray4
+    stalyNewsPage.backgroundColor = .systemGray5
     stalyNewsPage.textColor = .label
     stalyNewsPage.font = .systemFont(ofSize: 20)
     stalyNewsPage.layer.cornerRadius = 10
@@ -57,7 +57,7 @@ class NewsPageVC: UIViewController{
   lazy var nameNewsPage: UILabel = {
     let nameNewsPage = UILabel()
     nameNewsPage.textAlignment = .center
-    nameNewsPage.backgroundColor = .systemGray4
+    nameNewsPage.backgroundColor = .systemGray5
     nameNewsPage.numberOfLines = 0
     nameNewsPage.textColor = .label
     nameNewsPage.font = .systemFont(ofSize: 20)
@@ -71,7 +71,7 @@ class NewsPageVC: UIViewController{
     staly2NewsPage.numberOfLines = 0
     staly2NewsPage.textColor = .label
     staly2NewsPage.translatesAutoresizingMaskIntoConstraints = false
-    staly2NewsPage.backgroundColor = .systemGray4
+    staly2NewsPage.backgroundColor = .systemGray5
     staly2NewsPage.layer.cornerRadius = 10
     staly2NewsPage.clipsToBounds = true
     return staly2NewsPage
@@ -79,7 +79,7 @@ class NewsPageVC: UIViewController{
   //--------------------------------------------------------------------------
   lazy var textNewsPage: UILabel = {
     let textNewsPage = UILabel()
-    textNewsPage.backgroundColor = .systemGray4
+    textNewsPage.backgroundColor = .systemGray5
     textNewsPage.textColor = .label
     textNewsPage.font = .systemFont(ofSize: 18)
     textNewsPage.numberOfLines = 12

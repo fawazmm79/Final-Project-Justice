@@ -10,7 +10,7 @@ import TransitionButton
 
 class User_OR_Lawyer: UIViewController {
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -18,7 +18,7 @@ class User_OR_Lawyer: UIViewController {
     
     allConstraint()
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var scrollView: UIScrollView = {
     let scrollView = UIScrollView(frame: .zero)
     scrollView.backgroundColor = UIColor(red: 0.26, green: 0.53, blue: 0.46, alpha: 1.00)
@@ -28,14 +28,14 @@ class User_OR_Lawyer: UIViewController {
     scrollView.translatesAutoresizingMaskIntoConstraints = false
     return scrollView
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var containerView: UIView = {
     let containerView = UIView()
     containerView.backgroundColor = UIColor(red: 0.26, green: 0.53, blue: 0.46, alpha: 1.00)
     containerView.translatesAutoresizingMaskIntoConstraints = false
     return containerView
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var appIcon: UIImageView = {
     let appIcon = UIImageView()
     appIcon.contentMode = .scaleAspectFit
@@ -45,15 +45,12 @@ class User_OR_Lawyer: UIViewController {
     appIcon.layer.masksToBounds = true
     return appIcon
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var labelWelcome: UILabel = {
     let label = UILabel()
-    label.font = UIFont(name: "Party LET", size: 35)
-    label.text = """
-    Welcome to the justice application
-    
-    The application provides legal information and advice from certified lawyers to help you solve any case
-    """
+    label.font = .systemFont(ofSize: 20, weight: .regular)
+    label.textColor = .white
+    label.text = (NSLocalizedString("Welcome", comment: ""))
     label.translatesAutoresizingMaskIntoConstraints = false
     label.layer.cornerRadius = 25
     label.layer.masksToBounds = true
@@ -62,7 +59,7 @@ class User_OR_Lawyer: UIViewController {
 //    label.font = label.font.withSize(20)
     return label
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var userPageButton: TransitionButton = {
     let userPage = TransitionButton()
     userPage.translatesAutoresizingMaskIntoConstraints = false
@@ -75,7 +72,7 @@ class User_OR_Lawyer: UIViewController {
     userPage.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
     return userPage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var lawyerPageButton: TransitionButton = {
     let lawyerPage = TransitionButton()
     lawyerPage.translatesAutoresizingMaskIntoConstraints = false
@@ -88,7 +85,22 @@ class User_OR_Lawyer: UIViewController {
     lawyerPage.titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
     return lawyerPage
   }()
-  //--------------------------------------------------------------------------
+    //-------------------------------------------------------------------------
+    lazy var languageButton: TransitionButton = {
+      let languageButton = TransitionButton(type: .system)
+        languageButton.setTitle(NSLocalizedString("Do you want to change the language?", comment: ""), for: .normal)
+        languageButton.titleLabel?.numberOfLines = 0
+        languageButton.titleLabel?.textAlignment = .center
+        languageButton.setTitleColor(.white, for: .normal)
+        languageButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        languageButton.layer.cornerRadius = 20
+        languageButton.clipsToBounds = true
+        languageButton.translatesAutoresizingMaskIntoConstraints = false
+//        languageButton.backgroundColor = UIColor(red: 0.97, green: 0.81, blue: 0.36, alpha: 1.00)
+        languageButton.addTarget(self, action: #selector(changeLanguagePressed), for: .touchUpInside)
+      return languageButton
+    }()
+  //-------------------------------------------------------------------------
   func allConstraint(){
     
     view.addSubview(scrollView)
@@ -140,8 +152,17 @@ class User_OR_Lawyer: UIViewController {
       lawyerPageButton.widthAnchor.constraint(equalToConstant: 300),
       lawyerPageButton.heightAnchor.constraint(equalToConstant: 80),
     ])
+    //------------------------------------------------------------------------
+      view.addSubview(languageButton)
+      self.view.addSubview(languageButton)
+      NSLayoutConstraint.activate([
+        languageButton.topAnchor.constraint(equalTo: lawyerPageButton.bottomAnchor, constant:30),
+        languageButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+        languageButton.widthAnchor.constraint(equalToConstant: 300),
+        languageButton.heightAnchor.constraint(equalToConstant: 80),
+      ])
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   @objc private func logInUserButtonTapped() {
     
     userPageButton.startAnimation()
@@ -155,7 +176,7 @@ class User_OR_Lawyer: UIViewController {
       }
     }
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   @objc private func logInLawyerButtonTapped() {
     
     lawyerPageButton.startAnimation()
@@ -169,5 +190,51 @@ class User_OR_Lawyer: UIViewController {
       }
     }
   }
+    //----------------------------------------------------------------------
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+    //----------------------------------------------------------------------
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    //----------------------------------------------------------------------
+//    func allConstraint(){
+//        view.addSubview(languageButton)
+//        self.view.addSubview(languageButton)
+//        NSLayoutConstraint.activate([
+//            languageButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            languageButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -120),
+//            languageButton.widthAnchor.constraint(equalToConstant: 350),
+//            languageButton.heightAnchor.constraint(equalToConstant: 70)
+//        ])
+//    }
+    //----------------------------------------------------------------------
+    @objc func changeLanguagePressed(){
+        
+        languageButton.startAnimation()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            
+          self.languageButton.stopAnimation(animationStyle: .expand, revertAfterDelay:1)
+            
+          DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+              
+              let currentLang = Locale.current.languageCode
+              print("current Language: \(currentLang ?? "")")
+              
+              let newLanguage = currentLang == "en" ? "ar" : "en"
+              UserDefaults.standard.setValue([newLanguage], forKey: "AppleLanguages")
+              
+              UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+              
+              Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { (timer) in
+                  exit(0)
+              }
+          }
+        }
+    }
 }
-//--------------------------------------------------------------------------
+//---------------------------------------------------------------------------

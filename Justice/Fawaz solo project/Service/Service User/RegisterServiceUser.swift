@@ -13,12 +13,12 @@ class RegisterServiceUser {
   static let shared = RegisterServiceUser()
   
   let usersCollection = Firestore.firestore().collection("users")
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   // Add user to firestor//computed properties
   func addUser(user: User) {
     usersCollection.document(user.id).setData(user.dictUser)
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func listenToUsers(completion: @escaping (([User]) -> Void)) {
     
     usersCollection.addSnapshotListener { snapshot, error in
@@ -45,7 +45,7 @@ class RegisterServiceUser {
       completion(users)
     }
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func updateUserInfo(user: User) {
     usersCollection.document(user.id).setData([
       "id": user.id,

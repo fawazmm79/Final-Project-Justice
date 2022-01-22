@@ -9,7 +9,7 @@ import UIKit
 
 class LawyersPageVC : UIViewController{
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -18,9 +18,9 @@ class LawyersPageVC : UIViewController{
     
     allConstraint()
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   fileprivate let application = UIApplication.shared
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var imageLawyersPage: UIImageView = {
     let imageLawyersPage = UIImageView()
     imageLawyersPage.layer.masksToBounds = true
@@ -29,7 +29,7 @@ class LawyersPageVC : UIViewController{
     imageLawyersPage.backgroundColor = .systemGray
     return imageLawyersPage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var stalyLawyersPage: UILabel = {
     let stalyLawyersPage = UILabel()
     stalyLawyersPage.textAlignment = .center
@@ -42,7 +42,7 @@ class LawyersPageVC : UIViewController{
     stalyLawyersPage.translatesAutoresizingMaskIntoConstraints = false
     return stalyLawyersPage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var nameLawyersPage: UILabel = {
     let nameLawyersPage = UILabel()
     nameLawyersPage.textAlignment = .center
@@ -53,7 +53,7 @@ class LawyersPageVC : UIViewController{
     nameLawyersPage.translatesAutoresizingMaskIntoConstraints = false
     return nameLawyersPage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var numberLawyersPage: UILabel = {
     let numberLawyersPage = UILabel()
     numberLawyersPage.textAlignment = .center
@@ -63,7 +63,7 @@ class LawyersPageVC : UIViewController{
     numberLawyersPage.translatesAutoresizingMaskIntoConstraints = false
     return numberLawyersPage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var staly2LawyersPage: UILabel = {
     let staly2LawyersPage = UILabel()
     staly2LawyersPage.font = UIFont.systemFont(ofSize: 18)
@@ -75,7 +75,7 @@ class LawyersPageVC : UIViewController{
     staly2LawyersPage.clipsToBounds = true
     return staly2LawyersPage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var textLawyersPage: UILabel = {
     let textLawyersPage = UILabel()
     textLawyersPage.backgroundColor = .systemGray4
@@ -86,7 +86,7 @@ class LawyersPageVC : UIViewController{
     textLawyersPage.translatesAutoresizingMaskIntoConstraints = false
     return textLawyersPage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var buttonLawyersPage: UIButton = {
     let buttonLawyersPage = UIButton()
     buttonLawyersPage.setTitle("Call", for: .normal)
@@ -100,7 +100,7 @@ class LawyersPageVC : UIViewController{
     buttonLawyersPage.addTarget(self, action: #selector(popupAlert), for: .touchUpInside)
     return buttonLawyersPage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var button2LawyersPage: UIButton = {
     let button2LawyersPage = UIButton()
     button2LawyersPage.setTitle("Chat", for: .normal)
@@ -114,7 +114,7 @@ class LawyersPageVC : UIViewController{
     button2LawyersPage.addTarget(self, action: #selector(popupAlert2), for: .touchUpInside)
     return button2LawyersPage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func allConstraint(){
     
     view.addSubview(imageLawyersPage)
@@ -124,7 +124,7 @@ class LawyersPageVC : UIViewController{
       imageLawyersPage.widthAnchor.constraint(equalToConstant: 100),
       imageLawyersPage.heightAnchor.constraint(equalToConstant: 100)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(stalyLawyersPage)
     NSLayoutConstraint.activate([
       stalyLawyersPage.topAnchor.constraint(equalTo: imageLawyersPage.bottomAnchor, constant: 10),
@@ -132,7 +132,7 @@ class LawyersPageVC : UIViewController{
       stalyLawyersPage.widthAnchor.constraint(equalToConstant: 350),
       stalyLawyersPage.heightAnchor.constraint(equalToConstant: 80)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(nameLawyersPage)
     NSLayoutConstraint.activate([
       nameLawyersPage.topAnchor.constraint(equalTo: imageLawyersPage.bottomAnchor, constant: 15),
@@ -140,7 +140,7 @@ class LawyersPageVC : UIViewController{
       nameLawyersPage.widthAnchor.constraint(equalToConstant: 340),
       nameLawyersPage.heightAnchor.constraint(equalToConstant: 30)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(numberLawyersPage)
     NSLayoutConstraint.activate([
       numberLawyersPage.topAnchor.constraint(equalTo:nameLawyersPage.bottomAnchor, constant: 10),
@@ -148,7 +148,7 @@ class LawyersPageVC : UIViewController{
       numberLawyersPage.widthAnchor.constraint(equalToConstant: 340),
       numberLawyersPage.heightAnchor.constraint(equalToConstant: 30)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(staly2LawyersPage)
     NSLayoutConstraint.activate([
       staly2LawyersPage.topAnchor.constraint(equalTo: numberLawyersPage.bottomAnchor, constant: 20),
@@ -156,14 +156,14 @@ class LawyersPageVC : UIViewController{
       staly2LawyersPage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
       staly2LawyersPage.heightAnchor.constraint(equalToConstant: 230)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(textLawyersPage)
     NSLayoutConstraint.activate([
       textLawyersPage.topAnchor.constraint(equalTo: numberLawyersPage.bottomAnchor, constant: 30),
       textLawyersPage.leftAnchor.constraint(equalTo:view.leftAnchor,constant:30),
       textLawyersPage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(buttonLawyersPage)
     self.view.addSubview(buttonLawyersPage)
     NSLayoutConstraint.activate([
@@ -172,7 +172,7 @@ class LawyersPageVC : UIViewController{
       buttonLawyersPage.widthAnchor.constraint(equalToConstant: 350),
       buttonLawyersPage.heightAnchor.constraint(equalToConstant: 70)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(button2LawyersPage)
     self.view.addSubview(button2LawyersPage)
     NSLayoutConstraint.activate([
@@ -182,13 +182,13 @@ class LawyersPageVC : UIViewController{
       button2LawyersPage.heightAnchor.constraint(equalToConstant: 70)
     ])
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func btnSettingClick() {
     if let settingURL = URL(string: UIApplication.openSettingsURLString){
       application.open(settingURL, options: [:])
     }
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func btnCallClick() {
     if let phoneURL = URL(string: "tel://0123456789") {
       if application.canOpenURL(phoneURL){
@@ -196,7 +196,7 @@ class LawyersPageVC : UIViewController{
       }
     }
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   @objc func popupAlert(sender: UIButton!){
     
     let alert = UIAlertController(title: "Do you want to call this number?",
@@ -208,12 +208,12 @@ class LawyersPageVC : UIViewController{
       print("Yes call")}))
     
     alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
-      self.btnSettingClick()
+//      self.btnSettingClick()
       print("Do not call")}))
     
     self.present(alert, animated: true)
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   @objc func popupAlert2(sender: UIButton!){
     
     let alert = UIAlertController(title: "Do you want to start a chat?",
@@ -221,14 +221,20 @@ class LawyersPageVC : UIViewController{
                                   preferredStyle: .alert)
     
     alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-      self.btnCallClick()
+        
+        let vc = DMScreen()
+        vc.modalPresentationStyle = .fullScreen
+//        self.present(vc, animated: true, completion: nil)
+        
+        self.navigationController?.pushViewController(vc, animated: false)
+        
       print("Yes call")}))
     
     alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
-      self.btnSettingClick()
+//      self.btnSettingClick()
       print("Do not call")}))
     
     self.present(alert, animated: true)
   }
 }
-//--------------------------------------------------------------------------
+//---------------------------------------------------------------------------

@@ -11,7 +11,7 @@ class CourtVC_Cell: UICollectionViewCell {
   
   static let identifier = "CourtVC_Cell_key"
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   let staly: UILabel = {
     let staly = UILabel()
 //    staly.textColor = UIColor(red: 0.97, green: 0.81, blue: 0.36, alpha: 1.00)
@@ -21,7 +21,7 @@ class CourtVC_Cell: UICollectionViewCell {
     staly.backgroundColor = UIColor(red: 0.26, green: 0.53, blue: 0.46, alpha: 1.00)
     return staly
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   let myImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFit
@@ -29,17 +29,18 @@ class CourtVC_Cell: UICollectionViewCell {
     imageView.backgroundColor = UIColor(red: 0.26, green: 0.53, blue: 0.46, alpha: 1.00)
     return imageView
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   let name: UILabel = {
     let label = UILabel()
 //    label.textColor = UIColor(red: 0.97, green: 0.81, blue: 0.36, alpha: 1.00)
     label.textColor = .white
+    label.font = .systemFont(ofSize: 20, weight: .medium)
     label.numberOfLines = 0
     label.textAlignment = .center
     label.backgroundColor = UIColor(red: 0.26, green: 0.53, blue: 0.46, alpha: 1.00)
     return label
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override init (frame: CGRect) {
     super.init(frame: frame)
     
@@ -48,11 +49,11 @@ class CourtVC_Cell: UICollectionViewCell {
     contentView.addSubview(name)
     contentView.clipsToBounds = true
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   required init?(coder: NSCoder) {
     fatalError( "init(coder:) has not been implemented")
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func layoutSubviews() {
     super.layoutSubviews()
     
@@ -71,14 +72,14 @@ class CourtVC_Cell: UICollectionViewCell {
                         width: 160,
                         height: 45)
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   public func configure(label: String) {
     name.text = label
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func prepareForReuse() {
     super.prepareForReuse()
     name.text = nil
   }
 }
-//--------------------------------------------------------------------------
+//---------------------------------------------------------------------------

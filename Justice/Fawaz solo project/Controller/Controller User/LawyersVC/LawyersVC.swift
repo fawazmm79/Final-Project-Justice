@@ -9,7 +9,7 @@ import UIKit
 
 class LawyersVC: UIViewController {
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func viewDidLoad(){
     super.viewDidLoad()
     
@@ -32,12 +32,12 @@ class LawyersVC: UIViewController {
       customView: oldChat
     )
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   @objc func openChat(sender: UIButton!){
-    let vc = ChatVC()
+    let vc = DMScreen()
     navigationController?.pushViewController(vc, animated: true)
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   let searchBar = UISearchBar()
   var users = data_Lawyers_str
   var search = false
@@ -47,7 +47,7 @@ class LawyersVC: UIViewController {
   //  var ProductsVC: UICollectionView!
   
   //  var searchedProducts = data_Lawyers_str
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var TV: UITableView = {
     let TV = UITableView()
     TV.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +57,7 @@ class LawyersVC: UIViewController {
     TV.register(LawyersVC_Cell.self, forCellReuseIdentifier: LawyersVC_Cell.identifier)
     return TV
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func allConstraint(){
     
     view.addSubview(TV)
@@ -76,14 +76,14 @@ extension LawyersVC: UISearchBarDelegate {
     search(shouldShow: true)
     searchBar.becomeFirstResponder()
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func configureUI(){
     
     searchBar.sizeToFit()
     searchBar.delegate = self
     showSearchBarButton(shouldShow:true)
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func showSearchBarButton (shouldShow: Bool){
     if shouldShow {
       navigationItem.rightBarButtonItem=UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleShowSearchBar))
@@ -91,27 +91,27 @@ extension LawyersVC: UISearchBarDelegate {
       navigationItem.rightBarButtonItem=nil
     }
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func search (shouldShow: Bool) {
     showSearchBarButton (shouldShow: !shouldShow)
     searchBar.showsCancelButton = shouldShow
     navigationItem.titleView = shouldShow ? searchBar : nil
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func searchBarTextDidBeginEditing(_ searchBar: UISearchBar){
     print("Search bar did begin editing..")
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func searchBarTextDidEndEditing(_searchBar: UISearchBar){
     print("Search bar did end editing..")
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
     search(shouldShow: false)
     search = false
     users = data_Lawyers_str
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     if searchText.isEmpty {
       users = data_Lawyers_str
@@ -130,7 +130,7 @@ extension LawyersVC: UITableViewDelegate, UITableViewDataSource {
     
     return users.count
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
     let list = users[indexPath.row]
@@ -141,7 +141,7 @@ extension LawyersVC: UITableViewDelegate, UITableViewDataSource {
     
     return cell
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     TV.reloadData()

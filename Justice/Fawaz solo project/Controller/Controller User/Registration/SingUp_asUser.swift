@@ -13,7 +13,7 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
   
   let db = Firestore.firestore()
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -29,9 +29,9 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     allConstraint()
     dismissKeyboard()
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   var users: Array<User> = []
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var uImage: UIImageView = {
     let uImage = UIImageView()
     uImage.translatesAutoresizingMaskIntoConstraints = false
@@ -40,7 +40,7 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     uImage.layer.cornerRadius = 50
     return uImage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var uImagePicker : UIImagePickerController = {
     let uImagePicker = UIImagePickerController()
     uImagePicker.delegate = self
@@ -48,7 +48,7 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     uImagePicker.allowsEditing = true
     return uImagePicker
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var uImageName: UILabel = {
     let uImageName = UILabel()
     uImageName.translatesAutoresizingMaskIntoConstraints = false
@@ -56,35 +56,35 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     uImageName.text = (NSLocalizedString("Add Picture", comment: ""))
     return uImageName
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var uName: TextField_View = {
     let uName = TextField_View()
     uName.placeholder = (NSLocalizedString("Name", comment: ""))
     return uName
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var uEmail: TextField_View = {
     let uEmail = TextField_View()
     uEmail.placeholder = (NSLocalizedString("Email", comment: ""))
     return uEmail
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   private let uPassword: TextField_View = {
     let uPassword = TextField_View()
     uPassword.isSecureTextEntry = true
     uPassword.placeholder = (NSLocalizedString("Password", comment: ""))
     return uPassword
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   private let singUp: Button_View = {
     let singUp = Button_View()
-    singUp.setTitle(
-      NSLocalizedString("Sign In", comment: ""), for: .normal)
+      
+      singUp.setTitle(NSLocalizedString("Sing In", comment: ""), for: .normal)
     singUp.addTarget(
       self, action: #selector(singUpButtonTapped), for: .touchUpInside)
     return singUp
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   let stackView: UIStackView = {
     var stackView = UIStackView()
     stackView.axis  = NSLayoutConstraint.Axis.vertical
@@ -93,7 +93,7 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     stackView.spacing = 16.0
     return stackView
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var labelLogIn: UILabel = {
     let labelLogIn = UILabel()
     labelLogIn.translatesAutoresizingMaskIntoConstraints = false
@@ -101,7 +101,7 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     labelLogIn.text = (NSLocalizedString("did you have account?", comment: ""))
     return labelLogIn
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var buttonLogIn: UIButton = {
     let buttonLogIn = UIButton()
     buttonLogIn.translatesAutoresizingMaskIntoConstraints = false
@@ -111,7 +111,7 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     buttonLogIn.addTarget(self, action: #selector(logInButtonTapped), for: .touchUpInside)
     return buttonLogIn
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func allConstraint(){
     
     view.addSubview(uImage)
@@ -121,14 +121,14 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
       uImage.widthAnchor.constraint(equalToConstant: 150),
       uImage.heightAnchor.constraint(equalToConstant: 150),
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(uImageName)
     NSLayoutConstraint.activate([
       uImageName.centerXAnchor.constraint(equalTo:view.safeAreaLayoutGuide.centerXAnchor),
       uImageName.topAnchor.constraint(equalTo: uImage.bottomAnchor, constant: 20),
       uImageName.heightAnchor.constraint(equalToConstant: 40),
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     stackView.addArrangedSubview(uName)
     stackView.addArrangedSubview(uEmail)
     stackView.addArrangedSubview(uPassword)
@@ -141,26 +141,26 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
       stackView.topAnchor.constraint(equalTo: uImageName.bottomAnchor, constant: 20),
       stackView.widthAnchor.constraint(equalToConstant: 500),
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     NSLayoutConstraint.activate([
       labelLogIn.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30),
       labelLogIn.leftAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leftAnchor, constant:50),
       labelLogIn.heightAnchor.constraint(equalToConstant: 50),
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     NSLayoutConstraint.activate([
       buttonLogIn.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 30),
       buttonLogIn.rightAnchor.constraint(equalTo:view.safeAreaLayoutGuide.rightAnchor, constant:-50),
       buttonLogIn.heightAnchor.constraint(equalToConstant: 50),
     ])
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func dismissKeyboard(){
     let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
     view.addGestureRecognizer(tapGesture)
     tapGesture.cancelsTouchesInView = false
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   @objc private func singUpButtonTapped() {
     
     // linke with firebase
@@ -194,22 +194,22 @@ class SingUp_asUser: UIViewController, UIImagePickerControllerDelegate, UINaviga
     vc.modalTransitionStyle = .flipHorizontal
     self.present(vc, animated: true, completion: nil)
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   @objc func imageTapped() { // image picker in register page
     print("Image tapped")
     present(uImagePicker, animated: true)
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     let image = info[.editedImage] ?? info [.originalImage] as? UIImage
     uImage.image = image as? UIImage
     dismiss(animated: true)
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   @objc private func logInButtonTapped() {
     let vc = LogIn_asUser()
     vc.modalPresentationStyle = .fullScreen
     self.present(vc, animated: true, completion: nil)
   }
 }
-//--------------------------------------------------------------------------
+//---------------------------------------------------------------------------

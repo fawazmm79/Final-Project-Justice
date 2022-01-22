@@ -10,7 +10,7 @@ import UIKit
 class ServicePageVC : UIViewController{
   
   var restFromVC2: A?
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -19,9 +19,9 @@ class ServicePageVC : UIViewController{
     
     allConstraint()
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   fileprivate let application = UIApplication.shared
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var imageServicePage: UIImageView = {
     let imageServicePage = UIImageView()
     imageServicePage.layer.masksToBounds = true
@@ -30,7 +30,7 @@ class ServicePageVC : UIViewController{
     imageServicePage.backgroundColor = .systemGray
     return imageServicePage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var stalyServicePage: UILabel = {
     let stalyServicePage = UILabel()
     stalyServicePage.textAlignment = .center
@@ -43,7 +43,7 @@ class ServicePageVC : UIViewController{
     stalyServicePage.translatesAutoresizingMaskIntoConstraints = false
     return stalyServicePage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var nameServicePage: UILabel = {
     let nameServicePage = UILabel()
     nameServicePage.textAlignment = .center
@@ -54,7 +54,7 @@ class ServicePageVC : UIViewController{
     nameServicePage.translatesAutoresizingMaskIntoConstraints = false
     return nameServicePage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var numberServicePage: UILabel = {
     let numberServicePage = UILabel()
     numberServicePage.textAlignment = .center
@@ -64,7 +64,7 @@ class ServicePageVC : UIViewController{
     numberServicePage.translatesAutoresizingMaskIntoConstraints = false
     return numberServicePage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var staly2ServicePage: UILabel = {
     let staly2ServicePage = UILabel()
     staly2ServicePage.font = UIFont.systemFont(ofSize: 18)
@@ -76,7 +76,7 @@ class ServicePageVC : UIViewController{
     staly2ServicePage.clipsToBounds = true
     return staly2ServicePage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var textServicePage: UILabel = {
     let textServicePage = UILabel()
     textServicePage.backgroundColor = .systemGray4
@@ -87,7 +87,7 @@ class ServicePageVC : UIViewController{
     textServicePage.translatesAutoresizingMaskIntoConstraints = false
     return textServicePage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var buttonServicePage: UIButton = {
     let buttonServicePage = UIButton()
     buttonServicePage.setTitle("Call", for: .normal)
@@ -101,7 +101,7 @@ class ServicePageVC : UIViewController{
     buttonServicePage.addTarget(self, action: #selector(popupAlert), for: .touchUpInside)
     return buttonServicePage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var button2ServicePage: UIButton = {
     let button2ServicePage = UIButton()
     button2ServicePage.setTitle("Chat", for: .normal)
@@ -115,7 +115,7 @@ class ServicePageVC : UIViewController{
     button2ServicePage.addTarget(self, action: #selector(popupAlert2), for: .touchUpInside)
     return button2ServicePage
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func allConstraint(){
     
     view.addSubview(imageServicePage)
@@ -125,7 +125,7 @@ class ServicePageVC : UIViewController{
       imageServicePage.widthAnchor.constraint(equalToConstant: 100),
       imageServicePage.heightAnchor.constraint(equalToConstant: 100)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(stalyServicePage)
     NSLayoutConstraint.activate([
       stalyServicePage.topAnchor.constraint(equalTo: imageServicePage.bottomAnchor, constant: 10),
@@ -133,7 +133,7 @@ class ServicePageVC : UIViewController{
       stalyServicePage.widthAnchor.constraint(equalToConstant: 350),
       stalyServicePage.heightAnchor.constraint(equalToConstant: 80)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(nameServicePage)
     NSLayoutConstraint.activate([
       nameServicePage.topAnchor.constraint(equalTo: imageServicePage.bottomAnchor, constant: 15),
@@ -141,7 +141,7 @@ class ServicePageVC : UIViewController{
       nameServicePage.widthAnchor.constraint(equalToConstant: 340),
       nameServicePage.heightAnchor.constraint(equalToConstant: 30)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(numberServicePage)
     NSLayoutConstraint.activate([
       numberServicePage.topAnchor.constraint(equalTo:nameServicePage.bottomAnchor, constant: 10),
@@ -149,7 +149,7 @@ class ServicePageVC : UIViewController{
       numberServicePage.widthAnchor.constraint(equalToConstant: 340),
       numberServicePage.heightAnchor.constraint(equalToConstant: 30)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(staly2ServicePage)
     NSLayoutConstraint.activate([
       staly2ServicePage.topAnchor.constraint(equalTo: numberServicePage.bottomAnchor, constant: 20),
@@ -157,14 +157,15 @@ class ServicePageVC : UIViewController{
       staly2ServicePage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20),
       staly2ServicePage.heightAnchor.constraint(equalToConstant: 230)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(textServicePage)
     NSLayoutConstraint.activate([
       textServicePage.topAnchor.constraint(equalTo: numberServicePage.bottomAnchor, constant: 30),
       textServicePage.leftAnchor.constraint(equalTo:view.leftAnchor,constant:30),
       textServicePage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
+      textServicePage.heightAnchor.constraint(equalToConstant: 220)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(buttonServicePage)
     self.view.addSubview(buttonServicePage)
     NSLayoutConstraint.activate([
@@ -173,7 +174,7 @@ class ServicePageVC : UIViewController{
       buttonServicePage.widthAnchor.constraint(equalToConstant: 350),
       buttonServicePage.heightAnchor.constraint(equalToConstant: 70)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     view.addSubview(button2ServicePage)
     self.view.addSubview(button2ServicePage)
     NSLayoutConstraint.activate([
@@ -183,13 +184,13 @@ class ServicePageVC : UIViewController{
       button2ServicePage.heightAnchor.constraint(equalToConstant: 70)
     ])
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func btnSettingClick() {
     if let settingURL = URL(string: UIApplication.openSettingsURLString){
       application.open(settingURL, options: [:])
     }
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func btnCallClick() {
     if let phoneURL = URL(string: "tel://0123456789") {
       if application.canOpenURL(phoneURL){
@@ -197,7 +198,7 @@ class ServicePageVC : UIViewController{
       }
     }
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   @objc func popupAlert(sender: UIButton!){
     
     let alert = UIAlertController(title: "Do you want to call this number?",
@@ -206,22 +207,16 @@ class ServicePageVC : UIViewController{
     
     alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
       
-      let vc = DMScreen()
-      vc.modalPresentationStyle = .fullScreen
-      self.present(vc, animated: true, completion: nil)
-      
-      
-      
-//      self.btnCallClick()
+      self.btnCallClick()
       print("Yes call")}))
     
     alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
-      self.btnSettingClick()
+//      self.btnSettingClick()
       print("Do not call")}))
     
     self.present(alert, animated: true)
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   @objc func popupAlert2(sender: UIButton!){
     
     let alert = UIAlertController(title: "Do you want to start a chat?",
@@ -229,14 +224,19 @@ class ServicePageVC : UIViewController{
                                   preferredStyle: .alert)
     
     alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-      self.btnCallClick()
-      print("Yes call")}))
+        
+        let vc = DMScreen()
+        vc.modalPresentationStyle = .fullScreen
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: false)
+        
+      print("Yes chat")}))
     
     alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
-      self.btnSettingClick()
-      print("Do not call")}))
+//      self.btnSettingClick()
+      print("Do not chat")}))
     
     self.present(alert, animated: true)
   }
 }
-//--------------------------------------------------------------------------
+//---------------------------------------------------------------------------

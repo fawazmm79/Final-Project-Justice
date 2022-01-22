@@ -12,7 +12,7 @@ class MyProfileVC_Cell: UITableViewCell {
   
   static let identifier = "MyProfileVC_Cell_key"
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?){
     
     super.init(style: style , reuseIdentifier: reuseIdentifier)
@@ -20,11 +20,11 @@ class MyProfileVC_Cell: UITableViewCell {
     allConstraint()
     
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   required init?(coder: NSCoder) {
     super.init(coder: coder)
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var imageCell: UIImageView = {
     let imageCell = UIImageView()
     imageCell.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +35,7 @@ class MyProfileVC_Cell: UITableViewCell {
     imageCell.backgroundColor = .systemGray4
     return imageCell
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var titleCell: UILabel = {
     let titleCell = UILabel()
     titleCell.translatesAutoresizingMaskIntoConstraints = false
@@ -45,12 +45,12 @@ class MyProfileVC_Cell: UITableViewCell {
     titleCell.font = UIFont.systemFont(ofSize: 18)
     return titleCell
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var textCell: UILabel = {
     let textCell = UILabel()
     return textCell
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   lazy var stalyCell: UILabel = {
     let stalyCell = UILabel()
     stalyCell.font = UIFont.systemFont(ofSize: 18)
@@ -62,7 +62,7 @@ class MyProfileVC_Cell: UITableViewCell {
     stalyCell.clipsToBounds = true
     return stalyCell
   }()
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func allConstraint(){
     
     self.addSubview(imageCell)
@@ -72,7 +72,7 @@ class MyProfileVC_Cell: UITableViewCell {
       imageCell.heightAnchor.constraint(equalToConstant: 50),
       imageCell.widthAnchor.constraint(equalToConstant: 50)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     self.addSubview(stalyCell)
     NSLayoutConstraint.activate([
       stalyCell.centerYAnchor.constraint(equalTo: centerYAnchor),
@@ -80,7 +80,7 @@ class MyProfileVC_Cell: UITableViewCell {
       stalyCell.rightAnchor.constraint(equalTo:imageCell.leftAnchor, constant: -5),
       stalyCell.heightAnchor.constraint(equalToConstant: 50)
     ])
-    //------------------------------------------------------------------------
+    //-----------------------------------------------------------------------
     self.addSubview(titleCell)
     NSLayoutConstraint.activate([
       titleCell.rightAnchor.constraint(equalTo:imageCell.leftAnchor, constant: -15),

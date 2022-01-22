@@ -58,8 +58,9 @@ class Button_View: UIButton{
     super.init(frame: frame)
     
     translatesAutoresizingMaskIntoConstraints = false
-    setTitleColor(.white, for: .normal)
-    backgroundColor = .systemGray2
+    setTitleColor(.black, for: .normal)
+//    backgroundColor = .systemGray2
+    backgroundColor = UIColor(red: 0.97, green: 0.81, blue: 0.36, alpha: 1.00)
     layer.cornerRadius = 12
     layer.masksToBounds = true
     titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
@@ -111,11 +112,11 @@ class BackUser_OR_Lawyer: UIButton{
     super.init(frame: frame)
     
     translatesAutoresizingMaskIntoConstraints = false
-    setTitleColor(.white, for: .normal)
-//    backgroundColor = .systemGray2
+    setTitleColor(.blue, for: .normal)
+//    backgroundColor = UIColor(red: 0.97, green: 0.81, blue: 0.36, alpha: 1.00)
     layer.cornerRadius = 12
     layer.masksToBounds = true
-    titleLabel?.font = .systemFont(ofSize: 20, weight: .medium)
+      titleLabel?.font = .systemFont(ofSize: 20, weight: .heavy)
     
     NSLayoutConstraint.activate([
       widthAnchor.constraint(equalToConstant: 300),

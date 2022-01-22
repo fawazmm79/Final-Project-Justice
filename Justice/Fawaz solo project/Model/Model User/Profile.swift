@@ -17,38 +17,32 @@ struct MyProfile_str {
 var data_MyProfile_str = [
   
   MyProfile_str(
-    image: UIImage(systemName: "globe"),
-    title: "Language",
-    text: ""
-  ),
-  
-  MyProfile_str(
     image: UIImage(systemName: "questionmark.circle"),
-    title: "Common Questions",
+    title: (NSLocalizedString("Common Questions", comment: "")),
     text: ""
   ),
   
   MyProfile_str(
     image: UIImage(systemName: "text.bubble"),
-    title: "Connect with us",
+    title: (NSLocalizedString("Connect with us", comment: "")),
     text: ""
   ),
   
   MyProfile_str(
     image: UIImage(systemName: "text.alignright"),
-    title: "Terms of use",
+    title: (NSLocalizedString("Terms of use", comment: "")),
     text: ""
   ),
   
   MyProfile_str(
     image: UIImage(systemName: "doc.text"),
-    title: "Privacy policy",
+    title: (NSLocalizedString("Privacy policy", comment: "")),
     text: ""
   ),
   
   MyProfile_str(
     image: UIImage(systemName: "gear"),
-    title: "Settings",
+    title: (NSLocalizedString("Settings", comment: "")),
     text: ""
   ),
   

@@ -13,12 +13,12 @@ class RegisterServiceLawyer {
   static let shared = RegisterServiceLawyer()
   
   let lawyersCollection = Firestore.firestore().collection("lawyers")
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   // Add user to firestor//computed properties
   func addLawyer(lawyer: Lawyer) {
     lawyersCollection.document(lawyer.id).setData(lawyer.dictLawyer)
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func listenToLawyers(completion: @escaping (([Lawyer]) -> Void)) {
     
     lawyersCollection.addSnapshotListener { snapshot, error in
@@ -43,7 +43,7 @@ class RegisterServiceLawyer {
       completion(lawyers)
     }
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func updateUserInfo(lawyer: Lawyer) {
     lawyersCollection.document(lawyer.id).setData([
       "id": lawyer.id,

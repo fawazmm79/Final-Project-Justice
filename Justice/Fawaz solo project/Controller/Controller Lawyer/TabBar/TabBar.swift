@@ -9,7 +9,7 @@ import UIKit
 
 class TabLawyer: UITabBarController {
   
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -21,7 +21,7 @@ class TabLawyer: UITabBarController {
     
     setupVCs()
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   fileprivate func createNavController(for rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
     
     let navController = UINavigationController(rootViewController: rootViewController)
@@ -32,7 +32,7 @@ class TabLawyer: UITabBarController {
     
     return navController
   }
-  //--------------------------------------------------------------------------
+  //-------------------------------------------------------------------------
   func setupVCs() {
     
     viewControllers = [

@@ -28,7 +28,7 @@ class NewsVC_Cell: UITableViewCell {
     imageCell.translatesAutoresizingMaskIntoConstraints = false
     imageCell.layer.cornerRadius = 10
     imageCell.clipsToBounds = true
-    imageCell.backgroundColor = .systemGray4
+    imageCell.backgroundColor = .systemGray5
     imageCell.contentMode = .scaleAspectFill
     return imageCell
   }()
@@ -39,7 +39,7 @@ class NewsVC_Cell: UITableViewCell {
     titleCell.textColor = .label
     titleCell.textAlignment = .right
     titleCell.numberOfLines = 0
-    titleCell.backgroundColor = .systemGray4
+    titleCell.backgroundColor = .systemGray5
     titleCell.font = UIFont.systemFont(ofSize: 20)
     return titleCell
   }()
@@ -51,7 +51,7 @@ class NewsVC_Cell: UITableViewCell {
     stalyCell.numberOfLines = 0
     stalyCell.textColor = .label
     stalyCell.translatesAutoresizingMaskIntoConstraints = false
-    stalyCell.backgroundColor = .systemGray4
+    stalyCell.backgroundColor = .systemGray5
     stalyCell.layer.cornerRadius = 10
     stalyCell.clipsToBounds = true
     return stalyCell

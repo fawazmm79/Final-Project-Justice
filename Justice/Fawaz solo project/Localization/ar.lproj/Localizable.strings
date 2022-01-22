@@ -6,7 +6,52 @@
  
  */
 
+"Welcome" = "مرحبًا بك في تطبيق عدل
+ 
+ يوفر التطبيق معلومات وإستشارات قانونية من محامين معتمدين لمساعدتك في حل أي قضية";
+
 "User" = "مستخدم";
 "Lawyer" = "محامي";
+
+"Change Language" = "هل تريد تغير اللغه إلي الإنجليزيه؟";
+
+"Welcome as User in App" = "مرحبا بك كمستخدم للبرنامج";
+"Welcome as Lawyer in App" = "مرحبا بك كمحامي للبرنامج";
 "Log In" = "دخول";
 "Sing In" = "تسجيل";
+"Don't have account?" = "ليس لديك حساب؟";
+
+"Login as User" = "الدخول كمستخدم";
+"Login as Lawyer" = "الدخول كمحامي";
+
+"Do you want to change the language?" = "تغير اللغه إلى الإنجليزيه";
+
+"Add Picture" = "أضف صوره";
+"did you have account?" = "هل لديك حساب؟";
+
+"Categories" = "التصنيفات";
+"Lawyers" = "المحامين";
+"News" = "الأخبار";
+"Map" = "الخرائط";
+"More" = "المزيد";
+
+"Crimes" = "جنائي";
+"Commercial" = "تجاري";
+"Personal Status" = "آحوال شخصيه";
+"Employees" = "عمالي";
+"Implementation and Service Interruption" = "تنفيذ وإيقاف الخدمات";
+"My Rights" = "حقوقي";
+"Vehicles" = "مروري";
+"Comp" = "شركات ناشئه";
+"Hotels and Flights" = "فنادق وطيران";
+"Inheritance" = "التركه";
+"Medical Errors" = "أخطاء طبيه";
+"Trademarks" = "إداري";
+
+"Common Questions" = "الأسئلة الشائعة";
+"Connect with us" = "اتصل بنا";
+"Terms of use" = "تعليمات الإستخدام";
+"Privacy policy" = "سياسة الخصوصية";
+"Settings" = "الإعدادات";
+
+
